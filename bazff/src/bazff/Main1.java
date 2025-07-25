@@ -18,6 +18,7 @@ public class Main1 {
         System.out.println("HALO DOG");
         System.out.println("hai");
         System.out.println("aul");
+        System.out.println("BISMA BAU");
     }
     
 }
