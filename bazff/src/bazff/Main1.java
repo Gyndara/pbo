@@ -20,6 +20,7 @@ public class Main1 {
         System.out.println("aul");
         System.out.println("BISMA BAU");
         System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
+        System.out.println("zahy");
     }
     
 }
