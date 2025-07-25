@@ -21,6 +21,7 @@ public class Main1 {
         System.out.println("BISMA BAU");
         System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
         System.out.println("zahy");
+        System.out.println("halo selanjutntya");
     }
     
 }
