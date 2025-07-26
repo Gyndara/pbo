@@ -6,6 +6,7 @@
 package bazff.view;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,9 @@ public class DetailProduct extends javax.swing.JFrame {
      */
     public DetailProduct() {
         initComponents();
+        ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
+        jGambar.setIcon(LoginImage);
+        jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
     }
 
     /**
@@ -40,6 +44,8 @@ public class DetailProduct extends javax.swing.JFrame {
         jLabelDes = new javax.swing.JLabel();
         jBtnCancel = new javax.swing.JButton();
         jBtnCheckout = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jGambar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,6 +119,14 @@ public class DetailProduct extends javax.swing.JFrame {
         jBtnCheckout.setPreferredSize(new java.awt.Dimension(200, 60));
         jPanel2.add(jBtnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, -1, -1));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setPreferredSize(new java.awt.Dimension(550, 550));
+
+        jGambar.setPreferredSize(new java.awt.Dimension(550, 550));
+        jPanel3.add(jGambar);
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 550, 560));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -120,7 +134,7 @@ public class DetailProduct extends javax.swing.JFrame {
 
     private void jCmbSizeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCmbSizeFocusGained
         // TODO add your handling code here:
-        jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
+        
     }//GEN-LAST:event_jCmbSizeFocusGained
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
@@ -166,6 +180,7 @@ public class DetailProduct extends javax.swing.JFrame {
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnCheckout;
     private javax.swing.JComboBox<String> jCmbSize;
+    private javax.swing.JLabel jGambar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelDes;
@@ -173,6 +188,7 @@ public class DetailProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNama;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTxtJumlah;
     // End of variables declaration//GEN-END:variables
 }
