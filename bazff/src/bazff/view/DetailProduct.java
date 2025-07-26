@@ -5,6 +5,8 @@
  */
 package bazff.view;
 
+import java.awt.Color;
+
 /**
  *
  * @author Aull
@@ -37,9 +39,9 @@ public class DetailProduct extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -69,6 +71,11 @@ public class DetailProduct extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XXL", "XL", "L", "M", "S", "XS" }));
         jComboBox1.setPreferredSize(new java.awt.Dimension(250, 60));
+        jComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jComboBox1FocusGained(evt);
+            }
+        });
         jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, -1, -1));
 
         jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
@@ -76,10 +83,18 @@ public class DetailProduct extends javax.swing.JFrame {
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 510, -1, -1));
 
         jTextField2.setBackground(new java.awt.Color(255, 237, 250));
+        jTextField2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(236, 127, 169));
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("Cancel");
         jTextField2.setPreferredSize(new java.awt.Dimension(200, 60));
         jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 630, -1, -1));
 
         jTextField3.setBackground(new java.awt.Color(236, 127, 169));
+        jTextField3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 237, 250));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setText("Checkout");
         jTextField3.setPreferredSize(new java.awt.Dimension(200, 60));
         jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 630, -1, -1));
 
@@ -88,11 +103,19 @@ public class DetailProduct extends javax.swing.JFrame {
         jLabel5.setText("Masukan Jumlah");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 140, -1));
 
+        jLabel4.setText("Jersey Short elegan dengan bahan lembut, bikin tampil menarik dan hangat. ");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 360, 440, 30));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jComboBox1FocusGained
+        // TODO add your handling code here:
+        jComboBox1.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
+    }//GEN-LAST:event_jComboBox1FocusGained
+    
     /**
      * @param args the command line arguments
      */
@@ -133,6 +156,7 @@ public class DetailProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
