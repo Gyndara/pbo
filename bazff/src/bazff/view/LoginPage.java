@@ -74,13 +74,15 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel3.setText("HOLLA,  WELCOME!");
+        jLabel3.setText("HOLLA, WELCOME!");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 250, 430, -1));
 
+        jTextField3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
         jTextField3.setPreferredSize(new java.awt.Dimension(600, 80));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, -1, -1));
 
         jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
         jTextField4.setPreferredSize(new java.awt.Dimension(600, 80));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, -1, -1));
 
@@ -89,9 +91,9 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 680, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(236, 127, 169));
+        jLabel4.setForeground(new java.awt.Color(255, 237, 250));
         jLabel4.setText("Sign in");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 730, 120, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 730, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
