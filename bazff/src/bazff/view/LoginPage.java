@@ -5,6 +5,8 @@
  */
 package bazff.view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Aull
@@ -16,6 +18,8 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public LoginPage() {
         initComponents();
+        ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/login.jpg"));
+        jLogin.setIcon(LoginImage);
     }
 
     /**
@@ -28,15 +32,16 @@ public class LoginPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabellJudul = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLogin = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        jTxtPass = new javax.swing.JTextField();
+        jTxtEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jBtnSign = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,10 +50,10 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 55)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel1.setText("B  A  Z  F  F");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, -1, 81));
+        jLabellJudul.setFont(new java.awt.Font("Tahoma", 0, 55)); // NOI18N
+        jLabellJudul.setForeground(new java.awt.Color(236, 127, 169));
+        jLabellJudul.setText("B  A  Z  F  F");
+        jPanel1.add(jLabellJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, -1, 81));
 
         jPanel3.setPreferredSize(new java.awt.Dimension(800, 850));
 
@@ -56,14 +61,16 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addComponent(jLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 560, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(236, 127, 169));
@@ -72,41 +79,35 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel3.setText("HOLLA, WELCOME!");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 250, 430, -1));
+        jLabel3.setText("<html>HOLLA, WELCOME!</html>");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 230, 400, -1));
 
-        jTextField3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
-        jTextField3.setPreferredSize(new java.awt.Dimension(600, 80));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, -1, -1));
+        jTxtPass.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        jTxtPass.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
+        jTxtPass.setPreferredSize(new java.awt.Dimension(600, 80));
+        jPanel1.add(jTxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 600, -1, -1));
 
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
-        jTextField4.setPreferredSize(new java.awt.Dimension(600, 80));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(236, 127, 169));
-        jTextField1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 237, 250));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Sign In");
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(250, 80));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 680, -1, -1));
+        jTxtEmail.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        jTxtEmail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
+        jTxtEmail.setPreferredSize(new java.awt.Dimension(600, 80));
+        jPanel1.add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 460, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 70, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 70, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(236, 127, 169));
         jLabel6.setText("Password");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 120, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, 120, -1));
+
+        jBtnSign.setBackground(new java.awt.Color(236, 127, 169));
+        jBtnSign.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jBtnSign.setForeground(new java.awt.Color(255, 237, 250));
+        jBtnSign.setText("Sign in");
+        jBtnSign.setPreferredSize(new java.awt.Dimension(200, 60));
+        jPanel1.add(jBtnSign, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 720, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,10 +126,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,21 +157,23 @@ public class LoginPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new LoginPage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jBtnSign;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabellJudul;
+    private javax.swing.JLabel jLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTxtEmail;
+    private javax.swing.JTextField jTxtPass;
     // End of variables declaration//GEN-END:variables
 }
