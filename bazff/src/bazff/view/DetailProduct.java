@@ -32,14 +32,14 @@ public class DetailProduct extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jLabelNama = new javax.swing.JLabel();
+        jLabelHarga = new javax.swing.JLabel();
+        jCmbSize = new javax.swing.JComboBox<>();
+        jTxtJumlah = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelDes = new javax.swing.JLabel();
+        jBtnCancel = new javax.swing.JButton();
+        jBtnCheckout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,62 +59,73 @@ public class DetailProduct extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel2.setText("Jersey Short Jacket");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 240, -1, -1));
+        jLabelNama.setFont(new java.awt.Font("Arial", 0, 38)); // NOI18N
+        jLabelNama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNama.setText("Jersey Short Jacket");
+        jPanel2.add(jLabelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 360, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        jLabel3.setText("Rp.500.000-,");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 290, -1, -1));
+        jLabelHarga.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        jLabelHarga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelHarga.setText("Rp.500.000-,");
+        jPanel2.add(jLabelHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 280, -1, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(236, 127, 169));
-        jComboBox1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XXL", "XL", "L", "M", "S", "XS" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(250, 60));
-        jComboBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+        jCmbSize.setBackground(new java.awt.Color(236, 127, 169));
+        jCmbSize.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jCmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XXL", "XL", "L", "M", "S", "XS" }));
+        jCmbSize.setPreferredSize(new java.awt.Dimension(250, 60));
+        jCmbSize.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jComboBox1FocusGained(evt);
+                jCmbSizeFocusGained(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, -1, -1));
+        jPanel2.add(jCmbSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, -1, -1));
 
-        jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(250, 50));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 510, -1, -1));
-
-        jTextField2.setBackground(new java.awt.Color(255, 237, 250));
-        jTextField2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(236, 127, 169));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Cancel");
-        jTextField2.setPreferredSize(new java.awt.Dimension(200, 60));
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 630, -1, -1));
-
-        jTextField3.setBackground(new java.awt.Color(236, 127, 169));
-        jTextField3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 237, 250));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Checkout");
-        jTextField3.setPreferredSize(new java.awt.Dimension(200, 60));
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 630, -1, -1));
+        jTxtJumlah.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
+        jTxtJumlah.setPreferredSize(new java.awt.Dimension(250, 50));
+        jPanel2.add(jTxtJumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 510, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
         jLabel5.setText("Masukan Jumlah");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 140, -1));
 
-        jLabel4.setText("Jersey Short elegan dengan bahan lembut, bikin tampil menarik dan hangat. ");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 360, 440, 30));
+        jLabelDes.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabelDes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDes.setText("<html><div style='text-align: center;'>Jersey Short Jacket elegan dengan bahan lembut, bikin tampil menarik dan tetap hangat</div></html>");
+        jPanel2.add(jLabelDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 360, 30));
+
+        jBtnCancel.setBackground(new java.awt.Color(255, 237, 250));
+        jBtnCancel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jBtnCancel.setForeground(new java.awt.Color(236, 127, 169));
+        jBtnCancel.setText("Cancel");
+        jBtnCancel.setPreferredSize(new java.awt.Dimension(200, 60));
+        jBtnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBtnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 610, -1, -1));
+
+        jBtnCheckout.setBackground(new java.awt.Color(236, 127, 169));
+        jBtnCheckout.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jBtnCheckout.setForeground(new java.awt.Color(255, 237, 250));
+        jBtnCheckout.setText("Checkout");
+        jBtnCheckout.setPreferredSize(new java.awt.Dimension(200, 60));
+        jPanel2.add(jBtnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jComboBox1FocusGained
+    private void jCmbSizeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCmbSizeFocusGained
         // TODO add your handling code here:
-        jComboBox1.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
-    }//GEN-LAST:event_jComboBox1FocusGained
+        jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
+    }//GEN-LAST:event_jCmbSizeFocusGained
+
+    private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnCancelActionPerformed
     
     /**
      * @param args the command line arguments
@@ -152,16 +163,16 @@ public class DetailProduct extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jBtnCancel;
+    private javax.swing.JButton jBtnCheckout;
+    private javax.swing.JComboBox<String> jCmbSize;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelDes;
+    private javax.swing.JLabel jLabelHarga;
+    private javax.swing.JLabel jLabelNama;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTxtJumlah;
     // End of variables declaration//GEN-END:variables
 }
