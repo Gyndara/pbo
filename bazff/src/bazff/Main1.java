@@ -5,6 +5,8 @@
  */
 package bazff;
 
+import bazff.view.MainWindow;
+
 /**
  *
  * @author bisma
@@ -22,6 +24,8 @@ public class Main1 {
         System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
         System.out.println("zahy");
         System.out.println("halo selanjutntya");
+        MainWindow main = new MainWindow();
+        main.setVisible(true);
     }
     
 }
