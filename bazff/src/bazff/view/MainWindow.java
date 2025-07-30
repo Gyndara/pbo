@@ -19,14 +19,11 @@ public class MainWindow extends javax.swing.JFrame {
     /**
      * Creates new form MainWindow
      */
-    MainWindowController windowController;
+    private MainWindowController windowController;
     
     public MainWindow() {
-        windowController = new MainWindowController();
-        windowController.setProductDataPanel(new ProductDataPanel());
-        
-        
         initComponents();
+        windowController = new MainWindowController(this);
     }
 
     /**

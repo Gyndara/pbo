@@ -5,8 +5,12 @@
  */
 package bazff.view;
 
+import bazff.controller.ProductController;
+import java.awt.Window;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -17,8 +21,15 @@ public class ProductDataPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProductDataPanel
      */
-    public ProductDataPanel() {
+    private MainWindow mainWindow;
+    
+    public ProductDataPanel(MainWindow window) {
+        this.mainWindow = window;
         initComponents();
+    }
+
+    ProductDataPanel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -102,6 +113,7 @@ public class ProductDataPanel extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 237, 250));
         jButton1.setText("Delete");
+        jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(223, 80));
         PanelProductData.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
 
@@ -109,11 +121,23 @@ public class ProductDataPanel extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 237, 250));
         jButton2.setText("Update");
+        jButton2.setBorder(null);
         jButton2.setPreferredSize(new java.awt.Dimension(223, 80));
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         PanelProductData.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, -1, -1));
 
         add(PanelProductData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        UpdatePopUp1 dialog = new UpdatePopUp1(mainWindow, true);
+        dialog.setLocationRelativeTo(mainWindow);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
 
     public JPanel getPanelProductData() {
         return PanelProductData;
