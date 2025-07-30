@@ -6,6 +6,8 @@
 
 package bazff.view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author fauza
@@ -15,8 +17,10 @@ public class HomePage extends javax.swing.JFrame {
     /** Creates new form HomePage */
     public HomePage() {
         initComponents();
+        ImageIcon Img = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
+        jLabelImage1.setIcon(Img);
     }
-
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -32,27 +36,35 @@ public class HomePage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabelImage1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jLabelImage2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabelImage3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jLabelImage4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jLabelImage5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jLabelImage6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        jLabelImage7 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
+        jLabelImage8 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -96,6 +108,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel4.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(jLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Jersey Short Jacket");
@@ -109,6 +122,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel5.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(jLabelImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Work Shirt");
@@ -122,6 +136,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel6.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel6.add(jLabelImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Jorts Pants");
@@ -135,6 +150,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel8.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel8.add(jLabelImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Adidas T-Shirt ");
@@ -148,6 +164,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel7.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel7.add(jLabelImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Stripped T-Shirt");
@@ -161,6 +178,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel9.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel9.add(jLabelImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setText("Black Sweater");
@@ -174,6 +192,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel10.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel10.add(jLabelImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel15.setText("Pocket Shirt");
@@ -187,6 +206,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel11.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel11.add(jLabelImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("Denim Jorts Pants");
@@ -375,6 +395,14 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelImage1;
+    private javax.swing.JLabel jLabelImage2;
+    private javax.swing.JLabel jLabelImage3;
+    private javax.swing.JLabel jLabelImage4;
+    private javax.swing.JLabel jLabelImage5;
+    private javax.swing.JLabel jLabelImage6;
+    private javax.swing.JLabel jLabelImage7;
+    private javax.swing.JLabel jLabelImage8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
