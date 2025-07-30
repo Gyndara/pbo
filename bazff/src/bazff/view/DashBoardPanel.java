@@ -38,121 +38,43 @@ public class DashBoardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        HeaderHomePanel = new javax.swing.JPanel();
         PanelHeaderProduct = new javax.swing.JLabel();
-        PanelProductData = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        PanelHome = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 184, 224));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        HeaderHomePanel.setBackground(new java.awt.Color(255, 184, 224));
+        HeaderHomePanel.setPreferredSize(new java.awt.Dimension(1440, 127));
+        HeaderHomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelHeaderProduct.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         PanelHeaderProduct.setForeground(new java.awt.Color(236, 127, 169));
         PanelHeaderProduct.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PanelHeaderProduct.setText("PRODUCT DATA");
+        PanelHeaderProduct.setText("HOME");
         PanelHeaderProduct.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanel1.add(PanelHeaderProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        HeaderHomePanel.add(PanelHeaderProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(HeaderHomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        PanelProductData.setBackground(new java.awt.Color(255, 230, 248));
-        PanelProductData.setPreferredSize(new java.awt.Dimension(1440, 730));
-        PanelProductData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(700, 500));
-
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "PRODUCT CODE", "PRODUCT NAME", "PRODUCT QUANTITY", "PRODUCT STARUS"
-            }
-        ));
-        jTable1.setRowHeight(40);
-        jScrollPane1.setViewportView(jTable1);
-
-        PanelProductData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 1240, 500));
-
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 237, 250));
-        jButton1.setText("Delete");
-        jButton1.setBorder(null);
-        jButton1.setPreferredSize(new java.awt.Dimension(223, 80));
-        PanelProductData.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
-
-        jButton2.setBackground(new java.awt.Color(236, 127, 169));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 237, 250));
-        jButton2.setText("Update");
-        jButton2.setBorder(null);
-        jButton2.setPreferredSize(new java.awt.Dimension(223, 80));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        PanelProductData.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, -1, -1));
-
-        add(PanelProductData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
+        PanelHome.setBackground(new java.awt.Color(255, 230, 248));
+        PanelHome.setPreferredSize(new java.awt.Dimension(1440, 730));
+        PanelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(PanelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        UpdatePopUp1 dialog = new UpdatePopUp1(mainWindow, true);
-        dialog.setLocationRelativeTo(mainWindow);
-        dialog.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    public JLabel getPanelHeaderProduct() {
-        return PanelHeaderProduct;
+    public JPanel getHeaderHomePanel() {
+        return HeaderHomePanel;
     }
 
-    public JPanel getPanelProductData() {
-        return PanelProductData;
+    public JPanel getPanelHome() {
+        return PanelHome;
     }
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel HeaderHomePanel;
     private javax.swing.JLabel PanelHeaderProduct;
-    private javax.swing.JPanel PanelProductData;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel PanelHome;
     // End of variables declaration//GEN-END:variables
 }

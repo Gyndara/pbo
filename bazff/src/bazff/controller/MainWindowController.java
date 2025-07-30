@@ -51,13 +51,14 @@ public class MainWindowController {
 
     public void tampilHalamanUtama(MainWindow window) {
         window.getPanelHeader().removeAll();
-        window.getPanelHeader().add(dashBoardPanel.getPanelHeaderProduct());
+        window.getPanelHeader().add(dashBoardPanel.getHeaderHomePanel());
         window.getPanelHeader().repaint();
         window.getPanelHeader().revalidate();
         
         window.getMainPanel().removeAll();      
-        window.getMainPanel().add(dashBoardPanel.getPanelProductData());
+        window.getMainPanel().add(dashBoardPanel.getPanelHome());
         window.getMainPanel().repaint();
         window.getMainPanel().revalidate();
+        
     }
 }
