@@ -7,6 +7,7 @@ package bazff.controller;
 
 import bazff.view.MainWindow;
 import bazff.view.ProductDataPanel;
+import bazff.view.DashBoardPanel;
 
 /**
  *
@@ -14,15 +15,20 @@ import bazff.view.ProductDataPanel;
  */
 public class MainWindowController {
     private ProductDataPanel ProductDataPanel;
+    private DashBoardPanel dashBoardPanel;
 
     public MainWindowController(MainWindow window){
         this.ProductDataPanel = new ProductDataPanel(window);
+        this.dashBoardPanel = new DashBoardPanel(window);
     }
     
     public void setProductDataPanel(ProductDataPanel ProductDataPanel) {
         this.ProductDataPanel = ProductDataPanel;
     }
-    
+
+    public void setDashBoardPanel(DashBoardPanel dashBoardPanel) {
+        this.dashBoardPanel = dashBoardPanel;
+    }
     
     public void tampilHalamanProduct(MainWindow window){
         //mengubah panel header
@@ -39,6 +45,18 @@ public class MainWindowController {
         window.getPanelHeader().revalidate();
         
         window.getMainPanel().add(ProductDataPanel.getPanelProductData());
+        window.getMainPanel().repaint();
+        window.getMainPanel().revalidate();
+    }
+
+    public void tampilHalamanUtama(MainWindow window) {
+        window.getPanelHeader().removeAll();
+        window.getPanelHeader().add(dashBoardPanel.getPanelHeaderHome());
+        window.getPanelHeader().repaint();
+        window.getPanelHeader().revalidate();
+        
+        window.getMainPanel().removeAll();      
+        window.getMainPanel().add(dashBoardPanel.getPanelHome());
         window.getMainPanel().repaint();
         window.getMainPanel().revalidate();
     }
