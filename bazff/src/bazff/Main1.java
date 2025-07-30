@@ -25,7 +25,7 @@ public class Main1 {
         System.out.println("zahy");
         System.out.println("halo selanjutntya");
         MainWindow main = new MainWindow();
-        main.setVisible(true);
+        main.setVisible(true);                          
     }
-    
+        
 }
