@@ -5,12 +5,9 @@
  */
 package bazff.view;
 
-import bazff.controller.ProductController;
-import java.awt.Window;
-import javax.swing.JFrame;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 /**
  *

@@ -53,7 +53,6 @@ public class MainWindow extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MasterPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -73,6 +72,9 @@ public class MainWindow extends javax.swing.JFrame {
         PanelHome.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 0, new java.awt.Color(236, 127, 169)));
         PanelHome.setPreferredSize(new java.awt.Dimension(314, 68));
         PanelHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelHomeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PanelHomeMouseEntered(evt);
             }
@@ -259,6 +261,10 @@ public class MainWindow extends javax.swing.JFrame {
         windowController.tampilHalamanProduct(this);
     }//GEN-LAST:event_PanelProductMouseClicked
 
+    private void PanelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHomeMouseClicked
+        windowController.tampilHalamanUtama(this);
+    }//GEN-LAST:event_PanelHomeMouseClicked
+    
     /**
      * @param args the command line arguments
      */
