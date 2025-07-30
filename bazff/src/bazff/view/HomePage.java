@@ -32,13 +32,37 @@ public class HomePage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Page");
@@ -72,40 +96,222 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel4.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Jersey Short Jacket");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Rp. 500.000");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jPanel5.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setText("Work Shirt");
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Rp. 175.000");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, -1, -1));
 
         jPanel6.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 220, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setText("Jorts Pants");
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setText("Rp. 250.000");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 190, -1, -1));
 
         jPanel8.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 220, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel13.setText("Adidas T-Shirt ");
+        jPanel8.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Rp. 150.000");
+        jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 290, -1, -1));
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 190, -1, -1));
 
         jPanel7.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 640, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Stripped T-Shirt");
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Rp. 150.000");
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, -1, -1));
 
         jPanel9.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setText("Black Sweater");
+        jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Rp. 250.000");
+        jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, -1, -1));
 
         jPanel10.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 640, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setText("Pocket Shirt");
+        jPanel10.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setText("Rp. 125.000");
+        jPanel10.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 290, -1, -1));
+
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 620, -1, -1));
 
         jPanel11.setPreferredSize(new java.awt.Dimension(250, 340));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 640, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel17.setText("Denim Jorts Pants");
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 260, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setText("Rp. 200.000");
+        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 290, -1, -1));
+
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 620, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 230, 248));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Beli");
+        jButton2.setBorder(null);
+        jButton2.setPreferredSize(new java.awt.Dimension(250, 35));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 550, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(255, 230, 248));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setText("Beli");
+        jButton3.setBorder(null);
+        jButton3.setPreferredSize(new java.awt.Dimension(250, 35));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 550, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 230, 248));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setText("Beli");
+        jButton4.setBorder(null);
+        jButton4.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 550, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 230, 248));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Beli");
+        jButton1.setBorder(null);
+        jButton1.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(255, 230, 248));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setText("Beli");
+        jButton5.setBorder(null);
+        jButton5.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 980, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(255, 230, 248));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setText("Beli");
+        jButton6.setBorder(null);
+        jButton6.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 980, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(255, 230, 248));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton7.setText("Beli");
+        jButton7.setBorder(null);
+        jButton7.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 980, -1, -1));
+
+        jButton8.setBackground(new java.awt.Color(255, 230, 248));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton8.setText("Beli");
+        jButton8.setBorder(null);
+        jButton8.setPreferredSize(new java.awt.Dimension(250, 35));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 980, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,8 +349,32 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
