@@ -16,7 +16,9 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
      */
     public UpdatePopUp1(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        setUndecorated(true);
         initComponents();
+        pack();
     }
     
     public UpdatePopUp1(){
@@ -44,7 +46,6 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(508, 696));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

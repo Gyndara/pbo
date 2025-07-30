@@ -39,6 +39,7 @@ public class ProductController {
             JFrame frame = (JFrame) window;
             UpdatePopUp1 dialog = new UpdatePopUp1(frame, true);
             dialog.setLocationRelativeTo(frame);
+            dialog.setUndecorated(true);
             dialog.setVisible(true);
         } else {
             System.err.println("Tidak dapat menemukan frame utama.");
