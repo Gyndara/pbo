@@ -106,7 +106,7 @@ public class ProductDataPanel extends javax.swing.JPanel {
 
         PanelProductData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 1240, 500));
 
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
+        jButton1.setBackground(new java.awt.Color(255, 184, 224));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 237, 250));
         jButton1.setText("Delete");
