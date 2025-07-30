@@ -15,6 +15,10 @@ import bazff.view.ProductDataPanel;
 public class MainWindowController {
     private ProductDataPanel ProductDataPanel;
 
+    public MainWindowController(MainWindow window){
+        this.ProductDataPanel = new ProductDataPanel(window);
+    }
+    
     public void setProductDataPanel(ProductDataPanel ProductDataPanel) {
         this.ProductDataPanel = ProductDataPanel;
     }
