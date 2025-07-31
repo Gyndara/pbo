@@ -31,7 +31,6 @@ public class SizeData extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         SizePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -40,6 +39,8 @@ public class SizeData extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         PanelHeader = new javax.swing.JPanel();
         SizePanelHeader = new javax.swing.JLabel();
 
@@ -79,10 +80,9 @@ public class SizeData extends javax.swing.JFrame {
         SizePanel.setBackground(new java.awt.Color(255, 230, 248));
         SizePanel.setPreferredSize(new java.awt.Dimension(1440, 730));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabel1.setText("SIZE");
-
+        jButton1.setBackground(new java.awt.Color(236, 127, 169));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 230, 248));
         jButton1.setText("XS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(236, 127, 169));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 230, 248));
         jButton2.setText("L");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +100,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(236, 127, 169));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 230, 248));
         jButton3.setText("XXL");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +110,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(236, 127, 169));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 230, 248));
         jButton4.setText("M");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +120,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(236, 127, 169));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 230, 248));
         jButton5.setText("XL");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +130,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setBackground(new java.awt.Color(236, 127, 169));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 230, 248));
         jButton6.setText("Cancel");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +140,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setBackground(new java.awt.Color(236, 127, 169));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 230, 248));
         jButton7.setText("S");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +150,9 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setBackground(new java.awt.Color(190, 89, 133));
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 230, 248));
         jButton8.setText("Add");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,14 +160,39 @@ public class SizeData extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(255, 230, 248));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(236, 127, 169)));
+        jPanel2.setForeground(new java.awt.Color(236, 127, 169));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(236, 127, 169));
+        jLabel1.setText("SIZE");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(jLabel1)
+                .addContainerGap(173, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout SizePanelLayout = new javax.swing.GroupLayout(SizePanel);
         SizePanel.setLayout(SizePanelLayout);
         SizePanelLayout.setHorizontalGroup(
             SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SizePanelLayout.createSequentialGroup()
-                .addGap(438, 438, 438)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SizePanelLayout.createSequentialGroup()
+                .addContainerGap(447, Short.MAX_VALUE)
                 .addGroup(SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SizePanelLayout.createSequentialGroup()
+                    .addGroup(SizePanelLayout.createSequentialGroup()
                         .addGroup(SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,17 +206,16 @@ public class SizeData extends javax.swing.JFrame {
                                 .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(SizePanelLayout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(453, Short.MAX_VALUE))
+                        .addGap(70, 70, 70)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(444, 444, 444))
         );
         SizePanelLayout.setVerticalGroup(
             SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SizePanelLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1)
-                .addGap(47, 47, 47)
+                .addGap(59, 59, 59)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -193,7 +231,7 @@ public class SizeData extends javax.swing.JFrame {
                 .addGroup(SizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jPanelDasar.add(SizePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 202, -1, -1));
@@ -297,6 +335,7 @@ public class SizeData extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelDasar;
     // End of variables declaration//GEN-END:variables
 }
