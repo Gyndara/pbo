@@ -14,6 +14,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -55,21 +57,29 @@ public class HomePage extends javax.swing.JFrame {
             ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("resources/" + gambarProduk[i]));
             Image img = icon.getImage().getScaledInstance(320, 320, Image.SCALE_SMOOTH);
             labelGambar.setIcon(new ImageIcon(img));
-
+            
+            // Panel bawah untuk menampung nama + harga
+            JPanel panelInfo = new JPanel();
+            panelInfo.setLayout(new BoxLayout(panelInfo, BoxLayout.Y_AXIS));
+            panelInfo.setBackground(Color.WHITE);
+            
             // Nama Produk
             JLabel labelNama = new JLabel(namaProduk[i], JLabel.CENTER);
             labelNama.setFont(new Font("Arial", Font.BOLD, 16));
-            labelNama.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+            labelNama.setBorder(BorderFactory.createEmptyBorder(10, 0, 2, 0));
 
             panelProduk.add(labelGambar, BorderLayout.CENTER);
             panelProduk.add(labelNama, BorderLayout.SOUTH);
             
             //Harga Produk
-            //JLabel labelHarga = new Jlabel(hargaProduk[i], JLabel.CENTER);
-            //labe
+            JLabel labelHarga = new JLabel(hargaProduk[i], JLabel.CENTER);
+            labelHarga.setFont(new Font("Arial", Font.BOLD, 14));
+            labelHarga.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+           
+            panelProduk.add(labelHarga, BorderLayout.NORTH);
             
             // Tombol
-            JButton btnBeli = new JButton("Lihat Detail");
+            JButton btnBeli = new JButton("Beli");
             btnBeli.setFocusPainted(false);
             btnBeli.setBackground(Color.decode("#FFE6F8"));   // Pink lembut
             btnBeli.setForeground(Color.decode("#EC7FA9"));   // Pink tua
@@ -79,11 +89,16 @@ public class HomePage extends javax.swing.JFrame {
             btnBeli.addActionListener((ActionEvent e) -> {
                 JOptionPane.showMessageDialog(null, "Produk: " + labelNama.getText());
             });
+            
+            // Tambahkan ke panel info
+            panelInfo.add(labelNama);
+            panelInfo.add(labelHarga);
+            panelInfo.add(Box.createVerticalStrut(3));
+            panelInfo.add(btnBeli);
 
             // Tambahkan komponen ke panel
             panelProduk.add(labelGambar, BorderLayout.CENTER);
-            panelProduk.add(labelNama, BorderLayout.NORTH);
-            panelProduk.add(btnBeli, BorderLayout.SOUTH);
+            panelProduk.add(panelInfo, BorderLayout.SOUTH);
 
             jPanelProdukGrid.add(panelProduk);
 }
@@ -112,7 +127,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanelProdukGrid.setBackground(new java.awt.Color(255, 255, 255));
         jPanelProdukGrid.setPreferredSize(new java.awt.Dimension(1080, 720));
-        jPanelProdukGrid.setLayout(new java.awt.GridLayout(2, 0, 15, 15));
+        jPanelProdukGrid.setLayout(new java.awt.GridLayout(2, 0, 15, 20));
         jPanel1.add(jPanelProdukGrid, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 104, 1500, 730));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));

@@ -62,7 +62,7 @@
             <Property name="columns" type="int" value="0"/>
             <Property name="horizontalGap" type="int" value="15"/>
             <Property name="rows" type="int" value="2"/>
-            <Property name="verticalGap" type="int" value="15"/>
+            <Property name="verticalGap" type="int" value="20"/>
           </Layout>
         </Container>
       </SubComponents>
