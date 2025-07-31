@@ -199,14 +199,14 @@ public class SizeData extends javax.swing.JFrame {
         jPanelDasar.add(SizePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 202, -1, -1));
 
         PanelHeader.setBackground(new java.awt.Color(255, 184, 224));
-        PanelHeader.setLayout(new java.awt.CardLayout());
+        PanelHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SizePanelHeader.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         SizePanelHeader.setForeground(new java.awt.Color(236, 127, 169));
         SizePanelHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SizePanelHeader.setText("SIZE DATA");
         SizePanelHeader.setPreferredSize(new java.awt.Dimension(1440, 127));
-        PanelHeader.add(SizePanelHeader, "card2");
+        PanelHeader.add(SizePanelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanelDasar.add(PanelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 72, -1, -1));
 
