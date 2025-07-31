@@ -21,6 +21,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import bazff.controller.HomePageController;
+import java.awt.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,77 +34,33 @@ public class HomePage extends javax.swing.JFrame {
     /** Creates new form HomePage */
     public HomePage() {
         initComponents();
+
+        // Data produk
         String[] namaProduk = {
-            "Work Shirt", "Jersey", "Jorts Pants", 
-            "Adidas T-Shirt", "Striped T-Shirt", 
-            "Black Sweater", "Pocket Shirt", "Denim Jorts Pants"};
+            "Work Shirt", "Jersey", "Jorts Pants",
+            "Adidas T-Shirt", "Striped T-Shirt",
+            "Black Sweater", "Pocket Shirt", "Denim Jorts Pants"
+        };
+
         String[] gambarProduk = {
-        "Work_Shirt.png", "jersey.png", "Jorts_Pants1.png", "Adidas_TShirt.png", "Stripped_TShirt.png", 
-        "Black_Sweater.png", "Pocket_Shirt.png", "Jorts_Pants2.png"
+            "Work_Shirt.png", "jersey.png", "Jorts_Pants1.png", "Adidas_TShirt.png",
+            "Stripped_TShirt.png", "Black_Sweater.png", "Pocket_Shirt.png", "Jorts_Pants2.png"
         };
-         String[] hargaProduk = {
-        "Rp 500.000", "Rp 175.000", "Rp 250.000", "Rp 150.000",
-        "Rp 150.000", "Rp 250.000", "Rp 125.000", "Rp 250.000"
+
+        String[] hargaProduk = {
+            "Rp 500.000", "Rp 175.000", "Rp 250.000", "Rp 150.000",
+            "Rp 150.000", "Rp 250.000", "Rp 125.000", "Rp 250.000"
         };
-        for (int i = 0; i < namaProduk.length; i++) {
-            JPanel panelProduk = new JPanel();
-            panelProduk.setPreferredSize(new Dimension(250, 300));
-            panelProduk.setLayout(new BorderLayout());
-            panelProduk.setBackground(Color.WHITE);
-            panelProduk.setBorder(BorderFactory.createEmptyBorder());
 
-            // Gambar
-            JLabel labelGambar = new JLabel();
-            labelGambar.setHorizontalAlignment(JLabel.CENTER);
+        // Ambil panel dari controller
+        JPanel[] produkPanels = HomePageController.generateProdukPanels(namaProduk, hargaProduk, gambarProduk);
 
-            ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("resources/" + gambarProduk[i]));
-            Image img = icon.getImage().getScaledInstance(320, 320, Image.SCALE_SMOOTH);
-            labelGambar.setIcon(new ImageIcon(img));
-            
-            // Panel bawah untuk menampung nama + harga
-            JPanel panelInfo = new JPanel();
-            panelInfo.setLayout(new BoxLayout(panelInfo, BoxLayout.Y_AXIS));
-            panelInfo.setBackground(Color.WHITE);
-            
-            // Nama Produk
-            JLabel labelNama = new JLabel(namaProduk[i], JLabel.CENTER);
-            labelNama.setFont(new Font("Arial", Font.BOLD, 16));
-            labelNama.setBorder(BorderFactory.createEmptyBorder(10, 0, 2, 0));
+        for (JPanel panel : produkPanels) {
+            jPanelProdukGrid.add(panel);
+        }
 
-            panelProduk.add(labelGambar, BorderLayout.CENTER);
-            panelProduk.add(labelNama, BorderLayout.SOUTH);
-            
-            //Harga Produk
-            JLabel labelHarga = new JLabel(hargaProduk[i], JLabel.CENTER);
-            labelHarga.setFont(new Font("Arial", Font.BOLD, 14));
-            labelHarga.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
-           
-            panelProduk.add(labelHarga, BorderLayout.NORTH);
-            
-            // Tombol
-            JButton btnBeli = new JButton("Beli");
-            btnBeli.setFocusPainted(false);
-            btnBeli.setBackground(Color.decode("#FFE6F8"));   // Pink lembut
-            btnBeli.setForeground(Color.decode("#EC7FA9"));   // Pink tua
-            btnBeli.setFont(new Font("SansSerif", Font.BOLD, 12));
-            btnBeli.setBorder(BorderFactory.createEmptyBorder(8, 20, 8, 20));
-            
-            btnBeli.addActionListener((ActionEvent e) -> {
-                JOptionPane.showMessageDialog(null, "Produk: " + labelNama.getText());
-            });
-            
-            // Tambahkan ke panel info
-            panelInfo.add(labelNama);
-            panelInfo.add(labelHarga);
-            panelInfo.add(Box.createVerticalStrut(3));
-            panelInfo.add(btnBeli);
-
-            // Tambahkan komponen ke panel
-            panelProduk.add(labelGambar, BorderLayout.CENTER);
-            panelProduk.add(panelInfo, BorderLayout.SOUTH);
-
-            jPanelProdukGrid.add(panelProduk);
-}
+        jPanelProdukGrid.revalidate();
+        jPanelProdukGrid.repaint();
     }
 
     /** This method is called from within the constructor to
