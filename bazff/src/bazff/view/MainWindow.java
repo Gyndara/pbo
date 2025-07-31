@@ -20,10 +20,12 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
     private MainWindowController windowController;
+    private DashBoardPanel dashBoardPanel;
     
     public MainWindow() {
         initComponents();
         windowController = new MainWindowController(this);
+        windowController.tampilHalamanUtama(this);
     }
 
     /**
