@@ -160,6 +160,9 @@ public class MainWindow extends javax.swing.JFrame {
         PanelTransaction1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
         PanelTransaction1.setPreferredSize(new java.awt.Dimension(314, 68));
         PanelTransaction1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelTransaction1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PanelTransaction1MouseEntered(evt);
             }
@@ -266,6 +269,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void PanelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHomeMouseClicked
         windowController.tampilHalamanUtama(this);
     }//GEN-LAST:event_PanelHomeMouseClicked
+
+    private void PanelTransaction1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelTransaction1MouseClicked
+        windowController.tampilHalamanTransaksi(this);
+    }//GEN-LAST:event_PanelTransaction1MouseClicked
     
     /**
      * @param args the command line arguments

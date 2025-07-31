@@ -8,6 +8,7 @@ package bazff.controller;
 import bazff.view.MainWindow;
 import bazff.view.ProductDataPanel;
 import bazff.view.DashBoardPanel;
+import bazff.view.TransactionDataPanel;
 
 /**
  *
@@ -16,10 +17,16 @@ import bazff.view.DashBoardPanel;
 public class MainWindowController {
     private ProductDataPanel ProductDataPanel;
     private DashBoardPanel dashBoardPanel;
+    private TransactionDataPanel transactionDataPanel;
 
     public MainWindowController(MainWindow window){
         this.ProductDataPanel = new ProductDataPanel(window);
         this.dashBoardPanel = new DashBoardPanel(window);
+        this.transactionDataPanel = new TransactionDataPanel(window);
+    }
+
+    public void setTransactionDataPanel(TransactionDataPanel transactionDataPanel) {
+        this.transactionDataPanel = transactionDataPanel;
     }
     
     public void setProductDataPanel(ProductDataPanel ProductDataPanel) {
@@ -59,6 +66,23 @@ public class MainWindowController {
         window.getMainPanel().add(dashBoardPanel.getPanelHome());
         window.getMainPanel().repaint();
         window.getMainPanel().revalidate();
+    }
+    
+    public void tampilHalamanTransaksi(MainWindow window){
+        window.getPanelHeader().removeAll();
+        window.getPanelHeader().repaint();
+        window.getPanelHeader().revalidate();
         
+        window.getMainPanel().removeAll();
+        window.getMainPanel().repaint();
+        window.getMainPanel().revalidate();
+        
+        window.getPanelHeader().add(transactionDataPanel.getPanelHeaderTransaction());
+        window.getPanelHeader().repaint();
+        window.getPanelHeader().revalidate();
+        
+        window.getMainPanel().add(transactionDataPanel.getPanelTransaction());
+        window.getMainPanel().repaint();
+        window.getMainPanel().revalidate();
     }
 }
