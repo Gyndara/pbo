@@ -112,6 +112,11 @@ public class ProductDataPanel extends javax.swing.JPanel {
         jButton1.setText("Delete");
         jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(223, 80));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         PanelProductData.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(236, 127, 169));
@@ -135,6 +140,12 @@ public class ProductDataPanel extends javax.swing.JPanel {
         dialog.setLocationRelativeTo(mainWindow);
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DeleteProductPopUp dialog = new DeleteProductPopUp(mainWindow, true);
+        dialog.setLocationRelativeTo(mainWindow);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public JPanel getPanelProductData() {
         return PanelProductData;
