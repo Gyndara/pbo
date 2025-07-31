@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -33,15 +34,15 @@ public class HomePageController {
             JLabel labelGambar = new JLabel();
             labelGambar.setHorizontalAlignment(JLabel.CENTER);
             ImageIcon icon = new ImageIcon(HomePageController.class.getClassLoader().getResource("resources/" + gambarProduk[i]));
-            Image img = icon.getImage().getScaledInstance(180, 180, Image.SCALE_SMOOTH);
+            Image img = icon.getImage().getScaledInstance(320, 320, Image.SCALE_SMOOTH);
             labelGambar.setIcon(new ImageIcon(img));
 
             // Nama
-            JLabel labelNama = new JLabel(namaProduk[i], JLabel.CENTER);
+            JLabel labelNama = new JLabel(namaProduk[i], JLabel.LEFT);
             labelNama.setFont(new Font("Arial", Font.BOLD, 14));
 
             // Harga
-            JLabel labelHarga = new JLabel(hargaProduk[i], JLabel.CENTER);
+            JLabel labelHarga = new JLabel(hargaProduk[i], JLabel.LEFT);
             labelHarga.setFont(new Font("Arial", Font.PLAIN, 13));
 
             // Tombol
@@ -50,6 +51,8 @@ public class HomePageController {
             btnDetail.setForeground(Color.decode("#EC7FA9"));
             btnDetail.setFocusPainted(false);
             btnDetail.setFont(new Font("Arial", Font.BOLD, 12));
+            btnDetail.setPreferredSize(new Dimension(180, 35));
+            btnDetail.setBorder(BorderFactory.createEmptyBorder());
 
             // Event klik
             int index = i;
