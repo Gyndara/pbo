@@ -98,16 +98,6 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
         jButton1.setText("Delete");
         jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(150, 55));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -143,19 +133,6 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        Point posisi = this.getLocation();
-        this.setVisible(false);
-        
-        UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
-        dialog.setLocation(posisi);
-        dialog.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
