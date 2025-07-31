@@ -5,7 +5,7 @@
  */
 package bazff;
 
-import bazff.view.HomePage;
+import bazff.view.MainWindow;
 
 /**
  *
@@ -24,7 +24,7 @@ public class Main1 {
         System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
         System.out.println("zahy");
         System.out.println("halo selanjutntya");
-        HomePage main = new HomePage();
+        MainWindow main = new MainWindow();
         main.setVisible(true);                          
     }
         

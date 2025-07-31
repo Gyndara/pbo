@@ -6,7 +6,7 @@
 package bazff.view;
 
 
-import javax.swing.JLabel;
+
 import javax.swing.JPanel;
 
 /**
@@ -20,9 +20,14 @@ public class DashBoardPanel extends javax.swing.JPanel {
      */
     private MainWindow mainWindow;
     
+    
+
+    
     public DashBoardPanel(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+        
+        
     }
 
     DashBoardPanel() {
@@ -41,6 +46,13 @@ public class DashBoardPanel extends javax.swing.JPanel {
         HeaderHomePanel = new javax.swing.JPanel();
         PanelHeaderProduct = new javax.swing.JLabel();
         PanelHome = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,6 +73,42 @@ public class DashBoardPanel extends javax.swing.JPanel {
         PanelHome.setBackground(new java.awt.Color(255, 230, 248));
         PanelHome.setPreferredSize(new java.awt.Dimension(1440, 730));
         PanelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelHome.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 1110, 320));
+
+        jPanel5.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Barang Keluar");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("2,X");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 260, -1));
+
+        PanelHome.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 380, 280));
+
+        jPanel6.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Stock Barang");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("2,XX");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 260, -1));
+
+        PanelHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 380, 280));
+
         add(PanelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -76,5 +124,12 @@ public class DashBoardPanel extends javax.swing.JPanel {
     private javax.swing.JPanel HeaderHomePanel;
     private javax.swing.JLabel PanelHeaderProduct;
     private javax.swing.JPanel PanelHome;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
