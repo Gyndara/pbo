@@ -47,11 +47,11 @@ public class SizePopUp2 extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldProductCode = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonSearch = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        jButtonClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,10 +81,10 @@ public class SizePopUp2 extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
+        jTextFieldProductCode.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextFieldProductCode.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTextFieldProductCode.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTextFieldProductCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
@@ -92,36 +92,36 @@ public class SizePopUp2 extends javax.swing.JDialog {
         jLabel3.setPreferredSize(new java.awt.Dimension(435, 25));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 233, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 237, 250));
-        jButton1.setText("Search");
-        jButton1.setBorder(null);
-        jButton1.setPreferredSize(new java.awt.Dimension(150, 55));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonSearch.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSearch.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonSearch.setForeground(new java.awt.Color(255, 237, 250));
+        jButtonSearch.setText("Search");
+        jButtonSearch.setBorder(null);
+        jButtonSearch.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButtonSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jButtonSearchMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
+        jPanel1.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(255, 237, 250)));
         jPanel3.setPreferredSize(new java.awt.Dimension(490, 100));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 184, 224));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 237, 250));
-        jButton2.setText("Close");
-        jButton2.setBorder(null);
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 55));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonClose.setBackground(new java.awt.Color(255, 184, 224));
+        jButtonClose.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonClose.setForeground(new java.awt.Color(255, 237, 250));
+        jButtonClose.setText("Close");
+        jButtonClose.setBorder(null);
+        jButtonClose.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButtonClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jButtonCloseMouseClicked(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+        jPanel3.add(jButtonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, -1, -1));
 
@@ -130,18 +130,18 @@ public class SizePopUp2 extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jButtonCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCloseMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jButtonCloseMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jButtonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSearchMouseClicked
         Point posisi = this.getLocation();
         this.setVisible(false);
         
         UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
         dialog.setLocation(posisi);
         dialog.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jButtonSearchMouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,14 +182,14 @@ public class SizePopUp2 extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonClose;
+    private javax.swing.JButton jButtonSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldProductCode;
     // End of variables declaration//GEN-END:variables
 }
