@@ -5,44 +5,41 @@
  */
 package bazff.controller;
 
+import bazff.view.DeleteProductPopUp;
 import bazff.view.MainWindow;
-import bazff.view.ProductDataPanel;
 import bazff.view.UpdatePopUp1;
-import java.awt.Component;
-import java.awt.Window;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
+import bazff.view.UpdatePopUp2;
+import java.awt.Point;
 /**
  *
  * @author bisma
  */
 public class ProductController {
-    private ProductDataPanel panelProductData;
-    
-    public ProductController(){
-        
+    private MainWindow mainWindow;
+    private UpdatePopUp1 dialog1;
+    private DeleteProductPopUp dialog2;
+
+    public ProductController(MainWindow mainWindow) {
+        this.mainWindow = mainWindow;
     }
-    
-    public ProductController(MainWindow window){
-        this.panelProductData = new ProductDataPanel(window);
-    } 
 
-    public ProductDataPanel getPanelProductData() {
-        return panelProductData;
-    }    
-    
-    public void tampilUpdatePopUp1(Component comp){
-        Window window = SwingUtilities.getWindowAncestor(comp);
+    public void updatePopUp1() {
+        dialog1 = new UpdatePopUp1(mainWindow, this);
+        dialog1.setLocationRelativeTo(mainWindow);
+        dialog1.setVisible(true);
+    }
 
-        if (window instanceof JFrame) {
-            JFrame frame = (JFrame) window;
-            UpdatePopUp1 dialog = new UpdatePopUp1(frame, true);
-            dialog.setLocationRelativeTo(frame);
-            dialog.setUndecorated(true);
-            dialog.setVisible(true);
-        } else {
-            System.err.println("Tidak dapat menemukan frame utama.");
-        }
+    public void updatePopUp2(UpdatePopUp1 dialog1) {
+        Point posisi = dialog1.getLocation();
+        dialog1.setVisible(false);
+        UpdatePopUp2 dialog2 = new UpdatePopUp2(mainWindow, true);
+        dialog2.setLocation(posisi);
+        dialog2.setVisible(true);
+    }
+
+    public void deletePopUp() {
+        dialog2 = new DeleteProductPopUp(mainWindow, true);
+        dialog2.setLocationRelativeTo(mainWindow);
+        dialog2.setVisible(true);
     }
 }

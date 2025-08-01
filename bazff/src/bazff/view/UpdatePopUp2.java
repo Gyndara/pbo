@@ -25,6 +25,12 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         super(new javax.swing.JFrame(), true);
         initComponents();
     }
+    
+    private MainWindow mainWindow;
+    public UpdatePopUp2(MainWindow window){
+        initComponents();
+        mainWindow = window;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

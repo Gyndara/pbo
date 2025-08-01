@@ -5,7 +5,7 @@
  */
 package bazff.view;
 
-import java.awt.Point;
+import bazff.controller.ProductController;
 
 /**
  *
@@ -16,24 +16,22 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
-    public UpdatePopUp1(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        setUndecorated(true);
-        initComponents();
-        pack();
-    }
-    
+    private ProductController productController;
     public UpdatePopUp1(){
         super(new javax.swing.JFrame(), true);
         initComponents();
     }
     
     private MainWindow mainWindow;
-    public UpdatePopUp1(MainWindow window){
+    public UpdatePopUp1(MainWindow window, ProductController productController) {
+        super(window, true);
         this.mainWindow = window;
+        this.productController = productController;
+        setUndecorated(true);
         initComponents();
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,12 +133,7 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        Point posisi = this.getLocation();
-        this.setVisible(false);
-        
-        UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
-        dialog.setLocation(posisi);
-        dialog.setVisible(true);
+        productController.updatePopUp2(this);
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**

@@ -6,6 +6,7 @@
 package bazff.view;
 
 
+import bazff.controller.ProductController;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,11 +19,11 @@ public class ProductDataPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProductDataPanel
      */
-    private MainWindow mainWindow;
+    private ProductController productController;
     
     public ProductDataPanel(MainWindow window) {
-        this.mainWindow = window;
         initComponents();
+        productController = new ProductController(window);
     }
 
     ProductDataPanel() {
@@ -136,15 +137,11 @@ public class ProductDataPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        UpdatePopUp1 dialog = new UpdatePopUp1(mainWindow, true);
-        dialog.setLocationRelativeTo(mainWindow);
-        dialog.setVisible(true);
+        productController.updatePopUp1();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DeleteProductPopUp dialog = new DeleteProductPopUp(mainWindow, true);
-        dialog.setLocationRelativeTo(mainWindow);
-        dialog.setVisible(true);
+        productController.deletePopUp();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public JPanel getPanelProductData() {
