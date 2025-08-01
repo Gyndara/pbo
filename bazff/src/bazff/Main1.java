@@ -8,6 +8,7 @@ package bazff;
 import bazff.view.HomePage;
 import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
+import bazff.view.SizeDataView;
 
 /**
  *
@@ -26,11 +27,11 @@ public class Main1 {
         System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
         System.out.println("zahy");
         System.out.println("halo selanjutntya");
-//        MainWindow main = new MainWindow();
-//        main.setVisible(true);                          
+        MainWindow main = new MainWindow();
+        main.setVisible(true);                          
 //        HomePage home = new HomePage();
 //        home.setVisible(true);
-        ShoppingCartView shop = new ShoppingCartView();
-        shop.setVisible(true);
+//        ShoppingCartView shop = new ShoppingCartView();
+//        shop.setVisible(true);
     }    
 }
