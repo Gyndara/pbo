@@ -83,7 +83,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jTextField1.setPreferredSize(new java.awt.Dimension(435, 64));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
@@ -142,6 +142,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 230, 248));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 430, 70));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
