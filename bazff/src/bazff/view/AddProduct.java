@@ -52,6 +52,7 @@ public class AddProduct extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,35 +74,68 @@ public class AddProduct extends javax.swing.JPanel {
         PanelAddProduct.setPreferredSize(new java.awt.Dimension(1440, 730));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(236, 127, 169));
         jLabel1.setText("Product Name");
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(236, 127, 169));
         jLabel2.setText("Product Description ");
 
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(236, 127, 169));
         jLabel4.setText("Price");
 
+        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(236, 127, 169));
         jLabel5.setText("Size");
 
+        jComboBox1.setBackground(new java.awt.Color(236, 127, 169));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 230, 248));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
 
+        jButton1.setBackground(new java.awt.Color(190, 89, 133));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 230, 248));
         jButton1.setText("Add");
 
+        jButton2.setBackground(new java.awt.Color(190, 89, 133));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 230, 248));
         jButton2.setText("Add Product Size");
 
+        jButton3.setBackground(new java.awt.Color(236, 127, 169));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 230, 248));
         jButton3.setText("Cancel");
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 412, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 523, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout PanelAddProductLayout = new javax.swing.GroupLayout(PanelAddProduct);
         PanelAddProduct.setLayout(PanelAddProductLayout);
         PanelAddProductLayout.setHorizontalGroup(
             PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddProductLayout.createSequentialGroup()
-                .addContainerGap(818, Short.MAX_VALUE)
+                .addGap(165, 165, 165)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
                 .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
@@ -121,29 +155,34 @@ public class AddProduct extends javax.swing.JPanel {
         PanelAddProductLayout.setVerticalGroup(
             PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAddProductLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddProductLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddProductLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
@@ -169,6 +208,7 @@ public class AddProduct extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
