@@ -38,116 +38,116 @@ public class SizeDataView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelHeaderSizeData = new javax.swing.JPanel();
         PanelHeaderSize = new javax.swing.JLabel();
         PanelSizeData = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonSizeXS = new javax.swing.JButton();
+        jButtonSizeL = new javax.swing.JButton();
+        jButtonSizeXXL = new javax.swing.JButton();
+        jButtonSizeM = new javax.swing.JButton();
+        jButtonSizeXL = new javax.swing.JButton();
+        jButtonCancel = new javax.swing.JButton();
+        jButtonSizeS = new javax.swing.JButton();
+        jButtonAdd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 184, 224));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelHeaderSizeData.setBackground(new java.awt.Color(255, 184, 224));
+        jPanelHeaderSizeData.setPreferredSize(new java.awt.Dimension(1440, 127));
+        jPanelHeaderSizeData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelHeaderSize.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         PanelHeaderSize.setForeground(new java.awt.Color(236, 127, 169));
         PanelHeaderSize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PanelHeaderSize.setText("SIZE DATA");
         PanelHeaderSize.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanel1.add(PanelHeaderSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanelHeaderSizeData.add(PanelHeaderSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jPanelHeaderSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PanelSizeData.setBackground(new java.awt.Color(255, 230, 248));
         PanelSizeData.setPreferredSize(new java.awt.Dimension(1440, 730));
 
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 230, 248));
-        jButton1.setText("XS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeXS.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeXS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeXS.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeXS.setText("XS");
+        jButtonSizeXS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonSizeXSActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(236, 127, 169));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 230, 248));
-        jButton2.setText("L");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeL.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeL.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeL.setText("L");
+        jButtonSizeL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonSizeLActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(236, 127, 169));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 230, 248));
-        jButton3.setText("XXL");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeXXL.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeXXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeXXL.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeXXL.setText("XXL");
+        jButtonSizeXXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonSizeXXLActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(236, 127, 169));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 230, 248));
-        jButton4.setText("M");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeM.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeM.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeM.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeM.setText("M");
+        jButtonSizeM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonSizeMActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(236, 127, 169));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 230, 248));
-        jButton5.setText("XL");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeXL.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeXL.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeXL.setText("XL");
+        jButtonSizeXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButtonSizeXLActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(236, 127, 169));
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 230, 248));
-        jButton6.setText("Cancel");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancel.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonCancel.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonCancel.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonCancel.setText("Cancel");
+        jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButtonCancelActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(236, 127, 169));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 230, 248));
-        jButton7.setText("S");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSizeS.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonSizeS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonSizeS.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonSizeS.setText("S");
+        jButtonSizeS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jButtonSizeSActionPerformed(evt);
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(190, 89, 133));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 230, 248));
-        jButton8.setText("Add");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdd.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButtonAdd.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonAdd.setText("Add");
+        jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jButtonAddActionPerformed(evt);
             }
         });
 
@@ -185,17 +185,17 @@ public class SizeDataView extends javax.swing.JPanel {
                 .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelSizeDataLayout.createSequentialGroup()
                         .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonSizeXL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonSizeM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonSizeS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77)
                         .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jButtonSizeL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonSizeXXL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonSizeXS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelSizeDataLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -208,57 +208,57 @@ public class SizeDataView extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonSizeXS, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSizeS, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonSizeL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSizeM, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonSizeXXL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSizeXL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86)
                 .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(161, Short.MAX_VALUE))
         );
 
         add(PanelSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonSizeXSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonSizeXSActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonSizeLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonSizeLActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonSizeXXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXXLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonSizeXXLActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonSizeMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonSizeMActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButtonSizeXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButtonSizeXLActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jButtonCancelActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void jButtonSizeSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_jButtonSizeSActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_jButtonAddActionPerformed
 
     public JPanel getPanelProductData() {
         return PanelSizeData;
@@ -271,16 +271,16 @@ public class SizeDataView extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PanelHeaderSize;
     private javax.swing.JPanel PanelSizeData;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButtonAdd;
+    private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonSizeL;
+    private javax.swing.JButton jButtonSizeM;
+    private javax.swing.JButton jButtonSizeS;
+    private javax.swing.JButton jButtonSizeXL;
+    private javax.swing.JButton jButtonSizeXS;
+    private javax.swing.JButton jButtonSizeXXL;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelHeaderSizeData;
     // End of variables declaration//GEN-END:variables
 }

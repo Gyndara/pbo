@@ -23,7 +23,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanelHeaderSizeData">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e0" green="b8" red="ff" type="rgb"/>
@@ -87,18 +87,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton5" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="jButton4" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="jButton8" alignment="1" min="-2" pref="236" max="-2" attributes="0"/>
-                              <Component id="jButton7" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="jButtonSizeXL" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="jButtonSizeM" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="jButtonAdd" alignment="1" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="jButtonSizeS" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton6" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                              <Component id="jButtonCancel" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Component id="jButton2" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                                  <Component id="jButton3" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                                  <Component id="jButton1" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="jButtonSizeL" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="jButtonSizeXXL" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="jButtonSizeXS" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -118,23 +118,23 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton7" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeXS" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeS" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeL" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeM" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeXXL" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonSizeXL" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton6" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton8" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonCancel" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="jButtonAdd" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="161" max="32767" attributes="0"/>
               </Group>
@@ -142,7 +142,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jButtonSizeXS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -156,10 +156,10 @@
             <Property name="text" type="java.lang.String" value="XS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeXSActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="jButtonSizeL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -173,10 +173,10 @@
             <Property name="text" type="java.lang.String" value="L"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeLActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="jButtonSizeXXL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -190,10 +190,10 @@
             <Property name="text" type="java.lang.String" value="XXL"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeXXLActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="jButtonSizeM">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -207,10 +207,10 @@
             <Property name="text" type="java.lang.String" value="M"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeMActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="jButtonSizeXL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -224,10 +224,10 @@
             <Property name="text" type="java.lang.String" value="XL"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeXLActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="jButtonCancel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -241,10 +241,10 @@
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="jButtonSizeS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
@@ -258,10 +258,10 @@
             <Property name="text" type="java.lang.String" value="S"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSizeSActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="jButtonAdd">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="85" green="59" red="be" type="rgb"/>
@@ -275,7 +275,7 @@
             <Property name="text" type="java.lang.String" value="Add"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
