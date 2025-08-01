@@ -42,16 +42,16 @@ public class AddProduct extends javax.swing.JPanel {
         PanelHeaderAddProduct = new javax.swing.JLabel();
         PanelAddProduct = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldProductName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldapProductDescription = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldPrice = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jComboBoxSize = new javax.swing.JComboBox<>();
+        jButtonAdd = new javax.swing.JButton();
+        jButtonAddProductSize = new javax.swing.JButton();
+        jButtonCencel = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
@@ -77,47 +77,47 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(236, 127, 169));
         jLabel1.setText("Product Name");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField1.setInheritsPopupMenu(true);
+        jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldProductName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTextFieldProductName.setInheritsPopupMenu(true);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(236, 127, 169));
         jLabel2.setText("Product Description ");
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTextFieldapProductDescription.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldapProductDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(236, 127, 169));
         jLabel4.setText("Price");
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTextFieldPrice.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldPrice.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
         jLabel5.setText("Size");
 
-        jComboBox1.setBackground(new java.awt.Color(236, 127, 169));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 230, 248));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
+        jComboBoxSize.setBackground(new java.awt.Color(236, 127, 169));
+        jComboBoxSize.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jComboBoxSize.setForeground(new java.awt.Color(255, 230, 248));
+        jComboBoxSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
 
-        jButton1.setBackground(new java.awt.Color(190, 89, 133));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 230, 248));
-        jButton1.setText("Add");
+        jButtonAdd.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButtonAdd.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonAdd.setText("Add");
 
-        jButton2.setBackground(new java.awt.Color(190, 89, 133));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 230, 248));
-        jButton2.setText("Add Product Size");
+        jButtonAddProductSize.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAddProductSize.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButtonAddProductSize.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonAddProductSize.setText("Add Product Size");
 
-        jButton3.setBackground(new java.awt.Color(236, 127, 169));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 230, 248));
-        jButton3.setText("Cancel");
+        jButtonCencel.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonCencel.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jButtonCencel.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonCencel.setText("Cancel");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -144,16 +144,16 @@ public class AddProduct extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(jTextFieldapProductDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldProductName)
+                    .addComponent(jComboBoxSize, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelAddProductLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButtonCencel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(jButtonAddProductSize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(131, 131, 131))
         );
         PanelAddProductLayout.setVerticalGroup(
@@ -164,25 +164,25 @@ public class AddProduct extends javax.swing.JPanel {
                 .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelAddProductLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldapProductDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxSize, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(PanelAddProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonCencel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonAddProductSize, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelAddProductLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -203,18 +203,18 @@ public class AddProduct extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelAddProduct;
     private javax.swing.JLabel PanelHeaderAddProduct;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButtonAdd;
+    private javax.swing.JButton jButtonAddProductSize;
+    private javax.swing.JButton jButtonCencel;
+    private javax.swing.JComboBox<String> jComboBoxSize;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextFieldPrice;
+    private javax.swing.JTextField jTextFieldProductName;
+    private javax.swing.JTextField jTextFieldapProductDescription;
     // End of variables declaration//GEN-END:variables
 }
