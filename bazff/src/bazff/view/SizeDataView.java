@@ -38,7 +38,7 @@ public class SizeDataView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelHeaderSizeData = new javax.swing.JPanel();
+        PanelHeaderSizeData = new javax.swing.JPanel();
         PanelHeaderSize = new javax.swing.JLabel();
         PanelSizeData = new javax.swing.JPanel();
         jButtonSizeXS = new javax.swing.JButton();
@@ -55,21 +55,22 @@ public class SizeDataView extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelHeaderSizeData.setBackground(new java.awt.Color(255, 184, 224));
-        jPanelHeaderSizeData.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanelHeaderSizeData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelHeaderSizeData.setBackground(new java.awt.Color(255, 184, 224));
+        PanelHeaderSizeData.setPreferredSize(new java.awt.Dimension(1440, 127));
+        PanelHeaderSizeData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelHeaderSize.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         PanelHeaderSize.setForeground(new java.awt.Color(236, 127, 169));
         PanelHeaderSize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PanelHeaderSize.setText("SIZE DATA");
         PanelHeaderSize.setPreferredSize(new java.awt.Dimension(1440, 127));
-        jPanelHeaderSizeData.add(PanelHeaderSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        PanelHeaderSizeData.add(PanelHeaderSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        add(jPanelHeaderSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(PanelHeaderSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PanelSizeData.setBackground(new java.awt.Color(255, 230, 248));
         PanelSizeData.setPreferredSize(new java.awt.Dimension(1440, 730));
+        PanelSizeData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonSizeXS.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeXS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -80,6 +81,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeXSActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeXS, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 149, 166, 72));
 
         jButtonSizeL.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -90,6 +92,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeLActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeL, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 239, 166, 72));
 
         jButtonSizeXXL.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeXXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -100,6 +103,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeXXLActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeXXL, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 329, 166, 72));
 
         jButtonSizeM.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeM.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -110,6 +114,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeMActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeM, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 239, 166, 72));
 
         jButtonSizeXL.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -120,6 +125,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeXLActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeXL, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 329, 166, 72));
 
         jButtonCancel.setBackground(new java.awt.Color(236, 127, 169));
         jButtonCancel.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -130,6 +136,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonCancelActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 487, 236, 72));
 
         jButtonSizeS.setBackground(new java.awt.Color(236, 127, 169));
         jButtonSizeS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -140,6 +147,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonSizeSActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonSizeS, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 149, 166, 72));
 
         jButtonAdd.setBackground(new java.awt.Color(190, 89, 133));
         jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -150,80 +158,19 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonAddActionPerformed(evt);
             }
         });
+        PanelSizeData.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 487, 236, 72));
 
         jPanel2.setBackground(new java.awt.Color(255, 230, 248));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(236, 127, 169)));
         jPanel2.setForeground(new java.awt.Color(236, 127, 169));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 127, 169));
         jLabel1.setText("SIZE");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 7, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(jLabel1)
-                .addContainerGap(173, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout PanelSizeDataLayout = new javax.swing.GroupLayout(PanelSizeData);
-        PanelSizeData.setLayout(PanelSizeDataLayout);
-        PanelSizeDataLayout.setHorizontalGroup(
-            PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSizeDataLayout.createSequentialGroup()
-                .addGap(438, 438, 438)
-                .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelSizeDataLayout.createSequentialGroup()
-                        .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonSizeXL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSizeM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSizeS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(77, 77, 77)
-                        .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonSizeL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonSizeXXL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonSizeXS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(PanelSizeDataLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(453, Short.MAX_VALUE))
-        );
-        PanelSizeDataLayout.setVerticalGroup(
-            PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSizeDataLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSizeXS, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSizeS, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSizeL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSizeM, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSizeXXL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSizeXL, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
-                .addGroup(PanelSizeDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(161, Short.MAX_VALUE))
-        );
+        PanelSizeData.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 59, -1, -1));
 
         add(PanelSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -260,16 +207,19 @@ public class SizeDataView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAddActionPerformed
 
-    public JPanel getPanelProductData() {
+    public JPanel getPanelHeaderSizeData() {
+        return PanelHeaderSizeData;
+    }
+
+    public JPanel getPanelSizeData() {
         return PanelSizeData;
     }
 
-    public JLabel getPanelHeaderProduct() {
-        return PanelHeaderSize;
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PanelHeaderSize;
+    private javax.swing.JPanel PanelHeaderSizeData;
     private javax.swing.JPanel PanelSizeData;
     private javax.swing.JButton jButtonAdd;
     private javax.swing.JButton jButtonCancel;
@@ -281,6 +231,5 @@ public class SizeDataView extends javax.swing.JPanel {
     private javax.swing.JButton jButtonSizeXXL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanelHeaderSizeData;
     // End of variables declaration//GEN-END:variables
 }
