@@ -139,12 +139,7 @@ public class SizePopUp2 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCloseMouseClicked
 
     private void jButtonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSearchMouseClicked
-//        Point posisi = this.getLocation();
-//        this.setVisible(false);
-//        
-//        UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
-//        dialog.setLocation(posisi);
-//        dialog.setVisible(true);
+        controller.addPopUp2(this);
     }//GEN-LAST:event_jButtonSearchMouseClicked
 
     /**
