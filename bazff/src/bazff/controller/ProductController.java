@@ -5,13 +5,21 @@
  */
 package bazff.controller;
 
+import bazff.view.AddProduct;
 import bazff.view.DeleteProductPopUp;
 import bazff.view.MainWindow;
 import bazff.view.SizePopUp2;
 import bazff.view.SizePopUp3;
 import bazff.view.UpdatePopUp1;
 import bazff.view.UpdatePopUp2;
+import java.awt.Image;
 import java.awt.Point;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author bisma
@@ -21,6 +29,7 @@ public class ProductController {
     private UpdatePopUp1 dialog1;
     private DeleteProductPopUp dialog2;
     private SizePopUp2 sizePopUp2;
+    private AddProduct addProduct;
 
     public ProductController(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
@@ -58,5 +67,35 @@ public class ProductController {
         SizePopUp3 sizePopUp3 = new SizePopUp3(mainWindow, true);
         sizePopUp3.setLocation(posisi);
         sizePopUp3.setVisible(true);
+    }
+    
+    public String imageChosser(JLabel LabelImage, JTextField pathField){
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Pilih Gambar");
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Gambar (JPG, PNG)", "jpg", "jpeg", "png");
+        fileChooser.setFileFilter(filter);
+        
+        int result = fileChooser.showOpenDialog(mainWindow);
+        if (result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            String imagePath = selectedFile.getAbsolutePath();
+            
+            if (pathField != null){
+                pathField.setText(imagePath);
+            }
+            
+            if(LabelImage != null){
+                ImageIcon icon = new ImageIcon(imagePath);
+                Image image = icon.getImage().getScaledInstance(LabelImage.getWidth(), LabelImage.getHeight(), Image.SCALE_SMOOTH);
+                LabelImage.setIcon(new ImageIcon(image));
+            }
+            return imagePath;
+        }
+        return null;
+    }
+    
+    public void cancelAddProduct(){
+        
     }
 }

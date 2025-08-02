@@ -55,6 +55,7 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonAddProductSize = new javax.swing.JButton();
         jButtonCencel = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        LabelImage = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,7 +79,7 @@ public class AddProduct extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel1.setText("Product Name");
+        jLabel1.setText("Product Code");
         PanelAddProduct.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 36, -1, -1));
 
         jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -88,7 +89,7 @@ public class AddProduct extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel2.setText("Product Description ");
+        jLabel2.setText("Product Name ");
         PanelAddProduct.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 159, -1, -1));
 
         jTextFieldapProductDescription.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -142,10 +143,23 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonCencel.setBorder(null);
         PanelAddProduct.add(jButtonCencel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1102, 510, 207, 73));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(292, 424));
+        jPanel2.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel2.setPreferredSize(new java.awt.Dimension(450, 600));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        PanelAddProduct.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 89, -1, -1));
+
+        LabelImage.setFont(new java.awt.Font("Dialog", 1, 70)); // NOI18N
+        LabelImage.setForeground(new java.awt.Color(236, 127, 169));
+        LabelImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelImage.setText("+");
+        LabelImage.setPreferredSize(new java.awt.Dimension(540, 600));
+        LabelImage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelImageMouseClicked(evt);
+            }
+        });
+        jPanel2.add(LabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-47, 0, -1, -1));
+
+        PanelAddProduct.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -153,6 +167,10 @@ public class AddProduct extends javax.swing.JPanel {
     private void jButtonAddProductSizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddProductSizeMouseClicked
         productController.addPopUp1();
     }//GEN-LAST:event_jButtonAddProductSizeMouseClicked
+
+    private void LabelImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImageMouseClicked
+        productController.imageChosser(LabelImage, null);
+    }//GEN-LAST:event_LabelImageMouseClicked
 
     public JPanel getPanelAddProduct() {
         return PanelAddProduct;
@@ -164,6 +182,7 @@ public class AddProduct extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelImage;
     private javax.swing.JPanel PanelAddProduct;
     private javax.swing.JPanel PanelHeaderAddProduct;
     private javax.swing.JButton jButtonAdd;
