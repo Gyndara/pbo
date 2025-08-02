@@ -6,8 +6,10 @@
 package bazff.view;
 
 
+import bazff.controller.TableController;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 /**
  *
@@ -19,10 +21,13 @@ public class TransactionDataPanel extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private MainWindow mainWindow;
+    private TableController tableController;
     
     public TransactionDataPanel(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+        this.tableController = new TableController(this);
+        tableController.setUpTableTransaction();
     }
 
     TransactionDataPanel() {
@@ -42,7 +47,7 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         PanelHeaderProduct = new javax.swing.JLabel();
         PanelTransaction = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TransactionTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
@@ -68,40 +73,40 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jScrollPane1.setPreferredSize(new java.awt.Dimension(700, 500));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TransactionTable.setBackground(new java.awt.Color(255, 255, 255));
+        TransactionTable.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        TransactionTable.setForeground(new java.awt.Color(0, 0, 0));
+        TransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, "JAJANG", null, null},
+                {null, "UDIN", null, null},
+                {null, "ASEP", null, null},
+                {null, "MULLOH", null, null},
+                {null, "SUPRIADI", null, null},
+                {null, "GENA", null, null},
+                {null, "BISMA", null, null},
+                {null, "NAUFAL", null, null},
+                {null, "INDAH", null, null},
+                {null, "AULIA", null, null},
+                {null, "FAUZAN", null, null},
+                {null, "FIKRI", null, null},
+                {null, "ZAHY", null, null},
+                {null, "IQBAL", null, null},
+                {null, "ATHALLAH", null, null},
+                {null, "HATIF", null, null},
+                {null, "SANDI", null, null},
+                {null, "SHERRLY", null, null},
+                {null, "ALIFAH", null, null},
+                {null, "ANEL", null, null},
+                {null, "MAULANA", null, null},
+                {null, "KEY", null, null}
             },
             new String [] {
                 "TANGGAL/BULAN/TAHUN", "CUSTOMER NAME", "CASHIER NAME", "PAYMENT TOTAL"
             }
         ));
-        jTable1.setRowHeight(40);
-        jScrollPane1.setViewportView(jTable1);
+        TransactionTable.setRowHeight(40);
+        jScrollPane1.setViewportView(TransactionTable);
 
         PanelTransaction.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 1240, 500));
 
@@ -135,12 +140,16 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         return PanelTransaction;
     }
 
+    public JTable getTransactionTable() {
+        return TransactionTable;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PanelHeaderProduct;
     private javax.swing.JPanel PanelHeaderTransaction;
     private javax.swing.JPanel PanelTransaction;
+    private javax.swing.JTable TransactionTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

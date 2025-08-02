@@ -103,20 +103,43 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="TableProduct">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="19" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="22">
-                    <Column editable="true" title="PRODUCT CODE" type="java.lang.Object"/>
+                    <Column editable="true" title="PRODUCT CODE" type="java.lang.Object">
+                      <Data value="P-001"/>
+                      <Data value="P-002"/>
+                      <Data value="P-003"/>
+                      <Data value="P-004"/>
+                      <Data value="P-005"/>
+                      <Data value="P-006"/>
+                      <Data value="P-007"/>
+                      <Data value="P-008"/>
+                      <Data value="P-009"/>
+                      <Data value="P-010"/>
+                      <Data value="P-011"/>
+                      <Data value="P-012"/>
+                      <Data value="P-013"/>
+                      <Data value="P-014"/>
+                      <Data value="P-015"/>
+                      <Data value="P-016"/>
+                      <Data value="P-017"/>
+                      <Data value="P-018"/>
+                      <Data value="P-019"/>
+                      <Data value="P-020"/>
+                      <Data value="P-021"/>
+                      <Data value="P-022"/>
+                    </Column>
                     <Column editable="true" title="PRODUCT NAME" type="java.lang.Object"/>
                     <Column editable="true" title="PRODUCT QUANTITY" type="java.lang.Object"/>
                     <Column editable="true" title="PRODUCT STARUS" type="java.lang.Object"/>

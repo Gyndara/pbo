@@ -7,8 +7,10 @@ package bazff.view;
 
 
 import bazff.controller.ProductController;
+import bazff.controller.TableController;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 /**
  *
@@ -20,10 +22,13 @@ public class ProductDataPanel extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private ProductController productController;
+    private TableController tableController;
     
     public ProductDataPanel(MainWindow window) {
         initComponents();
         productController = new ProductController(window);
+        this.tableController = new TableController(this);
+        tableController.setUpTableProduct();
     }
 
     ProductDataPanel() {
@@ -43,7 +48,7 @@ public class ProductDataPanel extends javax.swing.JPanel {
         PanelHeaderProduct = new javax.swing.JLabel();
         PanelProductData = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TableProduct = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -70,40 +75,40 @@ public class ProductDataPanel extends javax.swing.JPanel {
         jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jScrollPane1.setPreferredSize(new java.awt.Dimension(700, 500));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableProduct.setBackground(new java.awt.Color(255, 255, 255));
+        TableProduct.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        TableProduct.setForeground(new java.awt.Color(0, 0, 0));
+        TableProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"P-001", null, null, null},
+                {"P-002", null, null, null},
+                {"P-003", null, null, null},
+                {"P-004", null, null, null},
+                {"P-005", null, null, null},
+                {"P-006", null, null, null},
+                {"P-007", null, null, null},
+                {"P-008", null, null, null},
+                {"P-009", null, null, null},
+                {"P-010", null, null, null},
+                {"P-011", null, null, null},
+                {"P-012", null, null, null},
+                {"P-013", null, null, null},
+                {"P-014", null, null, null},
+                {"P-015", null, null, null},
+                {"P-016", null, null, null},
+                {"P-017", null, null, null},
+                {"P-018", null, null, null},
+                {"P-019", null, null, null},
+                {"P-020", null, null, null},
+                {"P-021", null, null, null},
+                {"P-022", null, null, null}
             },
             new String [] {
                 "PRODUCT CODE", "PRODUCT NAME", "PRODUCT QUANTITY", "PRODUCT STARUS"
             }
         ));
-        jTable1.setRowHeight(40);
-        jScrollPane1.setViewportView(jTable1);
+        TableProduct.setRowHeight(40);
+        jScrollPane1.setViewportView(TableProduct);
 
         PanelProductData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 1240, 500));
 
@@ -152,13 +157,18 @@ public class ProductDataPanel extends javax.swing.JPanel {
         return PanelHeaderProduct;
     }
 
+    public JTable getTableProduct() {
+        return TableProduct;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PanelHeaderProduct;
     private javax.swing.JPanel PanelProductData;
+    private javax.swing.JTable TableProduct;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

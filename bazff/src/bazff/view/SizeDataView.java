@@ -6,8 +6,9 @@
 package bazff.view;
 
 
-import javax.swing.JLabel;
+import bazff.controller.TableController;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 /**
  *
@@ -19,12 +20,19 @@ public class SizeDataView extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private MainWindow mainWindow;
+    private TableController tableController;
     
     public SizeDataView(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+        this.tableController = new TableController(this);
+        tableController.setUpTableSize();
     }
 
+    public JTable getTableSize() {
+        return TableSize;
+    }
+    
     SizeDataView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -41,16 +49,11 @@ public class SizeDataView extends javax.swing.JPanel {
         PanelHeaderSizeData = new javax.swing.JPanel();
         PanelHeaderSize = new javax.swing.JLabel();
         PanelSizeData = new javax.swing.JPanel();
-        jButtonSizeXS = new javax.swing.JButton();
-        jButtonSizeL = new javax.swing.JButton();
-        jButtonSizeXXL = new javax.swing.JButton();
-        jButtonSizeM = new javax.swing.JButton();
-        jButtonSizeXL = new javax.swing.JButton();
-        jButtonCancel = new javax.swing.JButton();
-        jButtonSizeS = new javax.swing.JButton();
         jButtonAdd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableSize = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,97 +75,22 @@ public class SizeDataView extends javax.swing.JPanel {
         PanelSizeData.setPreferredSize(new java.awt.Dimension(1440, 730));
         PanelSizeData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSizeXS.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeXS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeXS.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeXS.setText("XS");
-        jButtonSizeXS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeXSActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeXS, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 149, 166, 72));
-
-        jButtonSizeL.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeL.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeL.setText("L");
-        jButtonSizeL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeLActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeL, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 239, 166, 72));
-
-        jButtonSizeXXL.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeXXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeXXL.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeXXL.setText("XXL");
-        jButtonSizeXXL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeXXLActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeXXL, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 329, 166, 72));
-
-        jButtonSizeM.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeM.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeM.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeM.setText("M");
-        jButtonSizeM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeMActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeM, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 239, 166, 72));
-
-        jButtonSizeXL.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeXL.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeXL.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeXL.setText("XL");
-        jButtonSizeXL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeXLActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeXL, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 329, 166, 72));
-
-        jButtonCancel.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonCancel.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonCancel.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonCancel.setText("Cancel");
-        jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 487, 236, 72));
-
-        jButtonSizeS.setBackground(new java.awt.Color(236, 127, 169));
-        jButtonSizeS.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jButtonSizeS.setForeground(new java.awt.Color(255, 230, 248));
-        jButtonSizeS.setText("S");
-        jButtonSizeS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSizeSActionPerformed(evt);
-            }
-        });
-        PanelSizeData.add(jButtonSizeS, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 149, 166, 72));
-
-        jButtonAdd.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAdd.setBackground(new java.awt.Color(236, 127, 169));
         jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jButtonAdd.setForeground(new java.awt.Color(255, 230, 248));
         jButtonAdd.setText("Add");
+        jButtonAdd.setBorder(null);
         jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAddActionPerformed(evt);
             }
         });
-        PanelSizeData.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 487, 236, 72));
+        PanelSizeData.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, 236, 72));
 
         jPanel2.setBackground(new java.awt.Color(255, 230, 248));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(236, 127, 169)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 184, 224)));
         jPanel2.setForeground(new java.awt.Color(236, 127, 169));
+        jPanel2.setPreferredSize(new java.awt.Dimension(410, 44));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
@@ -172,36 +100,36 @@ public class SizeDataView extends javax.swing.JPanel {
 
         PanelSizeData.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 59, -1, -1));
 
+        TableSize.setBackground(new java.awt.Color(255, 255, 255));
+        TableSize.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        TableSize.setForeground(new java.awt.Color(0, 0, 0));
+        TableSize.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"XL"},
+                {"M"},
+                {"L"},
+                {"S"},
+                {"XS"},
+                {"XXL"}
+            },
+            new String [] {
+                "Size Data"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TableSize);
+
+        PanelSizeData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 410, 380));
+
         add(PanelSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonSizeXSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeXSActionPerformed
-
-    private void jButtonSizeLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeLActionPerformed
-
-    private void jButtonSizeXXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXXLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeXXLActionPerformed
-
-    private void jButtonSizeMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeMActionPerformed
-
-    private void jButtonSizeXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeXLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeXLActionPerformed
-
-    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelActionPerformed
-
-    private void jButtonSizeSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSizeSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSizeSActionPerformed
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
@@ -221,15 +149,10 @@ public class SizeDataView extends javax.swing.JPanel {
     private javax.swing.JLabel PanelHeaderSize;
     private javax.swing.JPanel PanelHeaderSizeData;
     private javax.swing.JPanel PanelSizeData;
+    private javax.swing.JTable TableSize;
     private javax.swing.JButton jButtonAdd;
-    private javax.swing.JButton jButtonCancel;
-    private javax.swing.JButton jButtonSizeL;
-    private javax.swing.JButton jButtonSizeM;
-    private javax.swing.JButton jButtonSizeS;
-    private javax.swing.JButton jButtonSizeXL;
-    private javax.swing.JButton jButtonSizeXS;
-    private javax.swing.JButton jButtonSizeXXL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
