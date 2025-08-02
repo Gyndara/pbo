@@ -59,6 +59,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(188, 86, 125)), null));
         jPanel1.setPreferredSize(new java.awt.Dimension(490, 650));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -71,7 +72,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 2, 0, new java.awt.Color(255, 237, 250)));
-        jPanel2.setPreferredSize(new java.awt.Dimension(490, 43));
+        jPanel2.setPreferredSize(new java.awt.Dimension(485, 43));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -81,7 +82,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
         jLabel2.setPreferredSize(new java.awt.Dimension(490, 25));
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
         jTextFieldInputPrice.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jTextFieldInputPrice.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
@@ -114,7 +115,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(255, 237, 250)));
-        jPanel3.setPreferredSize(new java.awt.Dimension(490, 100));
+        jPanel3.setPreferredSize(new java.awt.Dimension(485, 100));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonClose.setBackground(new java.awt.Color(255, 184, 224));
@@ -130,7 +131,7 @@ public class SizePopUp3 extends javax.swing.JDialog {
         });
         jPanel3.add(jButtonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 548, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(236, 127, 169));
