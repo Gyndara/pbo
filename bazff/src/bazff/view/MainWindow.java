@@ -143,6 +143,9 @@ public class MainWindow extends javax.swing.JFrame {
         PanelAddProduct.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
         PanelAddProduct.setPreferredSize(new java.awt.Dimension(314, 68));
         PanelAddProduct.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelAddProductMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PanelAddProductMouseEntered(evt);
             }
@@ -280,6 +283,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void PanelSizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSizeMouseClicked
         windowController.tampilHalamanSizeData(this);
     }//GEN-LAST:event_PanelSizeMouseClicked
+
+    private void PanelAddProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelAddProductMouseClicked
+        windowController.tampilHalamanAddProduct(this);
+    }//GEN-LAST:event_PanelAddProductMouseClicked
     
     /**
      * @param args the command line arguments

@@ -5,6 +5,7 @@
  */
 package bazff.controller;
 
+import bazff.view.AddProduct;
 import bazff.view.MainWindow;
 import bazff.view.ProductDataPanel;
 import bazff.view.DashBoardPanel;
@@ -20,12 +21,14 @@ public class MainWindowController {
     private DashBoardPanel dashBoardPanel;
     private TransactionDataPanel transactionDataPanel;
     private SizeDataView sizeDataView;
+    private AddProduct addProduct;
 
     public MainWindowController(MainWindow window){
         this.ProductDataPanel = new ProductDataPanel(window);
         this.dashBoardPanel = new DashBoardPanel(window);
         this.transactionDataPanel = new TransactionDataPanel(window);
         this.sizeDataView = new SizeDataView(window);
+        this.addProduct = new AddProduct(window);
     }
 
     public void setTransactionDataPanel(TransactionDataPanel transactionDataPanel) {
@@ -42,6 +45,10 @@ public class MainWindowController {
 
     public void setSizeDataView(SizeDataView sizeDataView) {
         this.sizeDataView = sizeDataView;
+    }
+
+    public void setAddProduct(AddProduct addProduct) {
+        this.addProduct = addProduct;
     }
     
     public void tampilHalamanProduct(MainWindow window){
@@ -107,6 +114,24 @@ public class MainWindowController {
         window.getPanelHeader().revalidate();
         
         window.getMainPanel().add(sizeDataView.getPanelSizeData());
+        window.getMainPanel().repaint();
+        window.getMainPanel().revalidate();
+    }
+    
+    public void tampilHalamanAddProduct(MainWindow window){
+        window.getPanelHeader().removeAll();
+        window.getPanelHeader().repaint();
+        window.getPanelHeader().revalidate();
+        
+        window.getMainPanel().removeAll();
+        window.getMainPanel().repaint();
+        window.getMainPanel().revalidate();
+        
+        window.getPanelHeader().add(addProduct.getPanelHeaderAddProduct());
+        window.getPanelHeader().repaint();
+        window.getPanelHeader().revalidate();
+        
+        window.getMainPanel().add(addProduct.getPanelAddProduct());
         window.getMainPanel().repaint();
         window.getMainPanel().revalidate();
     }
