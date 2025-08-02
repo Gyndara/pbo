@@ -6,6 +6,7 @@
 package bazff.view;
 
 import bazff.controller.CartController;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -154,8 +155,12 @@ public class ShoppingCartView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        
+        cartController.KeluarPage(this);
     }//GEN-LAST:event_jPanel3MouseClicked
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
 
     public JTextField getjTxtTambahBarang() {
         return jTxtTambahBarang;
