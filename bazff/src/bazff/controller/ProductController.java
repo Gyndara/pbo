@@ -8,6 +8,7 @@ package bazff.controller;
 import bazff.view.DeleteProductPopUp;
 import bazff.view.MainWindow;
 import bazff.view.SizePopUp2;
+import bazff.view.SizePopUp3;
 import bazff.view.UpdatePopUp1;
 import bazff.view.UpdatePopUp2;
 import java.awt.Point;
@@ -49,5 +50,13 @@ public class ProductController {
         sizePopUp2 = new SizePopUp2(mainWindow, this);
         sizePopUp2.setLocationRelativeTo(mainWindow);
         sizePopUp2.setVisible(true);
+    }
+    
+    public void addPopUp2(SizePopUp2 sizePopUp2){
+        Point posisi = sizePopUp2.getLocation();
+        sizePopUp2.setVisible(false);
+        SizePopUp3 sizePopUp3 = new SizePopUp3(mainWindow, true);
+        sizePopUp3.setLocation(posisi);
+        sizePopUp3.setVisible(true);
     }
 }

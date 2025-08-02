@@ -7,6 +7,7 @@ package bazff.controller;
 
 import bazff.view.MainWindow;
 import bazff.view.SizePopUp1;
+import bazff.view.SizePopUp2;
 
 /**
  *
@@ -15,6 +16,7 @@ import bazff.view.SizePopUp1;
 public class SizeController {
     private MainWindow mainWindow;
     private SizePopUp1 sizePopUp1;
+    private SizePopUp2 sizePopUp2;
     
     public SizeController(MainWindow mainWindow){
         this.mainWindow = mainWindow;
