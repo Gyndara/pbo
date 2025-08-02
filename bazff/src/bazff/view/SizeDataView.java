@@ -6,6 +6,7 @@
 package bazff.view;
 
 
+import bazff.controller.SizeController;
 import bazff.controller.TableController;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -20,11 +21,13 @@ public class SizeDataView extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private MainWindow mainWindow;
+    private SizeController sizeController;
     private TableController tableController;
     
     public SizeDataView(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+        sizeController = new SizeController(window);
         this.tableController = new TableController(this);
         tableController.setUpTableSize();
     }
@@ -80,6 +83,11 @@ public class SizeDataView extends javax.swing.JPanel {
         jButtonAdd.setForeground(new java.awt.Color(255, 230, 248));
         jButtonAdd.setText("Add");
         jButtonAdd.setBorder(null);
+        jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAddMouseClicked(evt);
+            }
+        });
         jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAddActionPerformed(evt);
@@ -98,7 +106,7 @@ public class SizeDataView extends javax.swing.JPanel {
         jLabel1.setText("SIZE");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 7, -1, -1));
 
-        PanelSizeData.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 59, -1, -1));
+        PanelSizeData.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 59, -1, 50));
 
         TableSize.setBackground(new java.awt.Color(255, 255, 255));
         TableSize.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
@@ -134,6 +142,10 @@ public class SizeDataView extends javax.swing.JPanel {
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAddActionPerformed
+
+    private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
+        sizeController.addSizeDataPopUp();
+    }//GEN-LAST:event_jButtonAddMouseClicked
 
     public JPanel getPanelHeaderSizeData() {
         return PanelHeaderSizeData;
