@@ -1,11 +1,15 @@
 package bazff.controller;
 
+import bazff.view.HomePage;
+import bazff.view.ShoppingCartView;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -71,5 +75,22 @@ public class HomePageController {
         }
 
         return panels.toArray(new JPanel[0]);
+    }
+    
+    public static JButton getShoppingCartButton(HomePage homePage) {
+        JButton btnCart = new JButton("Shopping Cart");
+        btnCart.setPreferredSize(new Dimension(150, 40));
+        btnCart.setFocusPainted(false);
+        btnCart.setFont(new Font("Arial", Font.BOLD, 14));
+        btnCart.setBackground(Color.decode("#EC7FA9"));
+        btnCart.setForeground(Color.decode("#FFE6F8"));
+        btnCart.setBorder(BorderFactory.createEmptyBorder());
+
+        btnCart.addActionListener((ActionEvent e) -> {
+            new ShoppingCartView().setVisible(true);
+            homePage.setVisible(false);
+        });
+
+        return btnCart;
     }
 }

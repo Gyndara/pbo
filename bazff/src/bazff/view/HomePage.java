@@ -22,6 +22,7 @@ package bazff.view;
 //import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import bazff.controller.HomePageController;
+import javax.swing.JButton;
 //import java.awt.List;
 //import java.util.ArrayList;
 
@@ -54,6 +55,7 @@ public class HomePage extends javax.swing.JFrame {
 
         // Ambil panel dari controller
         JPanel[] produkPanels = HomePageController.generateProdukPanels(namaProduk, hargaProduk, gambarProduk);
+        
 
         for (JPanel panel : produkPanels) {
             jPanelProdukGrid.add(panel);
@@ -61,6 +63,13 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanelProdukGrid.revalidate();
         jPanelProdukGrid.repaint();
+        
+        JButton btnCart = HomePageController.getShoppingCartButton(HomePage.this);
+        jPanelAtas.add(btnCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 50, 150, 40));
+        
+        
+        jPanelAtas.revalidate();
+        jPanelAtas.repaint();
     }
 
     /** This method is called from within the constructor to
@@ -74,7 +83,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanelProdukGrid = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelAtas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,16 +100,16 @@ public class HomePage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(255, 237, 250));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1920, 150));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelAtas.setBackground(new java.awt.Color(255, 237, 250));
+        jPanelAtas.setPreferredSize(new java.awt.Dimension(1920, 150));
+        jPanelAtas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 127, 169));
         jLabel1.setText("B A Z F F");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanelAtas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanelAtas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,17 +142,15 @@ public class HomePage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HomePage().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new HomePage().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelAtas;
     private javax.swing.JPanel jPanelProdukGrid;
     // End of variables declaration//GEN-END:variables
 
