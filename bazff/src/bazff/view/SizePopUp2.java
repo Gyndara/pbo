@@ -5,7 +5,7 @@
  */
 package bazff.view;
 
-import java.awt.Point;
+import bazff.controller.ProductController;
 
 /**
  *
@@ -16,12 +16,15 @@ public class SizePopUp2 extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
-    public SizePopUp2(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    private ProductController controller;
+    public SizePopUp2(MainWindow window, ProductController controller) {
+        super(window, true);
+        this.controller = controller;
         setUndecorated(true);
         initComponents();
         pack();
     }
+
     
     public SizePopUp2(){
         super(new javax.swing.JFrame(), true);
@@ -136,12 +139,12 @@ public class SizePopUp2 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCloseMouseClicked
 
     private void jButtonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSearchMouseClicked
-        Point posisi = this.getLocation();
-        this.setVisible(false);
-        
-        UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
-        dialog.setLocation(posisi);
-        dialog.setVisible(true);
+//        Point posisi = this.getLocation();
+//        this.setVisible(false);
+//        
+//        UpdatePopUp2 dialog = new UpdatePopUp2(mainWindow, true);
+//        dialog.setLocation(posisi);
+//        dialog.setVisible(true);
     }//GEN-LAST:event_jButtonSearchMouseClicked
 
     /**

@@ -53,6 +53,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jCmbProductStatus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,7 +91,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel3.setText("Input Quantity");
+        jLabel3.setText("Add Product Quantity");
         jLabel3.setPreferredSize(new java.awt.Dimension(435, 25));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
@@ -131,7 +132,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel5.setText("Input Price");
+        jLabel5.setText("Input Price New Price (Opsional)");
         jLabel5.setPreferredSize(new java.awt.Dimension(435, 25));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
@@ -139,6 +140,13 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jTextField2.setPreferredSize(new java.awt.Dimension(435, 64));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        jCmbProductStatus.setBackground(new java.awt.Color(236, 127, 169));
+        jCmbProductStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jCmbProductStatus.setForeground(new java.awt.Color(255, 237, 250));
+        jCmbProductStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ready", "not ready" }));
+        jCmbProductStatus.setBorder(null);
+        jPanel1.add(jCmbProductStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 130, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -188,6 +196,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jCmbProductStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -6,6 +6,7 @@
 package bazff.view;
 
 
+import bazff.controller.ProductController;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -19,10 +20,11 @@ public class AddProduct extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private MainWindow mainWindow;
-    
+    private ProductController productController;
     public AddProduct(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+        productController = new ProductController(window);
     }
 
     AddProduct() {
@@ -126,6 +128,11 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonAddProductSize.setForeground(new java.awt.Color(255, 237, 250));
         jButtonAddProductSize.setText("Add Product Size");
         jButtonAddProductSize.setBorder(null);
+        jButtonAddProductSize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAddProductSizeMouseClicked(evt);
+            }
+        });
         PanelAddProduct.add(jButtonAddProductSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 611, 491, 73));
 
         jButtonCencel.setBackground(new java.awt.Color(255, 184, 224));
@@ -142,6 +149,10 @@ public class AddProduct extends javax.swing.JPanel {
 
         add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAddProductSizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddProductSizeMouseClicked
+        productController.addPopUp1();
+    }//GEN-LAST:event_jButtonAddProductSizeMouseClicked
 
     public JPanel getPanelAddProduct() {
         return PanelAddProduct;
