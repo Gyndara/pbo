@@ -79,7 +79,7 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel1.setText("Product Name");
         PanelAddProduct.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 36, -1, -1));
 
-        jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldProductName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jTextFieldProductName.setInheritsPopupMenu(true);
         PanelAddProduct.add(jTextFieldProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 73, 491, 62));
@@ -89,7 +89,7 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel2.setText("Product Description ");
         PanelAddProduct.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 159, -1, -1));
 
-        jTextFieldapProductDescription.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldapProductDescription.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldapProductDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         PanelAddProduct.add(jTextFieldapProductDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 196, 491, 62));
 
@@ -98,7 +98,7 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel4.setText("Price");
         PanelAddProduct.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 276, -1, -1));
 
-        jTextFieldPrice.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jTextFieldPrice.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldPrice.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         PanelAddProduct.add(jTextFieldPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 313, 491, 62));
 
@@ -111,24 +111,28 @@ public class AddProduct extends javax.swing.JPanel {
         jComboBoxSize.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jComboBoxSize.setForeground(new java.awt.Color(255, 230, 248));
         jComboBoxSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
+        jComboBoxSize.setBorder(null);
         PanelAddProduct.add(jComboBoxSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 430, 180, 62));
 
-        jButtonAdd.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAdd.setBackground(new java.awt.Color(236, 127, 169));
         jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButtonAdd.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonAdd.setForeground(new java.awt.Color(255, 237, 250));
         jButtonAdd.setText("Add");
+        jButtonAdd.setBorder(null);
         PanelAddProduct.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 510, 207, 73));
 
-        jButtonAddProductSize.setBackground(new java.awt.Color(190, 89, 133));
+        jButtonAddProductSize.setBackground(new java.awt.Color(236, 127, 169));
         jButtonAddProductSize.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButtonAddProductSize.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonAddProductSize.setForeground(new java.awt.Color(255, 237, 250));
         jButtonAddProductSize.setText("Add Product Size");
+        jButtonAddProductSize.setBorder(null);
         PanelAddProduct.add(jButtonAddProductSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 611, 491, 73));
 
-        jButtonCencel.setBackground(new java.awt.Color(236, 127, 169));
+        jButtonCencel.setBackground(new java.awt.Color(255, 184, 224));
         jButtonCencel.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jButtonCencel.setForeground(new java.awt.Color(255, 230, 248));
+        jButtonCencel.setForeground(new java.awt.Color(255, 237, 250));
         jButtonCencel.setText("Cancel");
+        jButtonCencel.setBorder(null);
         PanelAddProduct.add(jButtonCencel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1102, 510, 207, 73));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
