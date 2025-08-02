@@ -47,12 +47,15 @@ public class DashBoardPanel extends javax.swing.JPanel {
         PanelHeaderProduct = new javax.swing.JLabel();
         PanelHome = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +79,11 @@ public class DashBoardPanel extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(255, 184, 224));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        PanelHome.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 1110, 320));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/grafik.jpg"))); // NOI18N
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -30, 710, 380));
+
+        PanelHome.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 930, 320));
 
         jPanel5.setBackground(new java.awt.Color(255, 184, 224));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,10 +93,15 @@ public class DashBoardPanel extends javax.swing.JPanel {
         jLabel2.setText("Barang Keluar");
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("2,X");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 260, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/keranjang2.png"))); // NOI18N
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
 
         PanelHome.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 380, 280));
 
@@ -102,15 +114,28 @@ public class DashBoardPanel extends javax.swing.JPanel {
         jLabel1.setText("Stock Barang");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("2,XX");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 260, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/kiriedit.png"))); // NOI18N
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
 
         PanelHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 380, 280));
 
         add(PanelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     public JPanel getHeaderHomePanel() {
         return HeaderHomePanel;
@@ -126,10 +151,13 @@ public class DashBoardPanel extends javax.swing.JPanel {
     private javax.swing.JPanel PanelHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
