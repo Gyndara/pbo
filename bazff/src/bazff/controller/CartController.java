@@ -7,6 +7,7 @@ package bazff.controller;
 
 import bazff.view.DetailProduct;
 import bazff.view.HomePage;
+import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
 
 /**
@@ -16,17 +17,17 @@ import bazff.view.ShoppingCartView;
 public class CartController {
     private int tambahBarang;
     private int kurangBarang;
-    private DetailProduct detailProduct;
-//    private int keluarPage;
-//
-//    public int getKeluarPage() {
-//        return keluarPage;
-//    }
-//
-//    public void setKeluarPage(int keluarPage) {
-//        this.keluarPage = keluarPage;
-//    }
-//    
+    private HomePage homepage;
+    private MainWindow mainWindow;
+
+    public CartController(){
+        
+    }
+    
+    public CartController(MainWindow mainWindow){
+        this.mainWindow = mainWindow;
+    }
+    
     public void setTambahBarang(int tambahBarang) {
         this.tambahBarang = tambahBarang;
     }
@@ -64,14 +65,11 @@ public class CartController {
         
         form.getjTxtTambahBarang().setText(String.valueOf(this.getKurangBarang()));
     }
-    
-    public void detailProduct(){
-        
-    }
-    
+
     public void KeluarPage(ShoppingCartView form){
         form.setVisible(false);
         new HomePage().setVisible(true);
+        homepage.setVisible(false);
     }
     
 }

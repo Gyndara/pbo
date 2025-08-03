@@ -1,5 +1,6 @@
 package bazff.controller;
 
+import bazff.view.DetailProduct;
 import bazff.view.HomePage;
 import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
@@ -22,7 +23,9 @@ import javax.swing.JPanel;
 public class HomePageController {
     private MainWindow mainWindow;
     private HomePage homePage;
-
+    private DetailProduct detailProduct;
+    private CartController cartController;
+    
     public HomePageController(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
     }
@@ -31,7 +34,15 @@ public class HomePageController {
         this.homePage = homePage;
     }
     
-    public static JPanel[] generateProdukPanels(String[] namaProduk, String[] hargaProduk, String[] gambarProduk) {
+        
+    public void detailProduct(){
+        DetailProduct detailProduct = new DetailProduct();
+        detailProduct.setVisible(true);
+        homePage.setVisible(false);
+    }
+    
+    
+    public static JPanel[] generateProdukPanels(HomePageController controller, String[] namaProduk, String[] hargaProduk, String[] gambarProduk) {
         ArrayList<JPanel> panels = new ArrayList<>();
 
         for (int i = 0; i < namaProduk.length; i++) {
@@ -67,7 +78,7 @@ public class HomePageController {
             // Event klik
             int index = i;
             btnDetail.addActionListener(e -> {
-                JOptionPane.showMessageDialog(null, "Kamu memilih: " + namaProduk[index]);
+                controller.detailProduct();
             });
 
             // Panel bagian bawah
