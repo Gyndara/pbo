@@ -115,6 +115,11 @@ public class PaymentPopUp extends javax.swing.JDialog {
         jButtonAdd.setText("Pay");
         jButtonAdd.setBorder(null);
         jButtonAdd.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAddMouseClicked(evt);
+            }
+        });
         jPanel1.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
 
         jButtonClose.setBackground(new java.awt.Color(255, 184, 224));
@@ -163,6 +168,10 @@ public class PaymentPopUp extends javax.swing.JDialog {
     private void jButtonCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCloseMouseClicked
         this.dispose();
     }//GEN-LAST:event_jButtonCloseMouseClicked
+
+    private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
+        transactionController.receiptPopUp(this);
+    }//GEN-LAST:event_jButtonAddMouseClicked
 
     /**
      * @param args the command line arguments

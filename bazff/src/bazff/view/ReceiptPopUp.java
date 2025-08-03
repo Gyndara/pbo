@@ -17,9 +17,8 @@ public class ReceiptPopUp extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
-    public ReceiptPopUp(MainWindow window, SizeController controller) {
-        super(window, true);
-        this.mainWindow = window;
+    public ReceiptPopUp(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         setUndecorated(true);
         initComponents();
         pack();
