@@ -31,18 +31,19 @@ public class HomePageController {
         this.homePage = homePage;
     }
     
+    public HomePage getHomePage() {
+        return homePage;
+    }
         
     public void detailProduct(){
-        DetailProduct detailProduct = new DetailProduct();
+        detailProduct = new DetailProduct(this);
         detailProduct.setVisible(true);
         homePage.setVisible(false);
     }
     
-    
     public void keluarPageDetail(DetailProduct form){
         form.dispose();
-        new HomePage().setVisible(true);
-        homePage.setVisible(false);
+        homePage.setVisible(true);
     }
     
     public static JPanel[] generateProdukPanels(HomePageController controller, String[] namaProduk, String[] hargaProduk, String[] gambarProduk) {

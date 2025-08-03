@@ -5,6 +5,7 @@
  */
 package bazff.view;
 
+import bazff.controller.HomePageController;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -17,8 +18,22 @@ public class DetailProduct extends javax.swing.JFrame {
     /**
      * Creates new form DetailProduct
      */
+    private HomePageController homePageController;
+    private HomePage homePage;
     public DetailProduct() {
         initComponents();
+        ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
+        jGambar.setIcon(LoginImage);
+        jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
+        this.homePageController = homePageController;
+        this.homePage = homePage;
+    }
+    
+    public DetailProduct(HomePageController homePageController) {
+        initComponents();
+        this.homePageController = homePageController;
+        this.homePage = homePageController.getHomePage(); // ambil dari controller
+
         ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
         jGambar.setIcon(LoginImage);
         jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
@@ -147,7 +162,7 @@ public class DetailProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnCancelActionPerformed
 
     private void jBtnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCancelMouseClicked
-        this.dispose();
+        homePageController.keluarPageDetail(this);
     }//GEN-LAST:event_jBtnCancelMouseClicked
     
     /**
