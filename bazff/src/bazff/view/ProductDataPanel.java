@@ -80,31 +80,31 @@ public class ProductDataPanel extends javax.swing.JPanel {
         TableProduct.setForeground(new java.awt.Color(0, 0, 0));
         TableProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"P-001", null, null, null},
-                {"P-002", null, null, null},
-                {"P-003", null, null, null},
-                {"P-004", null, null, null},
-                {"P-005", null, null, null},
-                {"P-006", null, null, null},
-                {"P-007", null, null, null},
-                {"P-008", null, null, null},
-                {"P-009", null, null, null},
-                {"P-010", null, null, null},
-                {"P-011", null, null, null},
-                {"P-012", null, null, null},
-                {"P-013", null, null, null},
-                {"P-014", null, null, null},
-                {"P-015", null, null, null},
-                {"P-016", null, null, null},
-                {"P-017", null, null, null},
-                {"P-018", null, null, null},
-                {"P-019", null, null, null},
-                {"P-020", null, null, null},
-                {"P-021", null, null, null},
-                {"P-022", null, null, null}
+                {"P-001", null, null, null, null},
+                {"P-002", null, null, null, null},
+                {"P-003", null, null, null, null},
+                {"P-004", null, null, null, null},
+                {"P-005", null, null, null, null},
+                {"P-006", null, null, null, null},
+                {"P-007", null, null, null, null},
+                {"P-008", null, null, null, null},
+                {"P-009", null, null, null, null},
+                {"P-010", null, null, null, null},
+                {"P-011", null, null, null, null},
+                {"P-012", null, null, null, null},
+                {"P-013", null, null, null, null},
+                {"P-014", null, null, null, null},
+                {"P-015", null, null, null, null},
+                {"P-016", null, null, null, null},
+                {"P-017", null, null, null, null},
+                {"P-018", null, null, null, null},
+                {"P-019", null, null, null, null},
+                {"P-020", null, null, null, null},
+                {"P-021", null, null, null, null},
+                {"P-022", null, null, null, null}
             },
             new String [] {
-                "PRODUCT CODE", "PRODUCT NAME", "PRODUCT QUANTITY", "PRODUCT STARUS"
+                "PRODUCT CODE", "SKU CODE", "PRODUCT NAME", "PRODUCT QUANTITY", "PRODUCT STATUS"
             }
         ));
         TableProduct.setRowHeight(40);

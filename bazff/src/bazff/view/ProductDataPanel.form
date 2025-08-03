@@ -115,7 +115,7 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="22">
+                  <Table columnCount="5" rowCount="22">
                     <Column editable="true" title="PRODUCT CODE" type="java.lang.Object">
                       <Data value="P-001"/>
                       <Data value="P-002"/>
@@ -140,9 +140,10 @@
                       <Data value="P-021"/>
                       <Data value="P-022"/>
                     </Column>
+                    <Column editable="true" title="SKU CODE" type="java.lang.Object"/>
                     <Column editable="true" title="PRODUCT NAME" type="java.lang.Object"/>
                     <Column editable="true" title="PRODUCT QUANTITY" type="java.lang.Object"/>
-                    <Column editable="true" title="PRODUCT STARUS" type="java.lang.Object"/>
+                    <Column editable="true" title="PRODUCT STATUS" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="rowHeight" type="int" value="40"/>
