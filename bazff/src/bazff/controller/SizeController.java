@@ -5,6 +5,7 @@
  */
 package bazff.controller;
 
+import bazff.view.DeleteSizePopUp1;
 import bazff.view.MainWindow;
 import bazff.view.SizePopUp1;
 import bazff.view.SizePopUp2;
@@ -16,7 +17,7 @@ import bazff.view.SizePopUp2;
 public class SizeController {
     private MainWindow mainWindow;
     private SizePopUp1 sizePopUp1;
-    private SizePopUp2 sizePopUp2;
+    private DeleteSizePopUp1 deleteSizePopUp1;
     
     public SizeController(MainWindow mainWindow){
         this.mainWindow = mainWindow;
@@ -26,5 +27,11 @@ public class SizeController {
         sizePopUp1 = new SizePopUp1(mainWindow, this);
         sizePopUp1.setLocationRelativeTo(mainWindow);
         sizePopUp1.setVisible(true);
+    }
+    
+    public void deleteSizeDataPopUp(){
+        deleteSizePopUp1 = new DeleteSizePopUp1(mainWindow, this);
+        deleteSizePopUp1.setLocationRelativeTo(mainWindow);
+        deleteSizePopUp1.setVisible(true);
     }
 }
