@@ -57,6 +57,7 @@ public class SizeDataView extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableSize = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,7 +94,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 jButtonAddActionPerformed(evt);
             }
         });
-        PanelSizeData.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, 236, 72));
+        PanelSizeData.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, 236, 72));
 
         jPanel2.setBackground(new java.awt.Color(255, 230, 248));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 184, 224)));
@@ -136,6 +137,19 @@ public class SizeDataView extends javax.swing.JPanel {
 
         PanelSizeData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 410, 380));
 
+        jButton1.setBackground(new java.awt.Color(255, 184, 224));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 230, 248));
+        jButton1.setText("Delete");
+        jButton1.setBorder(null);
+        jButton1.setPreferredSize(new java.awt.Dimension(236, 72));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        PanelSizeData.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 610, -1, -1));
+
         add(PanelSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -146,6 +160,10 @@ public class SizeDataView extends javax.swing.JPanel {
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
         sizeController.addSizeDataPopUp();
     }//GEN-LAST:event_jButtonAddMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        sizeController.deleteSizeDataPopUp();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     public JPanel getPanelHeaderSizeData() {
         return PanelHeaderSizeData;
@@ -162,6 +180,7 @@ public class SizeDataView extends javax.swing.JPanel {
     private javax.swing.JPanel PanelHeaderSizeData;
     private javax.swing.JPanel PanelSizeData;
     private javax.swing.JTable TableSize;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAdd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
