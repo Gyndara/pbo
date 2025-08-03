@@ -20,9 +20,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class HomePageController {
-    private ShoppingCartView shoppingCart;
+    private MainWindow mainWindow;
     private HomePage homePage;
 
+    public HomePageController(MainWindow mainWindow) {
+        this.mainWindow = mainWindow;
+    }
+    
     public void setHomePage(HomePage homePage) {
         this.homePage = homePage;
     }
@@ -84,7 +88,7 @@ public class HomePageController {
     }
     
     public void tampilHalamanCart(){
-        ShoppingCartView cartView = new ShoppingCartView(this);
+        ShoppingCartView cartView = new ShoppingCartView(mainWindow);
         cartView.setVisible(true);
         homePage.setVisible(false);
     }
