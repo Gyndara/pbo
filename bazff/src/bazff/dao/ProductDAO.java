@@ -53,10 +53,8 @@ public class ProductDAO {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
             } catch (SQLException e) {
-                // Optional: log error
             }
         }
-
         return daftarProduk;
     }
 }
