@@ -6,6 +6,7 @@
 package bazff.view;
 
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 
 /**
  *
@@ -22,6 +23,14 @@ public class LoginPage extends javax.swing.JFrame {
         jLogin.setIcon(LoginImage);
     }
 
+    public JTextField getjTxtEmail() {
+        return jTxtEmail;
+    }
+
+    public JTextField getjTxtPass() {
+        return jTxtPass;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,8 +103,8 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 70, -1));
+        jLabel5.setText("Username");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 150, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(236, 127, 169));
@@ -108,6 +117,11 @@ public class LoginPage extends javax.swing.JFrame {
         jBtnSign.setText("Sign in");
         jBtnSign.setBorder(null);
         jBtnSign.setPreferredSize(new java.awt.Dimension(200, 60));
+        jBtnSign.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnSignMouseClicked(evt);
+            }
+        });
         jPanel1.add(jBtnSign, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 720, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,6 +141,18 @@ public class LoginPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnSignMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSignMouseClicked
+        String validate = jTxtEmail.getText();
+        
+        if (validate.equals("admin")) {
+            new MainWindow().setVisible(true);
+        } else {
+            new HomePage().setVisible(true);
+        }
+        
+        dispose();
+    }//GEN-LAST:event_jBtnSignMouseClicked
 
     /**
      * @param args the command line arguments

@@ -153,6 +153,7 @@ public class PaymentPopUp extends javax.swing.JDialog {
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setPreferredSize(new java.awt.Dimension(400, 230));
 
+        jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
