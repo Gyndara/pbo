@@ -54,8 +54,8 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonAdd = new javax.swing.JButton();
         jButtonAddProductSize = new javax.swing.JButton();
         jButtonCencel = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         LabelImage = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -143,22 +143,21 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonCencel.setBorder(null);
         PanelAddProduct.add(jButtonCencel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1102, 510, 207, 73));
 
-        jPanel2.setBackground(new java.awt.Color(255, 184, 224));
-        jPanel2.setPreferredSize(new java.awt.Dimension(450, 600));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         LabelImage.setFont(new java.awt.Font("Dialog", 1, 70)); // NOI18N
         LabelImage.setForeground(new java.awt.Color(236, 127, 169));
         LabelImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelImage.setText("+");
-        LabelImage.setPreferredSize(new java.awt.Dimension(540, 600));
+        LabelImage.setPreferredSize(new java.awt.Dimension(560, 620));
         LabelImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LabelImageMouseClicked(evt);
             }
         });
-        jPanel2.add(LabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-47, 0, -1, -1));
+        PanelAddProduct.add(LabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
+        jPanel2.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel2.setPreferredSize(new java.awt.Dimension(415, 580));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         PanelAddProduct.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
