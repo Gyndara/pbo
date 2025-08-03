@@ -82,13 +82,13 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel3.setText("<html>HOLLA, WELCOME!</html>");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 230, 400, -1));
 
-        jTxtPass.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        jTxtPass.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
+        jTxtPass.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTxtPass.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jTxtPass.setPreferredSize(new java.awt.Dimension(600, 80));
         jPanel1.add(jTxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 600, -1, -1));
 
-        jTxtEmail.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        jTxtEmail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169), new java.awt.Color(236, 127, 169)));
+        jTxtEmail.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTxtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
         jTxtEmail.setPreferredSize(new java.awt.Dimension(600, 80));
         jPanel1.add(jTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 460, -1, -1));
 
@@ -106,6 +106,7 @@ public class LoginPage extends javax.swing.JFrame {
         jBtnSign.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jBtnSign.setForeground(new java.awt.Color(255, 237, 250));
         jBtnSign.setText("Sign in");
+        jBtnSign.setBorder(null);
         jBtnSign.setPreferredSize(new java.awt.Dimension(200, 60));
         jPanel1.add(jBtnSign, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 720, -1, -1));
 

@@ -6,6 +6,7 @@
 package bazff;
 
 import bazff.view.HomePage;
+import bazff.view.LoginPage;
 import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
 import bazff.view.SizeDataView;
@@ -20,18 +21,7 @@ public class Main1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("HALO DOG");
-        System.out.println("hai");
-        System.out.println("aul");
-        System.out.println("BISMA BAU");
-        System.out.println("KALIAN BERISIN SEMUANYA AKU TIDUR   ");
-        System.out.println("zahy");
-        System.out.println("halo selanjutntya");
-//        MainWindow main = new MainWindow();
-//        main.setVisible(true);                          
-        HomePage home = new HomePage();
-        home.setVisible(true);
-//        ShoppingCartView shop = new ShoppingCartView();
-//        shop.setVisible(true);
+        LoginPage login = new LoginPage();
+        login.setVisible(true);
     }    
 }
