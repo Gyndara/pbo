@@ -28,6 +28,10 @@ public class CartController {
         this.mainWindow = mainWindow;
     }
     
+    public void setHomePage(HomePage homepage) {
+        this.homepage = homepage;
+    }
+    
     public void setTambahBarang(int tambahBarang) {
         this.tambahBarang = tambahBarang;
     }
@@ -68,8 +72,7 @@ public class CartController {
 
     public void KeluarPage(ShoppingCartView form){
         form.setVisible(false);
-        new HomePage().setVisible(true);
-        homepage.setVisible(false);
+        homepage.setVisible(true);
     }
     
 }

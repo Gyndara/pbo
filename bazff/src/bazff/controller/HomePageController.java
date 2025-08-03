@@ -10,14 +10,11 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class HomePageController {
@@ -41,6 +38,12 @@ public class HomePageController {
         homePage.setVisible(false);
     }
     
+    
+    public void keluarPageDetail(DetailProduct form){
+        form.dispose();
+        new HomePage().setVisible(true);
+        homePage.setVisible(false);
+    }
     
     public static JPanel[] generateProdukPanels(HomePageController controller, String[] namaProduk, String[] hargaProduk, String[] gambarProduk) {
         ArrayList<JPanel> panels = new ArrayList<>();
