@@ -1,6 +1,7 @@
 package bazff.controller;
 
 import bazff.view.HomePage;
+import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,8 +20,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class HomePageController {
+    private ShoppingCartView shoppingCart;
+    private HomePage homePage;
 
-
+    public void setHomePage(HomePage homePage) {
+        this.homePage = homePage;
+    }
+    
     public static JPanel[] generateProdukPanels(String[] namaProduk, String[] hargaProduk, String[] gambarProduk) {
         ArrayList<JPanel> panels = new ArrayList<>();
 
@@ -77,20 +83,9 @@ public class HomePageController {
         return panels.toArray(new JPanel[0]);
     }
     
-    public static JButton getShoppingCartButton(HomePage homePage) {
-        JButton btnCart = new JButton("Shopping Cart");
-        btnCart.setPreferredSize(new Dimension(150, 40));
-        btnCart.setFocusPainted(false);
-        btnCart.setFont(new Font("Arial", Font.BOLD, 14));
-        btnCart.setBackground(Color.decode("#EC7FA9"));
-        btnCart.setForeground(Color.decode("#FFE6F8"));
-        btnCart.setBorder(BorderFactory.createEmptyBorder());
-
-        btnCart.addActionListener((ActionEvent e) -> {
-            new ShoppingCartView().setVisible(true);
-            homePage.setVisible(false);
-        });
-
-        return btnCart;
+    public void tampilHalamanCart(){
+        ShoppingCartView cartView = new ShoppingCartView(this);
+        cartView.setVisible(true);
+        homePage.setVisible(false);
     }
 }
