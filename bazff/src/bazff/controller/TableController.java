@@ -7,7 +7,9 @@ package bazff.controller;
 
 import bazff.config.Database;
 import bazff.dao.ProductDAO;
+import bazff.dao.SizeDAO;
 import bazff.model.ProductModel;
+import bazff.model.SizeModel;
 import bazff.view.ProductDataPanel;
 import bazff.view.SizeDataView;
 import bazff.view.TransactionDataPanel;
@@ -44,16 +46,33 @@ public class TableController {
     }
     
     public void setUpTableSize(){
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        try {
+            Connection conn = Database.getKoneksi();
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            List<SizeModel> sizeList = sizeDAO.getSizeDisplay();
+            
+            DefaultTableModel model = (DefaultTableModel) sizeDataView.getTableSize().getModel();
+            model.setRowCount(0);
+            
+            for (SizeModel s : sizeList){
+                model.addRow(new Object[]{
+                    s.getSizeName(),
+                });
+            }
+            
+            DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+            centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-        for (int i = 0; i < sizeDataView.getTableSize().getColumnCount(); i++) {
-            sizeDataView.getTableSize().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-        }
+            for (int i = 0; i < sizeDataView.getTableSize().getColumnCount(); i++) {
+                sizeDataView.getTableSize().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            }
         
-        sizeDataView.getTableSize().setRowHeight(60);
-        JTableHeader header = sizeDataView.getTableSize().getTableHeader();
-        header.setFont(new Font("Tahome", Font.BOLD, 20));
+            sizeDataView.getTableSize().setRowHeight(60);
+            JTableHeader header = sizeDataView.getTableSize().getTableHeader();
+            header.setFont(new Font("Tahome", Font.BOLD, 20));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
     public void setUpTableProduct(){
@@ -63,7 +82,7 @@ public class TableController {
             List<ProductModel> produkList = productDAO.getProductDisplay();
 
             DefaultTableModel model = (DefaultTableModel) productDataPanel.getTableProduct().getModel();
-            model.setRowCount(0); // Bersihkan isi tabel sebelum diisi ulang
+            model.setRowCount(0);
 
             for (ProductModel p : produkList) {
                 model.addRow(new Object[]{
@@ -75,21 +94,19 @@ public class TableController {
                 });
             }
 
-        // Center align isi tabel
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+            DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+            centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-        for (int i = 0; i < productDataPanel.getTableProduct().getColumnCount(); i++) {
-            productDataPanel.getTableProduct().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-        }
+            for (int i = 0; i < productDataPanel.getTableProduct().getColumnCount(); i++) {
+                productDataPanel.getTableProduct().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            }
 
-        // Styling tambahan
-        productDataPanel.getTableProduct().setRowHeight(60);
-        JTableHeader header = productDataPanel.getTableProduct().getTableHeader();
-        header.setFont(new Font("Tahoma", Font.BOLD, 20));
+            productDataPanel.getTableProduct().setRowHeight(60);
+            JTableHeader header = productDataPanel.getTableProduct().getTableHeader();
+            header.setFont(new Font("Tahoma", Font.BOLD, 20));
 
-        } catch (SQLException e) {
-            e.printStackTrace(); // atau tampilkan di UI
+            } catch (SQLException e) {
+                e.printStackTrace();
         }
     }
     
