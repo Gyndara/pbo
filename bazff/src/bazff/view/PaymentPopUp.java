@@ -6,6 +6,7 @@
 package bazff.view;
 
 import bazff.controller.SizeController;
+import bazff.controller.TransactionController;
 import java.awt.Point;
 
 /**
@@ -17,11 +18,13 @@ public class PaymentPopUp extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
-    public PaymentPopUp(MainWindow window, SizeController controller) {
+    private TransactionController transactionController;
+    public PaymentPopUp(MainWindow window, TransactionController transactionController) {
         super(window, true);
-        this.mainWindow = window;
-        setUndecorated(true);
+        setUndecorated(true);                     
         initComponents();
+        this.mainWindow = window;
+        this.transactionController = transactionController;
         pack();
     }
     

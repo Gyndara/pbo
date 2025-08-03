@@ -5,6 +5,7 @@
  */
 package bazff.view;
 
+import bazff.controller.HomePageController;
 import bazff.controller.MainWindowController;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -21,11 +22,12 @@ public class MainWindow extends javax.swing.JFrame {
      */
     private MainWindowController windowController;
     private DashBoardPanel dashBoardPanel;
-    
+    private HomePageController homePageController;
     public MainWindow() {
         initComponents();
         windowController = new MainWindowController(this);
         windowController.tampilHalamanUtama(this);
+        homePageController = new HomePageController(this);
     }
 
     /**

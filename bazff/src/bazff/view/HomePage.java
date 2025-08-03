@@ -33,12 +33,13 @@ import javax.swing.JButton;
 public class HomePage extends javax.swing.JFrame {
 
     private HomePageController homePageController;
+    private MainWindow mainWindow;
     /** Creates new form HomePage */
     public HomePage() {
         
         initComponents();
-        this.homePageController = new HomePageController();
-        this.homePageController.setHomePage(this);
+        this.homePageController = new HomePageController(mainWindow);
+        this.homePageController.setHomePage(this); 
         // Data produk
         String[] namaProduk = {
             "Work Shirt", "Jersey", "Jorts Pants",

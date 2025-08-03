@@ -257,9 +257,12 @@
               <Dimension value="[250, 60]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="820" y="960" width="-1" height="-1"/>
+              <AbsoluteConstraints x="820" y="930" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -278,7 +281,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="960" width="-1" height="-1"/>
+              <AbsoluteConstraints x="10" y="930" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

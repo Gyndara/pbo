@@ -6,6 +6,8 @@
 package bazff.view;
 
 import bazff.controller.CartController;
+import bazff.controller.HomePageController;
+import bazff.controller.TransactionController;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -15,15 +17,36 @@ import javax.swing.JTextField;
  */
 public class ShoppingCartView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ShoppingCartView
-     */
-    
+    private TransactionController transactionController;
     private CartController cartController;
+    private HomePageController homePageController;
+    private MainWindow mainWindow;
+
+    // ✅ Constructor utama
+    public ShoppingCartView(MainWindow window) {
+        initComponents();
+        this.mainWindow = window;
+        this.cartController = new CartController();
+        this.transactionController = new TransactionController(window);
+    }
+
+    // ✅ Constructor yang menerima HomePageController
+    public ShoppingCartView(HomePageController homePageController, MainWindow window) {
+        initComponents();
+        this.mainWindow = window;
+        this.homePageController = homePageController;
+        this.cartController = new CartController();
+        this.transactionController = new TransactionController(window);
+    }
+
+    // ✅ Constructor default, gunakan default MainWindow (jika memungkinkan)
     public ShoppingCartView() {
         initComponents();
+        this.mainWindow = new MainWindow(); // atau dapatkan dari AppContext
         this.cartController = new CartController();
+        this.transactionController = new TransactionController(mainWindow);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,13 +156,18 @@ public class ShoppingCartView extends javax.swing.JFrame {
         jButton1.setText("Proceed to Checkout");
         jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(250, 60));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 960, -1, -1));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 930, -1, -1));
 
         jTextField1.setBackground(new java.awt.Color(255, 230, 248));
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 35)); // NOI18N
         jTextField1.setText("Total    =     Rp 300.000-,");
         jTextField1.setPreferredSize(new java.awt.Dimension(400, 60));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 960, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 930, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -157,6 +185,10 @@ public class ShoppingCartView extends javax.swing.JFrame {
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         cartController.KeluarPage(this);
     }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        transactionController.paymentPopUp();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     public JPanel getjPanel3() {
         return jPanel3;
