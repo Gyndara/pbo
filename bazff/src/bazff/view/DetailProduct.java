@@ -105,6 +105,11 @@ public class DetailProduct extends javax.swing.JFrame {
         jBtnCancel.setForeground(new java.awt.Color(236, 127, 169));
         jBtnCancel.setText("Cancel");
         jBtnCancel.setPreferredSize(new java.awt.Dimension(200, 60));
+        jBtnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnCancelMouseClicked(evt);
+            }
+        });
         jBtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCancelActionPerformed(evt);
@@ -140,6 +145,10 @@ public class DetailProduct extends javax.swing.JFrame {
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnCancelActionPerformed
+
+    private void jBtnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCancelMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jBtnCancelMouseClicked
     
     /**
      * @param args the command line arguments

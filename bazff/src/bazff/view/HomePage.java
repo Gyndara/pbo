@@ -20,6 +20,7 @@ package bazff.view;
 //import javax.swing.JButton;
 //import javax.swing.JLabel;
 //import javax.swing.JOptionPane;
+import bazff.controller.CartController;
 import javax.swing.JPanel;
 import bazff.controller.HomePageController;
 import javax.swing.JButton;
@@ -33,7 +34,9 @@ import javax.swing.JButton;
 public class HomePage extends javax.swing.JFrame {
 
     private HomePageController homePageController;
+    private CartController cartController;
     private MainWindow mainWindow;
+    private JPanel[] produkPanels;  
     /** Creates new form HomePage */
     public HomePage() {
         
@@ -58,12 +61,13 @@ public class HomePage extends javax.swing.JFrame {
         };
 
         // Ambil panel dari controller
-        JPanel[] produkPanels = HomePageController.generateProdukPanels(namaProduk, hargaProduk, gambarProduk);
+        produkPanels = HomePageController.generateProdukPanels(homePageController, namaProduk, hargaProduk, gambarProduk);
+
         
 
         for (JPanel panel : produkPanels) {
-            jPanelProdukGrid.add(panel);
-        }
+        jPanelProdukGrid.add(panel);
+    }
 
         jPanelProdukGrid.revalidate();
         jPanelProdukGrid.repaint();
