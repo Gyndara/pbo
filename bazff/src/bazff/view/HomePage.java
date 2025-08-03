@@ -32,10 +32,13 @@ import javax.swing.JButton;
  */
 public class HomePage extends javax.swing.JFrame {
 
+    private HomePageController homePageController;
     /** Creates new form HomePage */
     public HomePage() {
+        
         initComponents();
-
+        this.homePageController = new HomePageController();
+        this.homePageController.setHomePage(this);
         // Data produk
         String[] namaProduk = {
             "Work Shirt", "Jersey", "Jorts Pants",
@@ -63,13 +66,6 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanelProdukGrid.revalidate();
         jPanelProdukGrid.repaint();
-        
-        JButton btnCart = HomePageController.getShoppingCartButton(HomePage.this);
-        jPanelAtas.add(btnCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 50, 150, 40));
-        
-        
-        jPanelAtas.revalidate();
-        jPanelAtas.repaint();
     }
 
     /** This method is called from within the constructor to
@@ -85,6 +81,7 @@ public class HomePage extends javax.swing.JFrame {
         jPanelProdukGrid = new javax.swing.JPanel();
         jPanelAtas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,10 +106,27 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1.setText("B A Z F F");
         jPanelAtas.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(236, 127, 169));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Shopping Cart");
+        jButton1.setBorder(null);
+        jButton1.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jPanelAtas.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 50, -1, -1));
+
         getContentPane().add(jPanelAtas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        homePageController.tampilHalamanCart();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -148,6 +162,7 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAtas;
