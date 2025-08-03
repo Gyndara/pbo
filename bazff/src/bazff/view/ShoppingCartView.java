@@ -21,29 +21,30 @@ public class ShoppingCartView extends javax.swing.JFrame {
     private CartController cartController;
     private HomePageController homePageController;
     private MainWindow mainWindow;
+    private HomePage homePage;
 
-    // ✅ Constructor utama
     public ShoppingCartView(MainWindow window) {
         initComponents();
         this.mainWindow = window;
         this.cartController = new CartController();
+        this.homePage = new HomePage();
         this.transactionController = new TransactionController(window);
     }
 
-    // ✅ Constructor yang menerima HomePageController
     public ShoppingCartView(HomePageController homePageController, MainWindow window) {
         initComponents();
         this.mainWindow = window;
         this.homePageController = homePageController;
         this.cartController = new CartController();
+        this.homePage = new HomePage();
         this.transactionController = new TransactionController(window);
     }
 
-    // ✅ Constructor default, gunakan default MainWindow (jika memungkinkan)
     public ShoppingCartView() {
         initComponents();
         this.mainWindow = new MainWindow(); // atau dapatkan dari AppContext
         this.cartController = new CartController();
+        this.homePage = new HomePage();
         this.transactionController = new TransactionController(mainWindow);
     }
 
@@ -183,6 +184,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        cartController.setHomePage(homePage);
         cartController.KeluarPage(this);
     }//GEN-LAST:event_jPanel3MouseClicked
 
