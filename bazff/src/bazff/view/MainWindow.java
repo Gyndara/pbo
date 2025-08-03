@@ -7,6 +7,7 @@ package bazff.view;
 
 import bazff.controller.HomePageController;
 import bazff.controller.MainWindowController;
+import bazff.controller.ProductController;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,12 +24,19 @@ public class MainWindow extends javax.swing.JFrame {
     private MainWindowController windowController;
     private DashBoardPanel dashBoardPanel;
     private HomePageController homePageController;
+    private ProductController productController;
     public MainWindow() {
         initComponents();
         windowController = new MainWindowController(this);
         windowController.tampilHalamanUtama(this);
         homePageController = new HomePageController(this);
+        productController = new ProductController(this);
     }
+
+    public ProductController getProductController() {
+        return productController;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

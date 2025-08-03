@@ -57,4 +57,12 @@ public class ProductDAO {
         }
         return daftarProduk;
     }
+    
+    public void deleteBySku(String skuCode) throws SQLException{
+        String sql = "DELETE FROM product_size WHERE sku_code = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, skuCode);
+            stmt.executeUpdate();
+        }
+    }
 }

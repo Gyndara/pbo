@@ -5,6 +5,8 @@
  */
 package bazff.controller;
 
+import bazff.config.Database;
+import bazff.dao.ProductDAO;
 import bazff.view.AddProduct;
 import bazff.view.DeleteProductPopUp;
 import bazff.view.MainWindow;
@@ -15,6 +17,7 @@ import bazff.view.UpdatePopUp2;
 import java.awt.Image;
 import java.awt.Point;
 import java.io.File;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -30,6 +33,7 @@ public class ProductController {
     private DeleteProductPopUp dialog2;
     private SizePopUp2 sizePopUp2;
     private AddProduct addProduct;
+    private TableController tableController;
 
     public ProductController(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
@@ -95,7 +99,13 @@ public class ProductController {
         return null;
     }
     
-    public void cancelAddProduct(){
-        
+    public void deleteProduct(String skuCode){
+        try {
+            ProductDAO product = new ProductDAO(Database.getKoneksi());
+            product.deleteBySku(skuCode);
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 }

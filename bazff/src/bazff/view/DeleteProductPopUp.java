@@ -6,6 +6,7 @@
 package bazff.view;
 
 import java.awt.Point;
+import javax.swing.JTextField;
 
 /**
  *
@@ -29,10 +30,16 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
     }
     
     private MainWindow mainWindow;
-    public DeleteProductPopUp(MainWindow window){
+    public DeleteProductPopUp(MainWindow window, boolean modal){
+        setUndecorated(true);
         this.mainWindow = window;
         initComponents();
     }
+
+    public JTextField getjTxtSku() {
+        return jTxtSku;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +54,7 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTxtSku = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -82,10 +89,10 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
+        jTxtSku.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtSku.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTxtSku.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTxtSku, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
@@ -99,6 +106,11 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
         jButton1.setText("Delete");
         jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -138,6 +150,18 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String skuCode = jTxtSku.getText().trim();
+    
+        if (!skuCode.equals("") && mainWindow != null) {
+            mainWindow.getProductController().deleteProduct(skuCode);
+            this.dispose();
+            
+        } else {
+            System.out.println("SKU kosong");
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -184,6 +208,6 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTxtSku;
     // End of variables declaration//GEN-END:variables
 }
