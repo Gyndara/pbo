@@ -87,6 +87,7 @@ public class HomePage extends javax.swing.JFrame {
         jPanelAtas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,6 +125,16 @@ public class HomePage extends javax.swing.JFrame {
         });
         jPanelAtas.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 50, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel2.setText("Logout");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanelAtas.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 120, -1, -1));
+
         getContentPane().add(jPanelAtas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -132,6 +143,11 @@ public class HomePage extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         homePageController.tampilHalamanCart();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        new LoginPage().setVisible(true); // Tampilkan kembali halaman login
+        this.dispose(); 
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -169,6 +185,7 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAtas;
     private javax.swing.JPanel jPanelProdukGrid;

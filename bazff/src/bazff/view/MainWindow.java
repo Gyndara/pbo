@@ -48,10 +48,12 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         PanelSize = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        PanelAddProduct = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         PanelTransaction1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        PanelAddProduct = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        PanelLogout = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         PanelHeader = new javax.swing.JPanel();
         MainPanelHeader = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
@@ -141,6 +143,29 @@ public class MainWindow extends javax.swing.JFrame {
 
         MenuPanel.add(PanelSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
 
+        PanelTransaction1.setBackground(new java.awt.Color(255, 230, 248));
+        PanelTransaction1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
+        PanelTransaction1.setPreferredSize(new java.awt.Dimension(314, 68));
+        PanelTransaction1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelTransaction1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                PanelTransaction1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PanelTransaction1MouseExited(evt);
+            }
+        });
+        PanelTransaction1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(236, 127, 169));
+        jLabel6.setText("Transaction Data");
+        PanelTransaction1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, -1, -1));
+
+        MenuPanel.add(PanelTransaction1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, -1, -1));
+
         PanelAddProduct.setBackground(new java.awt.Color(255, 230, 248));
         PanelAddProduct.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
         PanelAddProduct.setPreferredSize(new java.awt.Dimension(314, 68));
@@ -164,28 +189,29 @@ public class MainWindow extends javax.swing.JFrame {
 
         MenuPanel.add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, -1, -1));
 
-        PanelTransaction1.setBackground(new java.awt.Color(255, 230, 248));
-        PanelTransaction1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
-        PanelTransaction1.setPreferredSize(new java.awt.Dimension(314, 68));
-        PanelTransaction1.addMouseListener(new java.awt.event.MouseAdapter() {
+        PanelLogout.setBackground(new java.awt.Color(255, 230, 248));
+        PanelLogout.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(236, 127, 169)));
+        PanelLogout.setPreferredSize(new java.awt.Dimension(314, 68));
+        PanelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PanelTransaction1MouseClicked(evt);
+                PanelLogoutMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                PanelTransaction1MouseEntered(evt);
+                PanelLogoutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                PanelTransaction1MouseExited(evt);
+                PanelLogoutMouseExited(evt);
             }
         });
-        PanelTransaction1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelLogout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel6.setText("Transaction Data");
-        PanelTransaction1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, -1, -1));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(236, 127, 169));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Logout");
+        PanelLogout.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 15, 180, -1));
 
-        MenuPanel.add(PanelTransaction1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, -1, -1));
+        MenuPanel.add(PanelLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, -1, -1));
 
         MasterPanel.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 72, -1, 860));
 
@@ -289,6 +315,21 @@ public class MainWindow extends javax.swing.JFrame {
     private void PanelAddProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelAddProductMouseClicked
         windowController.tampilHalamanAddProduct(this);
     }//GEN-LAST:event_PanelAddProductMouseClicked
+
+    private void PanelLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMouseClicked
+        new LoginPage().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PanelLogoutMouseClicked
+
+    private void PanelLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMouseEntered
+        PanelLogout.setBackground(new Color(236, 127, 169));
+        jLabel10.setForeground(new Color(255, 230, 248));
+    }//GEN-LAST:event_PanelLogoutMouseEntered
+
+    private void PanelLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMouseExited
+        PanelLogout.setBackground(new Color(255, 230, 248));
+        jLabel10.setForeground(new Color(236, 127, 169));
+    }//GEN-LAST:event_PanelLogoutMouseExited
     
     /**
      * @param args the command line arguments
@@ -333,10 +374,12 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel PanelAddProduct;
     private javax.swing.JPanel PanelHeader;
     private javax.swing.JPanel PanelHome;
+    private javax.swing.JPanel PanelLogout;
     private javax.swing.JPanel PanelProduct;
     private javax.swing.JPanel PanelSize;
     private javax.swing.JPanel PanelTransaction1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
