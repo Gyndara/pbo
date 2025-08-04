@@ -6,6 +6,7 @@
 package bazff.view;
 
 import bazff.controller.ProductController;
+import javax.swing.JTextField;
 
 /**
  *
@@ -141,6 +142,10 @@ public class SizePopUp2 extends javax.swing.JDialog {
     private void jButtonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSearchMouseClicked
         controller.addPopUp2(this);
     }//GEN-LAST:event_jButtonSearchMouseClicked
+
+    public JTextField getjTextFieldProductCode() {
+        return jTextFieldProductCode;
+    }
 
     /**
      * @param args the command line arguments

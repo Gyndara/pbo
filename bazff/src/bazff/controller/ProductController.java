@@ -58,7 +58,7 @@ public class ProductController {
 
     public void updatePopUp2(UpdatePopUp1 dialog1) {
         Point posisi = dialog1.getLocation();
-        String skuCode = dialog1.getjTxtSkuUpdate().getText(); // ambil sku dari dialog1
+        String skuCode = dialog1.getjTxtSkuUpdate().getText();
 
         dialog1.setVisible(false);
 
@@ -82,11 +82,47 @@ public class ProductController {
     
     public void addPopUp2(SizePopUp2 sizePopUp2){
         Point posisi = sizePopUp2.getLocation();
+        String productCode = sizePopUp2.getjTextFieldProductCode().getText();
+        
         sizePopUp2.setVisible(false);
-        SizePopUp3 sizePopUp3 = new SizePopUp3(mainWindow, true);
+        
+        SizePopUp3 sizePopUp3 = new SizePopUp3(mainWindow, productCode);
         sizePopUp3.setLocation(posisi);
         sizePopUp3.setVisible(true);
     }
+    
+    public void insertProductDetailFromPopup(String productCode, String selectedSizeName, String priceText) {
+        try {
+            Connection conn = Database.getKoneksi();
+
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            ProductDAO productDAO = new ProductDAO(conn);
+            ProductDetailDAO detailDAO = new ProductDetailDAO(conn);
+
+            int sizeId = sizeDAO.getSizeIdByName(selectedSizeName);
+            int price = Integer.parseInt(priceText.trim());
+            int productId = productDAO.getProductIdByCode(productCode);
+
+            String sku = productCode + sizeId;
+
+            ProductDetailModel detail = new ProductDetailModel();
+            detail.setProductId(productId);
+            detail.setSizeId(sizeId);
+            detail.setSkuCode(sku);
+            detail.setProductPrice(price);
+            detail.setQuantity(0);
+            detail.setProductStatus("not_ready");
+
+            detailDAO.insertProductDetail(detail);
+
+            JOptionPane.showMessageDialog(null, "Data ukuran berhasil ditambahkan!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Gagal menambahkan detail produk: " + e.getMessage());
+        }
+    }
+    
     
     public String imageChosser(JLabel LabelImage, JTextField pathField){
         JFileChooser fileChooser = new JFileChooser();
@@ -234,7 +270,7 @@ public class ProductController {
 
 
     private String saveImageToDisk(File imageFile) throws IOException {
-        String folder = "img/";
+        String folder = "resources/";
         Files.createDirectories(Paths.get(folder));
         String destPath = folder + imageFile.getName();
         Files.copy(imageFile.toPath(), Paths.get(destPath), StandardCopyOption.REPLACE_EXISTING);

@@ -5,7 +5,13 @@
  */
 package bazff.view;
 
+import bazff.config.Database;
+import bazff.controller.ProductController;
+import bazff.dao.SizeDAO;
 import java.awt.Point;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -16,11 +22,21 @@ public class SizePopUp3 extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
+    private String productCode;
     public SizePopUp3(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         setUndecorated(true);
         initComponents();
+        loadSizeOptions();
         pack();
+    }
+    
+    public SizePopUp3(MainWindow window, String productCode) {
+        this.mainWindow = window;
+        this.productCode = productCode;
+        setUndecorated(true);
+        initComponents();
+        loadSizeOptions();
     }
     
     public SizePopUp3(){
@@ -31,9 +47,25 @@ public class SizePopUp3 extends javax.swing.JDialog {
     private MainWindow mainWindow;
     public SizePopUp3(MainWindow window){
         this.mainWindow = window;
+        setUndecorated(true);
         initComponents();
+        loadSizeOptions();
     }
 
+    private void loadSizeOptions() {
+        try {
+            Connection conn = Database.getKoneksi();
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            List<String> sizes = sizeDAO.getAllSizeNames();
+            jComboBoxSize.removeAllItems();
+            for (String size : sizes){
+                jComboBoxSize.addItem(size);
+            }
+        } catch (SQLException e) {
+            System.out.println("Gagal memuat data ukuran: " + e.getMessage());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,7 +188,13 @@ public class SizePopUp3 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCloseMouseClicked
 
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
+        String selectedSize = jComboBoxSize.getSelectedItem().toString();
+        String price = jTextFieldInputPrice.getText();
+    
+        ProductController controller = new ProductController(mainWindow); 
+        controller.insertProductDetailFromPopup(productCode, selectedSize, price);
 
+        this.dispose();
     }//GEN-LAST:event_jButtonAddMouseClicked
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
