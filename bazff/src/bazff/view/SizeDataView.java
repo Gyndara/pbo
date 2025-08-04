@@ -24,10 +24,10 @@ public class SizeDataView extends javax.swing.JPanel {
     private SizeController sizeController;
     private TableController tableController;
     
-    public SizeDataView(MainWindow window) {
-        this.mainWindow = window;
+    public SizeDataView(MainWindow mainWindow) {
+        this.mainWindow = mainWindow;
         initComponents();
-        sizeController = new SizeController(window);
+        sizeController = new SizeController(mainWindow);
         this.tableController = new TableController(this);
         tableController.setUpTableSize();
     }

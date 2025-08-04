@@ -9,6 +9,7 @@ import bazff.config.Database;
 import bazff.dao.SizeDAO;
 import bazff.view.DeleteSizePopUp1;
 import bazff.view.MainWindow;
+import bazff.view.SizeDataView;
 import bazff.view.SizePopUp1;
 import bazff.view.SizePopUp2;
 import java.sql.SQLException;
@@ -58,5 +59,13 @@ public class SizeController {
         deleteSizePopUp1 = new DeleteSizePopUp1(mainWindow, this);
         deleteSizePopUp1.setLocationRelativeTo(mainWindow);
         deleteSizePopUp1.setVisible(true);
+    }
+    
+    public void refreshSizePanel(){                     
+        SizeDataView PanelSizeData = new SizeDataView(mainWindow); // buat ulang panel Size
+        mainWindow.getMainPanel().removeAll();                 // hapus semua panel sebelumnya
+        mainWindow.getMainPanel().add(PanelSizeData);              // tambahkan panel Size yang baru
+        mainWindow.getMainPanel().revalidate();                // refresh layout
+        mainWindow.getMainPanel().repaint();                   // repaint tampilan
     }
 }

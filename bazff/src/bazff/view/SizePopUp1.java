@@ -147,7 +147,8 @@ public class SizePopUp1 extends javax.swing.JDialog {
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
         String sizeName = jTxtSizeData.getText();
         if (!sizeName.trim().isEmpty()) {
-            sizeController.insertSize(sizeName);
+            mainWindow.getSizeController().insertSize(sizeName);
+            mainWindow.getSizeController().refreshSizePanel();
             this.dispose();
         } else {
             System.out.println("Size tidak boleh kosong!");

@@ -8,6 +8,7 @@ package bazff.view;
 import bazff.controller.HomePageController;
 import bazff.controller.MainWindowController;
 import bazff.controller.ProductController;
+import bazff.controller.SizeController;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,12 +26,14 @@ public class MainWindow extends javax.swing.JFrame {
     private DashBoardPanel dashBoardPanel;
     private HomePageController homePageController;
     private ProductController productController;
+    private SizeController sizeController;
     public MainWindow() {
         initComponents();
         windowController = new MainWindowController(this);
         windowController.tampilHalamanUtama(this);
         homePageController = new HomePageController(this);
         productController = new ProductController(this);
+        sizeController = new SizeController(this);
     }
 
     public ProductController getProductController() {
@@ -44,6 +47,11 @@ public class MainWindow extends javax.swing.JFrame {
     public HomePageController getHomePageController() {
         return homePageController;
     }
+
+    public SizeController getSizeController() {
+        return sizeController;
+    }
+    
     
     
     
