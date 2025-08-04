@@ -10,7 +10,9 @@ package bazff.model;
  * @author bisma
  */
 public class SizeModel {
+    private int id;
     private String sizeName;
+    
     
     public SizeModel(){
         
@@ -20,6 +22,15 @@ public class SizeModel {
         this.sizeName = sizeName;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     public String getSizeName() {
         return sizeName;
     }

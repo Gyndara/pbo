@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 /**
  *
  * @author bisma
@@ -109,5 +111,21 @@ public class SizeDAO {
             }
         }
         return -1; // Jika tidak ditemukan
+    }
+    
+    public Map<Integer, String> getSizeMap() throws SQLException {
+        Map<Integer, String> sizeMap = new HashMap<>();
+        String query = "SELECT id, size_name FROM size";
+
+        try (PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("size_name");
+                sizeMap.put(id, name);
+            }
+        }
+
+        return sizeMap;
     }
 }

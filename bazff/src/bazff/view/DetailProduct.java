@@ -6,9 +6,12 @@
 package bazff.view;
 
 import bazff.config.Database;
+import bazff.controller.CartController;
 import bazff.controller.HomePageController;
 import bazff.dao.ProductDAO;
+import bazff.dao.SizeDAO;
 import bazff.model.ProductModel;
+import bazff.model.SizeModel;
 import java.awt.Color;
 import java.awt.Component;
 import java.sql.Connection;
@@ -35,6 +38,7 @@ public class DetailProduct extends javax.swing.JFrame {
         initComponents();
         
         
+        
         ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
         jGambar.setIcon(LoginImage);
         jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
@@ -44,7 +48,6 @@ public class DetailProduct extends javax.swing.JFrame {
     
     public DetailProduct(HomePageController homePageController, String productCode) {
         initComponents();
-        customizeComboBoxRenderer();
         this.homePageController = homePageController;
         this.homePage = homePageController.getHomePage(); // ambil dari controller
         
@@ -52,7 +55,10 @@ public class DetailProduct extends javax.swing.JFrame {
             Connection conn = Database.getKoneksi();
             ProductDAO productDAO = new ProductDAO(conn);
             List<ProductModel> sizeList = productDAO.getSizesByProductCode(productCode);
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            Map<Integer, String> sizeMap = sizeDAO.getSizeMap();
             
+            customizeComboBoxRenderer(sizeMap);
             for(ProductModel p : sizeList) {
                 jCmbSize.addItem(p);
             }
@@ -73,7 +79,7 @@ public class DetailProduct extends javax.swing.JFrame {
         jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
     }
     
-    private void customizeComboBoxRenderer() {
+    private void customizeComboBoxRenderer(Map<Integer, String> sizeMap) {
     jCmbSize.setRenderer(new DefaultListCellRenderer() {
         @Override
         public Component getListCellRendererComponent(
@@ -83,7 +89,9 @@ public class DetailProduct extends javax.swing.JFrame {
 
             if (value instanceof ProductModel) {
                 ProductModel model = (ProductModel) value;
-                setText("" + model.getSizeId()); // customize this as needed
+                String sizeName = sizeMap.getOrDefault(
+                        model.getSizeId(), "tidak di ketahui");
+                setText(sizeName); // customize this as needed
             }
 
             return this;
@@ -193,6 +201,11 @@ public class DetailProduct extends javax.swing.JFrame {
         jBtnCheckout.setForeground(new java.awt.Color(255, 237, 250));
         jBtnCheckout.setText("Checkout");
         jBtnCheckout.setPreferredSize(new java.awt.Dimension(200, 60));
+        jBtnCheckout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCheckoutActionPerformed(evt);
+            }
+        });
         jPanel2.add(jBtnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -228,6 +241,13 @@ public class DetailProduct extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jCmbSizeActionPerformed
+
+    private void jBtnCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCheckoutActionPerformed
+        // TODO add your handling code here:
+        CartController.addDaftarProduct((ProductModel) jCmbSize.getSelectedItem());
+        homePageController.keluarPageDetail(this);
+        homePageController.tampilHalamanCart();
+    }//GEN-LAST:event_jBtnCheckoutActionPerformed
     
     /**
      * @param args the command line arguments
