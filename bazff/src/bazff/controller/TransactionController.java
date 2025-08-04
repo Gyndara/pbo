@@ -12,11 +12,14 @@ import bazff.model.ProductModel;
 import bazff.view.MainWindow;
 import bazff.view.PaymentPopUp;
 import bazff.view.ReceiptPopUp;
+import bazff.view.ShoppingCartView;
 import java.awt.Point;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,9 +30,15 @@ public class TransactionController {
     private PaymentPopUp paymentPopUp;
     private ReceiptPopUp receiptPopUp;
     private TransactionDAO transactionDAO;
+    private ShoppingCartView view;
+    
+    public TransactionController(MainWindow mainWindow, ShoppingCartView view){
+        this.mainWindow = mainWindow;
+        this.view = view;
+    }
     
     public TransactionController(MainWindow mainWindow){
-        this.mainWindow = mainWindow;
+       this(mainWindow, null);
     }
     
     public TransactionController(Connection conn) {
@@ -71,12 +80,7 @@ public class TransactionController {
     }
     
     public void receiptPopUp(PaymentPopUp paymentPopUp){
-        Point posisi = paymentPopUp.getLocation();
-        paymentPopUp.setVisible(false);
-        ReceiptPopUp receiptPopUp = new ReceiptPopUp(mainWindow, true);
-        
         double bayar = Double.parseDouble(paymentPopUp.getjTextField1().getText());
-        
         StringBuilder isiPembayaran = new StringBuilder();
         double total = 0;
         double ppn = 0;
@@ -99,7 +103,23 @@ public class TransactionController {
         
         ppn = total * 0.12;
         total2 = total + ppn;
+        
+        if (bayar < total2) {
+            double kurang = total2 - bayar;
+            JOptionPane.showMessageDialog(paymentPopUp, 
+            "Uang yang dibayarkan kurang dari total harga!\nTotal: Rp. " + total2 + "\nBayar: Rp. " + bayar + "\nKurang: Rp. " + kurang,
+            "Pembayaran Gagal", 
+            JOptionPane.ERROR_MESSAGE);
+            return; 
+        }
+        
         double kembalian = bayar - total2;
+        
+        CartController.setDaftarProduct(new ArrayList<>());
+        
+        Point posisi = paymentPopUp.getLocation();
+        paymentPopUp.setVisible(false);
+        ReceiptPopUp receiptPopUp = new ReceiptPopUp(mainWindow, true, view);
         receiptPopUp.getjTextArea2().setText(isiPembayaran.toString());
         receiptPopUp.getjTextArea3().setText(String.valueOf("SUB-TOTAL = Rp." + total + "\nPPN 12% = Rp." + ppn + "\nTOTAL = Rp." + total2));
         receiptPopUp.getjTextArea1().setText(String.valueOf("Bayar = Rp." + bayar + "\nKembalian = Rp." + kembalian));

@@ -182,7 +182,6 @@ public class CartController {
                     }
                     else{
                         daftarProduct.remove(p);
-                        panels.remove(panelProduk);
                         MainPanel.remove(panelProduk);
                         MainPanel.revalidate();
                         MainPanel.repaint();

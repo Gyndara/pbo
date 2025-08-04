@@ -18,11 +18,13 @@ public class ReceiptPopUp extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
-    public ReceiptPopUp(java.awt.Frame parent, boolean modal) {
+    private ShoppingCartView view;
+    public ReceiptPopUp(java.awt.Frame parent, boolean modal, ShoppingCartView view) {
         super(parent, modal);
         setUndecorated(true);
         initComponents();
         pack();
+        this.view = view;
     }
     
     public ReceiptPopUp(){
@@ -164,6 +166,7 @@ public class ReceiptPopUp extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
+        view.closeCart();
         this.dispose();
     }//GEN-LAST:event_jButtonAddMouseClicked
 

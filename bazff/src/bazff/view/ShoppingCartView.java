@@ -35,7 +35,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
         this.homePageController = homePageController;
         this.cartController = new CartController(mainWindow);
         this.homePage = new HomePage();
-        this.transactionController = new TransactionController(window);
+        this.transactionController = new TransactionController(window, this);
         
         try {
             Connection conn = Database.getKoneksi();
@@ -144,8 +144,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        cartController.setHomePage(homePage);
-        cartController.KeluarPage(this);
+        closeCart();
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void jBtnProceedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnProceedMouseClicked
@@ -159,6 +158,11 @@ public class ShoppingCartView extends javax.swing.JFrame {
 
     public JPanel getjPanel3() {
         return jPanel3;
+    }
+    
+    public void closeCart() {
+        cartController.setHomePage(homePage);
+        cartController.KeluarPage(this);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
