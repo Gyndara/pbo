@@ -5,10 +5,13 @@
  */
 package bazff.controller;
 
+import bazff.config.Database;
+import bazff.dao.SizeDAO;
 import bazff.view.DeleteSizePopUp1;
 import bazff.view.MainWindow;
 import bazff.view.SizePopUp1;
 import bazff.view.SizePopUp2;
+import java.sql.SQLException;
 
 /**
  *
@@ -18,9 +21,31 @@ public class SizeController {
     private MainWindow mainWindow;
     private SizePopUp1 sizePopUp1;
     private DeleteSizePopUp1 deleteSizePopUp1;
+    private SizeDAO sizeDao; 
     
     public SizeController(MainWindow mainWindow){
         this.mainWindow = mainWindow;
+        try {
+            this.sizeDao = new SizeDAO(Database.getKoneksi());
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void insertSize(String sizeName) {
+        try {
+            sizeDao.insertSize(sizeName);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void deleteSize(String sizeName) {
+        try {
+            sizeDao.deleteSize(sizeName);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
     
     public void addSizeDataPopUp(){

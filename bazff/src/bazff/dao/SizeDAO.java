@@ -52,4 +52,20 @@ public class SizeDAO {
         }
         return daftarSize;
     }
+    
+    public void insertSize(String sizeName) throws SQLException {
+        String sql = "INSERT INTO size (size_name) VALUES (?)";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, sizeName);
+            stmt.executeUpdate();
+        }
+    }
+    
+    public void deleteSize(String sizeName) throws SQLException {
+        String sql = "DELETE FROM size WHERE size_name = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, sizeName);
+            stmt.executeUpdate();
+        }
+    }
 }

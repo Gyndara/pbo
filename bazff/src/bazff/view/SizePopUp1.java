@@ -17,9 +17,11 @@ public class SizePopUp1 extends javax.swing.JDialog {
     /**
      * Creates new form UpdatePopUp1
      */
+    private SizeController sizeController;
     public SizePopUp1(MainWindow window, SizeController controller) {
         super(window, true);
         this.mainWindow = window;
+        this.sizeController = controller;
         setUndecorated(true);
         initComponents();
         pack();
@@ -49,7 +51,7 @@ public class SizePopUp1 extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldInputSize = new javax.swing.JTextField();
+        jTxtSizeData = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButtonAdd = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -84,10 +86,10 @@ public class SizePopUp1 extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
-        jTextFieldInputSize.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextFieldInputSize.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextFieldInputSize.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextFieldInputSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
+        jTxtSizeData.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtSizeData.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTxtSizeData.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTxtSizeData, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
@@ -143,7 +145,13 @@ public class SizePopUp1 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCloseMouseClicked
 
     private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
-        
+        String sizeName = jTxtSizeData.getText();
+        if (!sizeName.trim().isEmpty()) {
+            sizeController.insertSize(sizeName);
+            this.dispose();
+        } else {
+            System.out.println("Size tidak boleh kosong!");
+        }
     }//GEN-LAST:event_jButtonAddMouseClicked
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
@@ -195,6 +203,6 @@ public class SizePopUp1 extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextFieldInputSize;
+    private javax.swing.JTextField jTxtSizeData;
     // End of variables declaration//GEN-END:variables
 }
