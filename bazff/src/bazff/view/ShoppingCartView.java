@@ -15,7 +15,6 @@ import java.sql.SQLException;
 import java.util.Map;
 import javax.swing.Box;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  *
@@ -59,10 +58,6 @@ public class ShoppingCartView extends javax.swing.JFrame {
         
     }
 
-    public JTextField getTotalField(){
-        return jTextFieldTotal;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,7 +75,6 @@ public class ShoppingCartView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanelListDaftar = new javax.swing.JPanel();
         jBtnProceed = new javax.swing.JButton();
-        jTextFieldTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,12 +138,6 @@ public class ShoppingCartView extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnProceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 930, -1, -1));
 
-        jTextFieldTotal.setBackground(new java.awt.Color(255, 230, 248));
-        jTextFieldTotal.setFont(new java.awt.Font("Dialog", 0, 35)); // NOI18N
-        jTextFieldTotal.setText("Total    =     Rp 300.000-,");
-        jTextFieldTotal.setPreferredSize(new java.awt.Dimension(400, 60));
-        jPanel1.add(jTextFieldTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 930, -1, -1));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -182,6 +170,5 @@ public class ShoppingCartView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelListDaftar;
-    private javax.swing.JTextField jTextFieldTotal;
     // End of variables declaration//GEN-END:variables
 }
