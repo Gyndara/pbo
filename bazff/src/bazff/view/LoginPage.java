@@ -184,13 +184,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
             this.dispose(); // Tutup form login
         }
-
-        rs.close();
-        pst.close();
-        conn.close();
-
     } catch (HeadlessException | SQLException e) {
-        JOptionPane.showMessageDialog(this, "Pasword atau Username salah" );
     }
     }//GEN-LAST:event_jBtnSignMouseClicked
 
