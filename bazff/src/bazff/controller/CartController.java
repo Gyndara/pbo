@@ -16,8 +16,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.PopupMenu;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -26,18 +29,18 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
  * @author bisma
  */
 public class CartController {
-    private int tambahBarang;
-    private int kurangBarang;
     public static List<ProductModel> daftarProduct = new ArrayList<>();
     private HomePage homepage;
     private MainWindow mainWindow;
@@ -54,12 +57,88 @@ public class CartController {
         this.homepage = homepage;
     }
     
-    public void setTambahBarang(int tambahBarang) {
-        this.tambahBarang = tambahBarang;
-        
+   public static JPanel[] generateDaftarPanels(CartController controller) {
+        ArrayList<JPanel> panels = new ArrayList<>();
+        try {
+            
+            for (ProductModel p : daftarProduct) {
+                
+                JPanel panelProduk = new JPanel();
+                panelProduk.setMaximumSize(new Dimension(1920, 220));
+                panelProduk.setLayout(new BorderLayout());
+                panelProduk.setBackground(new Color(255, 230, 248));
+
+                // Gambar
+                JLabel labelGambar = new JLabel();
+                labelGambar.setHorizontalAlignment(JLabel.CENTER);
+                ImageIcon icon = new ImageIcon(HomePageController.class.getClassLoader().getResource("resources/Work_shirt.png"));
+                Image img = icon.getImage().getScaledInstance(320, 320, Image.SCALE_SMOOTH);
+                labelGambar.setIcon(new ImageIcon(img));
+
+                // Nama
+                JLabel labelNama = new JLabel(p.getProductName(), JLabel.LEFT);
+                labelNama.setFont(new Font("Arial", Font.BOLD, 14));
+                
+                // Ukuran
+                JLabel labelSize = new JLabel("  " + p.getSizeId(), JLabel.LEFT);
+                labelSize.setFont(new Font("Arial", Font.BOLD, 14));
+
+                // Harga
+                JLabel labelHarga = new JLabel("Rp. " + p.getProductPrice(), JLabel.LEFT);
+                labelHarga.setFont(new Font("Arial", Font.PLAIN, 13));
+
+                // Panel bagian kiri
+                JPanel panelKiri = new JPanel(new GridBagLayout());
+                panelKiri.setOpaque(false);
+                GridBagConstraints gbc = new GridBagConstraints();
+                
+                gbc.weightx = 1.0;
+                gbc.weighty = 1.0;
+                gbc.fill=GridBagConstraints.BOTH;
+                
+                gbc.gridx = 0;
+                gbc.gridy = 0;
+                gbc.gridheight = 2;
+                panelKiri.add(labelGambar, gbc);
+                
+                gbc.gridx = 1;
+                gbc.gridy = 0;
+                gbc.gridheight = 1;
+                panelKiri.add(labelNama, gbc);
+                
+                gbc.gridx = 1;
+                gbc.gridy = 1;
+                gbc.gridheight = 1;
+                panelKiri.add(labelHarga, gbc);
+                
+                //TODO: Ganti Angka ID jadi ukuran S M L XL
+                gbc.gridx = 2;
+                gbc.gridy = 0;
+                gbc.gridheight = 1;
+                panelKiri.add(labelSize, gbc);
+                
+                // Panel bagian kanan
+                JPanel panelKanan = new JPanel(new BorderLayout());
+                panelKiri.setOpaque(false);
+                
+                //TODO: Tambahin tombol dan teks jumlah beli
+                //
+                //
+                //
+
+                // Gabung semua
+                panelProduk.add(panelKiri, BorderLayout.WEST);
+                panelProduk.add(panelKanan, BorderLayout.EAST);
+
+                panels.add(panelProduk);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return panels.toArray(new JPanel[0]);
     }
-    
-   
 
     public static List<ProductModel> getDaftarProduct() {
         return daftarProduct;
@@ -71,40 +150,6 @@ public class CartController {
     
     public static void addDaftarProduct(ProductModel produk){
         CartController.daftarProduct.add(produk);
-    }
-
-    public int getTambahBarang() {
-        return tambahBarang;
-    }
-
-    public int getKurangBarang() {
-        return kurangBarang;
-    }
-
-    public void setKurangBarang(int kurangBarang) {
-        this.kurangBarang = kurangBarang;
-    }
-    
-    public void tambahBarang(ShoppingCartView form){
-        String current = form.getjTxtTambahBarang().getText();
-        this.tambahBarang = Integer.valueOf(current);
-        
-        this.setTambahBarang(this.tambahBarang + 1);
-        
-        form.getjTxtTambahBarang().setText(String.valueOf(this.getTambahBarang()));
-    }
-
-    public void kurangBarang(ShoppingCartView form){
-        String current = form.getjTxtTambahBarang().getText();
-        this.kurangBarang = Integer.valueOf(current);
-        
-        if (this.kurangBarang > 0) {
-            this.setKurangBarang(this.kurangBarang - 1);
-        } else {
-            this.setKurangBarang(0); // Opsional, hanya untuk memastikan tetap 0
-        }
-        
-        form.getjTxtTambahBarang().setText(String.valueOf(this.getKurangBarang()));
     }
 
     public void KeluarPage(ShoppingCartView form){

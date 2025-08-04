@@ -125,7 +125,7 @@ public class HomePageController {
     }
     
     public void tampilHalamanCart(){
-        ShoppingCartView cartView = new ShoppingCartView(mainWindow);
+        ShoppingCartView cartView = new ShoppingCartView(this, mainWindow);
         cartView.setVisible(true);
         homePage.setVisible(false);
     }

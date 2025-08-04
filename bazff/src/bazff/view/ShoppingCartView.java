@@ -8,6 +8,7 @@ package bazff.view;
 import bazff.controller.CartController;
 import bazff.controller.HomePageController;
 import bazff.controller.TransactionController;
+import javax.swing.Box;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -22,14 +23,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
     private HomePageController homePageController;
     private MainWindow mainWindow;
     private HomePage homePage;
-
-    public ShoppingCartView(MainWindow window) {
-        initComponents();
-        this.mainWindow = window;
-        this.cartController = new CartController();
-        this.homePage = new HomePage();
-        this.transactionController = new TransactionController(window);
-    }
+    private JPanel[] produkPanels;  
 
     public ShoppingCartView(HomePageController homePageController, MainWindow window) {
         initComponents();
@@ -38,14 +32,14 @@ public class ShoppingCartView extends javax.swing.JFrame {
         this.cartController = new CartController();
         this.homePage = new HomePage();
         this.transactionController = new TransactionController(window);
-    }
-
-    public ShoppingCartView() {
-        initComponents();
-        this.mainWindow = new MainWindow(); // atau dapatkan dari AppContext
-        this.cartController = new CartController();
-        this.homePage = new HomePage();
-        this.transactionController = new TransactionController(mainWindow);
+        
+        produkPanels = CartController.generateDaftarPanels(cartController);
+        for (JPanel p : produkPanels) {
+            jPanelListDaftar.add(p);
+            jPanelListDaftar.add(Box.createVerticalStrut(10));
+        }
+        jPanelListDaftar.revalidate();
+        jPanelListDaftar.repaint();
     }
 
 
@@ -64,12 +58,9 @@ public class ShoppingCartView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTxtTambahBarang = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jPanelListDaftar = new javax.swing.JPanel();
+        jBtnProceed = new javax.swing.JButton();
+        jTextFieldTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,149 +101,67 @@ public class ShoppingCartView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(255, 230, 248));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1920, 220));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelListDaftar.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelListDaftar.setPreferredSize(new java.awt.Dimension(1920, 220));
+        jPanelListDaftar.setLayout(new javax.swing.BoxLayout(jPanelListDaftar, javax.swing.BoxLayout.Y_AXIS));
+        jPanel1.add(jPanelListDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, 740));
 
-        jButton2.setBackground(new java.awt.Color(236, 127, 169));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(148, 42, 42));
-        jButton2.setText("+");
-        jButton2.setBorder(null);
-        jButton2.setPreferredSize(new java.awt.Dimension(80, 40));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jBtnProceed.setBackground(new java.awt.Color(236, 127, 169));
+        jBtnProceed.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jBtnProceed.setForeground(new java.awt.Color(255, 237, 250));
+        jBtnProceed.setText("Proceed to Checkout");
+        jBtnProceed.setBorder(null);
+        jBtnProceed.setPreferredSize(new java.awt.Dimension(250, 60));
+        jBtnProceed.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jBtnProceedMouseClicked(evt);
             }
         });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1820, 45, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(236, 127, 169));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(148, 42, 42));
-        jButton3.setText("-");
-        jButton3.setBorder(null);
-        jButton3.setPreferredSize(new java.awt.Dimension(80, 40));
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+        jBtnProceed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnProceedActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1820, 137, -1, -1));
+        jPanel1.add(jBtnProceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 930, -1, -1));
 
-        jTxtTambahBarang.setEditable(false);
-        jTxtTambahBarang.setBackground(new java.awt.Color(236, 127, 169));
-        jTxtTambahBarang.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jTxtTambahBarang.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTxtTambahBarang.setText("0");
-        jTxtTambahBarang.setBorder(null);
-        jTxtTambahBarang.setPreferredSize(new java.awt.Dimension(80, 40));
-        jPanel4.add(jTxtTambahBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(1820, 91, -1, -1));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 237, 250));
-        jButton1.setText("Proceed to Checkout");
-        jButton1.setBorder(null);
-        jButton1.setPreferredSize(new java.awt.Dimension(250, 60));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 930, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(255, 230, 248));
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 35)); // NOI18N
-        jTextField1.setText("Total    =     Rp 300.000-,");
-        jTextField1.setPreferredSize(new java.awt.Dimension(400, 60));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 930, -1, -1));
+        jTextFieldTotal.setBackground(new java.awt.Color(255, 230, 248));
+        jTextFieldTotal.setFont(new java.awt.Font("Dialog", 0, 35)); // NOI18N
+        jTextFieldTotal.setText("Total    =     Rp 300.000-,");
+        jTextFieldTotal.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel1.add(jTextFieldTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 930, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-       cartController.tambahBarang(this);
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        cartController.kurangBarang(this);
-    }//GEN-LAST:event_jButton3MouseClicked
-
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         cartController.setHomePage(homePage);
         cartController.KeluarPage(this);
     }//GEN-LAST:event_jPanel3MouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jBtnProceedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnProceedMouseClicked
         transactionController.paymentPopUp();
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jBtnProceedMouseClicked
+
+    private void jBtnProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProceedActionPerformed
+        // TODO add your handling code here:
+        System.out.println(cartController.getDaftarProduct());
+    }//GEN-LAST:event_jBtnProceedActionPerformed
 
     public JPanel getjPanel3() {
         return jPanel3;
     }
 
-    public JTextField getjTxtTambahBarang() {
-        return jTxtTambahBarang;
-    }
-
-    public void setjTxtTambahBarang(JTextField jTxtTambahBarang) {
-        this.jTxtTambahBarang = jTxtTambahBarang;
-    }
-
-    
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ShoppingCartView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ShoppingCartView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ShoppingCartView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ShoppingCartView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ShoppingCartView().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jBtnProceed;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTxtTambahBarang;
+    private javax.swing.JPanel jPanelListDaftar;
+    private javax.swing.JTextField jTextFieldTotal;
     // End of variables declaration//GEN-END:variables
 }
