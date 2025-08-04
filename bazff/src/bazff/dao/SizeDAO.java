@@ -5,6 +5,7 @@
  */
 package bazff.dao;
 
+import bazff.config.Database;
 import bazff.model.SizeModel;
 import java.sql.Connection;
 import java.util.List;
@@ -67,5 +68,34 @@ public class SizeDAO {
             stmt.setString(1, sizeName);
             stmt.executeUpdate();
         }
+    }
+    
+    public List<String> getAllSizeNames() throws SQLException {
+        final String sql = "SELECT size_name FROM size"; // sesuaikan nama kolom jika berbeda
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<String> sizes = new ArrayList<>();
+
+        try {
+            conn = Database.getKoneksi();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                sizes.add(rs.getString("size_name")); // sesuaikan jika nama kolom berbeda
+            }
+        } catch (Exception e) {
+            System.out.println("Terjadi exception: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+            }
+        }
+
+        return sizes;
     }
 }
