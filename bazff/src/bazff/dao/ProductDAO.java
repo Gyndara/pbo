@@ -5,6 +5,8 @@
  */
 package bazff.dao;
 
+import bazff.config.Database;
+import bazff.model.MainProductModel;
 import bazff.model.ProductModel;
 import java.sql.Connection;
 import java.util.List;
@@ -199,5 +201,25 @@ public class ProductDAO {
         } finally {
             if (stmt != null) stmt.close();
         }
+    }
+    
+    public void insertProduct(MainProductModel product) throws SQLException {
+        String sql = "INSERT INTO product (product_code, product_name, product_image) VALUES (?, ?, ?)";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, product.getProductCode());
+            stmt.setString(2, product.getProductName());
+            stmt.setString(3, product.getProductImage());
+            stmt.executeUpdate();
+        }
+    }
+
+    public int getProductIdByCode(String code) throws SQLException {
+        String sql = "SELECT id FROM product WHERE product_code = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, code);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) return rs.getInt("id");
+        }
+        return -1;
     }
 }

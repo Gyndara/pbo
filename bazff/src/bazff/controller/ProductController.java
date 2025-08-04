@@ -7,6 +7,10 @@ package bazff.controller;
 
 import bazff.config.Database;
 import bazff.dao.ProductDAO;
+import bazff.dao.ProductDetailDAO;
+import bazff.dao.SizeDAO;
+import bazff.model.MainProductModel;
+import bazff.model.ProductDetailModel;
 import bazff.view.AddProduct;
 import bazff.view.DeleteProductPopUp;
 import bazff.view.MainWindow;
@@ -17,12 +21,19 @@ import bazff.view.UpdatePopUp2;
 import java.awt.Image;
 import java.awt.Point;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.sql.Connection;
 /**
  *
  * @author bisma
@@ -140,5 +151,93 @@ public class ProductController {
     public void refreshProductPanel(){
         mainWindow.getMainPanel().revalidate();
         mainWindow.getMainPanel().repaint();
+    }
+    
+    public void insertProductFromForm(JTextField txtCode, JTextField txtName, JTextField txtPrice, JComboBox comboSize, File imageFile) {
+        Connection conn = null;
+
+        try {
+            conn = Database.getKoneksi();
+            
+            conn.setAutoCommit(false); // 🔥 Autocommit dimatikan
+
+            String code = txtCode.getText().trim();
+            String name = txtName.getText().trim();
+            int price = Integer.parseInt(txtPrice.getText().trim());
+            String size = comboSize.getSelectedItem().toString();
+            String imagePath = saveImageToDisk(imageFile);
+
+            // Siapkan model dan DAO untuk product
+            MainProductModel product = new MainProductModel();
+            product.setProductCode(code);
+            product.setProductName(name);
+            product.setProductImage(imagePath);
+
+            ProductDAO productDAO = new ProductDAO(conn);
+            productDAO.insertProduct(product);
+            int productId = productDAO.getProductIdByCode(code);
+
+            // Ambil ID size
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            int sizeId = sizeDAO.getSizeIdByName(size);
+            if (sizeId == -1) throw new SQLException("Size tidak ditemukan: " + size);
+
+            // Siapkan model detail produk
+            String sku = code + sizeId;
+            ProductDetailModel detail = new ProductDetailModel();
+            detail.setProductId(productId);
+            detail.setSizeId(sizeId);
+            detail.setSkuCode(sku);
+            detail.setProductPrice(price);
+            detail.setQuantity(0);
+            detail.setProductStatus("not_ready");
+
+            System.out.println("debug Insert ke product_size:");
+            System.out.println("product_id: " + detail.getProductId());
+            System.out.println("size_id: " + detail.getSizeId());
+            System.out.println("sku_code: " + detail.getSkuCode());
+            System.out.println("price: " + detail.getProductPrice());
+            System.out.println("quantity: " + detail.getQuantity());
+            System.out.println("status: " + detail.getProductStatus());
+       
+            ProductDetailDAO detailDAO = new ProductDetailDAO(conn);
+            try {
+                detailDAO.insertProductDetail(detail);
+            } catch (SQLException ex) {
+                throw new SQLException("Gagal insert ke product_size: " + ex.getMessage(), ex);
+            }
+
+            conn.commit(); 
+            JOptionPane.showMessageDialog(null, "Produk berhasil ditambahkan!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException rollbackEx) {
+                    rollbackEx.printStackTrace();
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Gagal menambahkan produk: " + e.getMessage());
+
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.setAutoCommit(true); // 🔁 Kembalikan ke autocommit true
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    private String saveImageToDisk(File imageFile) throws IOException {
+        String folder = "img/";
+        Files.createDirectories(Paths.get(folder));
+        String destPath = folder + imageFile.getName();
+        Files.copy(imageFile.toPath(), Paths.get(destPath), StandardCopyOption.REPLACE_EXISTING);
+        return destPath;
     }
 }

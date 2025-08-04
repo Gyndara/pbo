@@ -98,4 +98,16 @@ public class SizeDAO {
 
         return sizes;
     }
+    
+    public int getSizeIdByName(String sizeName) throws SQLException {
+        final String sql = "SELECT id FROM size WHERE size_name = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, sizeName);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("id");
+            }
+        }
+        return -1; // Jika tidak ditemukan
+    }
 }

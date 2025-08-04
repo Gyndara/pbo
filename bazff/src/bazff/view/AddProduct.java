@@ -9,9 +9,11 @@ package bazff.view;
 import bazff.config.Database;
 import bazff.controller.ProductController;
 import bazff.dao.SizeDAO;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,12 +25,14 @@ public class AddProduct extends javax.swing.JPanel {
     /**
      * Creates new form ProductDataPanel
      */
+    private String path; 
     private MainWindow mainWindow;
     private ProductController productController;
+    private File selectedImageFile;
+    
     public AddProduct(MainWindow window) {
         this.mainWindow = window;
         initComponents();
-
         try {
             Connection conn = Database.getKoneksi();
             SizeDAO sizeDAO = new SizeDAO(conn);
@@ -60,9 +64,9 @@ public class AddProduct extends javax.swing.JPanel {
         label = new javax.swing.JLabel();
         PanelAddProduct = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldProductName = new javax.swing.JTextField();
+        jTextFieldProductCode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldapProductDescription = new javax.swing.JTextField();
+        jTextFieldProductName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldPrice = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -98,19 +102,19 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel1.setText("Product Code");
         PanelAddProduct.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 36, -1, -1));
 
-        jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextFieldProductName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextFieldProductName.setInheritsPopupMenu(true);
-        PanelAddProduct.add(jTextFieldProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 73, 491, 62));
+        jTextFieldProductCode.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextFieldProductCode.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTextFieldProductCode.setInheritsPopupMenu(true);
+        PanelAddProduct.add(jTextFieldProductCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 73, 491, 62));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(236, 127, 169));
         jLabel2.setText("Product Name ");
         PanelAddProduct.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 159, -1, -1));
 
-        jTextFieldapProductDescription.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextFieldapProductDescription.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        PanelAddProduct.add(jTextFieldapProductDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 196, 491, 62));
+        jTextFieldProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextFieldProductName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        PanelAddProduct.add(jTextFieldProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 196, 491, 62));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(236, 127, 169));
@@ -131,6 +135,11 @@ public class AddProduct extends javax.swing.JPanel {
         jButtonAdd.setForeground(new java.awt.Color(255, 237, 250));
         jButtonAdd.setText("Add");
         jButtonAdd.setBorder(null);
+        jButtonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAddMouseClicked(evt);
+            }
+        });
         PanelAddProduct.add(jButtonAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 510, 207, 73));
 
         jButtonAddProductSize.setBackground(new java.awt.Color(236, 127, 169));
@@ -184,8 +193,33 @@ public class AddProduct extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonAddProductSizeMouseClicked
 
     private void LabelImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImageMouseClicked
+        path = productController.imageChosser(LabelImage, null);
         productController.imageChosser(LabelImage, null);
+        if (path != null) {
+        selectedImageFile = new File(path);
+        }
     }//GEN-LAST:event_LabelImageMouseClicked
+
+    private void jButtonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAddMouseClicked
+        if (selectedImageFile == null) {
+            JOptionPane.showMessageDialog(this, "Silakan pilih gambar terlebih dahulu!");
+            return;
+        }
+
+        productController.insertProductFromForm(jTextFieldProductCode,
+            jTextFieldProductName,
+            jTextFieldPrice,
+            jComboBox1,
+            selectedImageFile
+        );
+        
+        jTextFieldProductCode.setText("");
+        jTextFieldProductName.setText("");
+        jTextFieldPrice.setText("");
+        jComboBox1.setSelectedIndex(0);
+        LabelImage.setIcon(null);
+        selectedImageFile = null;
+    }//GEN-LAST:event_jButtonAddMouseClicked
 
     public JPanel getPanelAddProduct() {
         return PanelAddProduct;
@@ -210,8 +244,8 @@ public class AddProduct extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldPrice;
+    private javax.swing.JTextField jTextFieldProductCode;
     private javax.swing.JTextField jTextFieldProductName;
-    private javax.swing.JTextField jTextFieldapProductDescription;
     private javax.swing.JLabel label;
     // End of variables declaration//GEN-END:variables
 }
