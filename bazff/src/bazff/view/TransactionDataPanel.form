@@ -51,7 +51,7 @@
               <Color blue="a9" green="7f" red="ec" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="PRODUCT DATA"/>
+            <Property name="text" type="java.lang.String" value="TRANSACTION DATA"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[1440, 127]"/>
             </Property>
@@ -115,34 +115,10 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="22">
-                    <Column editable="true" title="TANGGAL/BULAN/TAHUN" type="java.lang.Object"/>
-                    <Column editable="true" title="CUSTOMER NAME" type="java.lang.Object">
-                      <Data value="JAJANG"/>
-                      <Data value="UDIN"/>
-                      <Data value="ASEP"/>
-                      <Data value="MULLOH"/>
-                      <Data value="SUPRIADI"/>
-                      <Data value="GENA"/>
-                      <Data value="BISMA"/>
-                      <Data value="NAUFAL"/>
-                      <Data value="INDAH"/>
-                      <Data value="AULIA"/>
-                      <Data value="FAUZAN"/>
-                      <Data value="FIKRI"/>
-                      <Data value="ZAHY"/>
-                      <Data value="IQBAL"/>
-                      <Data value="ATHALLAH"/>
-                      <Data value="HATIF"/>
-                      <Data value="SANDI"/>
-                      <Data value="SHERRLY"/>
-                      <Data value="ALIFAH"/>
-                      <Data value="ANEL"/>
-                      <Data value="MAULANA"/>
-                      <Data value="KEY"/>
-                    </Column>
-                    <Column editable="true" title="CASHIER NAME" type="java.lang.Object"/>
-                    <Column editable="true" title="PAYMENT TOTAL" type="java.lang.Object"/>
+                  <Table columnCount="3" rowCount="22">
+                    <Column editable="false" title="TAHUN/BULAN/TANGGAL" type="java.lang.Object"/>
+                    <Column editable="false" title="CASHIER NAME" type="java.lang.Object"/>
+                    <Column editable="false" title="TOTAL" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="rowHeight" type="int" value="40"/>
@@ -150,34 +126,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a9" green="7f" red="ec" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fa" green="ed" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Export"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
-            </Property>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[223, 80]"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1120" y="620" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

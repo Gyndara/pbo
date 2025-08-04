@@ -48,7 +48,6 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         PanelTransaction = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TransactionTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,7 +59,7 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         PanelHeaderProduct.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         PanelHeaderProduct.setForeground(new java.awt.Color(236, 127, 169));
         PanelHeaderProduct.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PanelHeaderProduct.setText("PRODUCT DATA");
+        PanelHeaderProduct.setText("TRANSACTION DATA");
         PanelHeaderProduct.setPreferredSize(new java.awt.Dimension(1440, 127));
         PanelHeaderTransaction.add(PanelHeaderProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -78,59 +77,48 @@ public class TransactionDataPanel extends javax.swing.JPanel {
         TransactionTable.setForeground(new java.awt.Color(0, 0, 0));
         TransactionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "JAJANG", null, null},
-                {null, "UDIN", null, null},
-                {null, "ASEP", null, null},
-                {null, "MULLOH", null, null},
-                {null, "SUPRIADI", null, null},
-                {null, "GENA", null, null},
-                {null, "BISMA", null, null},
-                {null, "NAUFAL", null, null},
-                {null, "INDAH", null, null},
-                {null, "AULIA", null, null},
-                {null, "FAUZAN", null, null},
-                {null, "FIKRI", null, null},
-                {null, "ZAHY", null, null},
-                {null, "IQBAL", null, null},
-                {null, "ATHALLAH", null, null},
-                {null, "HATIF", null, null},
-                {null, "SANDI", null, null},
-                {null, "SHERRLY", null, null},
-                {null, "ALIFAH", null, null},
-                {null, "ANEL", null, null},
-                {null, "MAULANA", null, null},
-                {null, "KEY", null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "TANGGAL/BULAN/TAHUN", "CUSTOMER NAME", "CASHIER NAME", "PAYMENT TOTAL"
+                "TAHUN/BULAN/TANGGAL", "CASHIER NAME", "TOTAL"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TransactionTable.setRowHeight(40);
         jScrollPane1.setViewportView(TransactionTable);
 
         PanelTransaction.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 1240, 500));
 
-        jButton1.setBackground(new java.awt.Color(236, 127, 169));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 237, 250));
-        jButton1.setText("Export");
-        jButton1.setBorder(null);
-        jButton1.setPreferredSize(new java.awt.Dimension(223, 80));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        PanelTransaction.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 620, -1, -1));
-
         add(PanelTransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        ExportPopUp dialog = new ExportPopUp(mainWindow, true);
-        dialog.setLocationRelativeTo(mainWindow);
-        dialog.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
 
     public JPanel getPanelHeaderTransaction() {
         return PanelHeaderTransaction;
@@ -149,7 +137,6 @@ public class TransactionDataPanel extends javax.swing.JPanel {
     private javax.swing.JPanel PanelHeaderTransaction;
     private javax.swing.JPanel PanelTransaction;
     private javax.swing.JTable TransactionTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

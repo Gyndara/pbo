@@ -8,8 +8,10 @@ package bazff.controller;
 import bazff.config.Database;
 import bazff.dao.ProductDAO;
 import bazff.dao.SizeDAO;
+import bazff.dao.TransactionDAO;
 import bazff.model.ProductModel;
 import bazff.model.SizeModel;
+import bazff.model.TransactionModel;
 import bazff.view.ProductDataPanel;
 import bazff.view.SizeDataView;
 import bazff.view.TransactionDataPanel;
@@ -110,16 +112,38 @@ public class TableController {
         }
     }
     
-    public void setUpTableTransaction(){
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+    public void setUpTableTransaction() {
+        try {
+            Connection conn = Database.getKoneksi();
+            TransactionDAO transactionDAO = new TransactionDAO(conn);
+            List<TransactionModel> transaksiList = transactionDAO.getTransactionSummary();
 
-        for (int i = 0; i < transactionDataPanel.getTransactionTable().getColumnCount(); i++) {
-            transactionDataPanel.getTransactionTable().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            DefaultTableModel model = (DefaultTableModel) transactionDataPanel.getTransactionTable().getModel();
+            model.setRowCount(0); // Kosongkan data lama
+
+            for (TransactionModel t : transaksiList) {
+                model.addRow(new Object[]{
+                    t.getTanggal(),
+                    t.getCashierName(),
+                    t.getTotal()
+                });
+            }
+
+            // Styling tabel
+            DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+            centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+            for (int i = 0; i < transactionDataPanel.getTransactionTable().getColumnCount(); i++) {
+                transactionDataPanel.getTransactionTable().getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            }
+
+            transactionDataPanel.getTransactionTable().setRowHeight(60);
+            JTableHeader header = transactionDataPanel.getTransactionTable().getTableHeader();
+            header.setFont(new Font("Tahoma", Font.BOLD, 20));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        
-        transactionDataPanel.getTransactionTable().setRowHeight(60);
-        JTableHeader header = transactionDataPanel.getTransactionTable().getTableHeader();
-        header.setFont(new Font("Tahome", Font.BOLD, 20));
     }
+
 }
