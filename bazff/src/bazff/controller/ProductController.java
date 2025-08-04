@@ -268,7 +268,6 @@ public class ProductController {
         }
     }
 
-
     private String saveImageToDisk(File imageFile) throws IOException {
         String folder = "resources/";
         Files.createDirectories(Paths.get(folder));

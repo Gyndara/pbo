@@ -5,9 +5,14 @@
  */
 package bazff.view;
 
+import bazff.config.Database;
 import bazff.controller.CartController;
 import bazff.controller.HomePageController;
 import bazff.controller.TransactionController;
+import bazff.dao.SizeDAO;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Map;
 import javax.swing.Box;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -33,7 +38,17 @@ public class ShoppingCartView extends javax.swing.JFrame {
         this.homePage = new HomePage();
         this.transactionController = new TransactionController(window);
         
-        produkPanels = CartController.generateDaftarPanels(cartController);
+        try {
+            Connection conn = Database.getKoneksi();
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            Map<Integer, String> sizeMap = sizeDAO.getSizeMap();
+
+            // Lalu panggil method generate dengan sizeMap
+            produkPanels = CartController.generateDaftarPanels(cartController, sizeMap);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         for (JPanel p : produkPanels) {
             jPanelListDaftar.add(p);
             jPanelListDaftar.add(Box.createVerticalStrut(10));

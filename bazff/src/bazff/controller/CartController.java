@@ -57,12 +57,10 @@ public class CartController {
         this.homepage = homepage;
     }
     
-   public static JPanel[] generateDaftarPanels(CartController controller) {
+    public static JPanel[] generateDaftarPanels(CartController controller, Map<Integer, String> sizeMap) {
         ArrayList<JPanel> panels = new ArrayList<>();
         try {
-            
             for (ProductModel p : daftarProduct) {
-                
                 JPanel panelProduk = new JPanel();
                 panelProduk.setMaximumSize(new Dimension(1920, 220));
                 panelProduk.setLayout(new BorderLayout());
@@ -75,12 +73,13 @@ public class CartController {
                 Image img = icon.getImage().getScaledInstance(320, 320, Image.SCALE_SMOOTH);
                 labelGambar.setIcon(new ImageIcon(img));
 
-                // Nama
+                // Nama Produk
                 JLabel labelNama = new JLabel(p.getProductName(), JLabel.LEFT);
                 labelNama.setFont(new Font("Arial", Font.BOLD, 14));
-                
-                // Ukuran
-                JLabel labelSize = new JLabel("  " + p.getSizeId(), JLabel.LEFT);
+
+                // ✅ Ukuran: ubah ID menjadi nama ukuran
+                String sizeName = sizeMap.getOrDefault(p.getSizeId(), "tidak diketahui");
+                JLabel labelSize = new JLabel("Ukuran: " + sizeName, JLabel.LEFT);
                 labelSize.setFont(new Font("Arial", Font.BOLD, 14));
 
                 // Harga
@@ -91,40 +90,36 @@ public class CartController {
                 JPanel panelKiri = new JPanel(new GridBagLayout());
                 panelKiri.setOpaque(false);
                 GridBagConstraints gbc = new GridBagConstraints();
-                
+
                 gbc.weightx = 1.0;
                 gbc.weighty = 1.0;
-                gbc.fill=GridBagConstraints.BOTH;
-                
+                gbc.fill = GridBagConstraints.BOTH;
+
                 gbc.gridx = 0;
                 gbc.gridy = 0;
                 gbc.gridheight = 2;
                 panelKiri.add(labelGambar, gbc);
-                
+
                 gbc.gridx = 1;
                 gbc.gridy = 0;
                 gbc.gridheight = 1;
                 panelKiri.add(labelNama, gbc);
-                
+
                 gbc.gridx = 1;
                 gbc.gridy = 1;
                 gbc.gridheight = 1;
                 panelKiri.add(labelHarga, gbc);
-                
-                //TODO: Ganti Angka ID jadi ukuran S M L XL
+
                 gbc.gridx = 2;
                 gbc.gridy = 0;
                 gbc.gridheight = 1;
                 panelKiri.add(labelSize, gbc);
-                
+
                 // Panel bagian kanan
                 JPanel panelKanan = new JPanel(new BorderLayout());
                 panelKiri.setOpaque(false);
-                
-                //TODO: Tambahin tombol dan teks jumlah beli
-                //
-                //
-                //
+
+                // TODO: Tambahin tombol dan teks jumlah beli jika diperlukan
 
                 // Gabung semua
                 panelProduk.add(panelKiri, BorderLayout.WEST);
