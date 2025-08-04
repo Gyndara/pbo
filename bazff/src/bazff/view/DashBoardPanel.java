@@ -8,6 +8,7 @@ package bazff.view;
 
 
 import bazff.controller.ProductController;
+import bazff.controller.TransactionController;
 import javax.swing.JPanel;
 
 /**
@@ -21,19 +22,22 @@ public class DashBoardPanel extends javax.swing.JPanel {
      */
     private MainWindow mainWindow;
     private ProductController productController;
-    
+    private TransactionController transactionController;
 
     
     public DashBoardPanel(MainWindow window) {
         this.mainWindow = window;
         initComponents();
         
-         // Buat controller
+       
         productController = new ProductController(mainWindow);
+        transactionController = new TransactionController(mainWindow);
 
-        // Ambil total barang masuk dan tampilkan di text field
         int totalMasuk = productController.ambilTotalBarangMasuk();
         jTxtBarangMasuk.setText(String.valueOf(totalMasuk));
+        
+        int totalTerjual = transactionController.ambilTotalBarangTerjual();
+        jTextField1.setText(String.valueOf(totalTerjual));
     }
 
     DashBoardPanel() {
@@ -52,8 +56,6 @@ public class DashBoardPanel extends javax.swing.JPanel {
         HeaderHomePanel = new javax.swing.JPanel();
         PanelHeaderProduct = new javax.swing.JLabel();
         PanelHome = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -83,24 +85,17 @@ public class DashBoardPanel extends javax.swing.JPanel {
         PanelHome.setPreferredSize(new java.awt.Dimension(1440, 730));
         PanelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 184, 224));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/grafik.jpg"))); // NOI18N
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -30, 710, 380));
-
-        PanelHome.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 930, 320));
-
         jPanel5.setBackground(new java.awt.Color(255, 184, 224));
+        jPanel5.setPreferredSize(new java.awt.Dimension(400, 400));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Barang Keluar");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 260, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/keranjang2.png"))); // NOI18N
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 184, 224));
@@ -113,21 +108,22 @@ public class DashBoardPanel extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
+        jPanel5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 270, 40));
 
-        PanelHome.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 380, 280));
+        PanelHome.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 184, 224));
         jPanel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jPanel6.setPreferredSize(new java.awt.Dimension(400, 400));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Barang Ready");
-        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 260, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/kiriedit.png"))); // NOI18N
-        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
 
         jTxtBarangMasuk.setEditable(false);
         jTxtBarangMasuk.setBackground(new java.awt.Color(255, 184, 224));
@@ -140,9 +136,9 @@ public class DashBoardPanel extends javax.swing.JPanel {
                 jTxtBarangMasukActionPerformed(evt);
             }
         });
-        jPanel6.add(jTxtBarangMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
+        jPanel6.add(jTxtBarangMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 270, 40));
 
-        PanelHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 380, 280));
+        PanelHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
         add(PanelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -169,10 +165,8 @@ public class DashBoardPanel extends javax.swing.JPanel {
     private javax.swing.JPanel PanelHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;

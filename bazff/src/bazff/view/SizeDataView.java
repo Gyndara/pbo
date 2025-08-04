@@ -109,9 +109,7 @@ public class SizeDataView extends javax.swing.JPanel {
 
         PanelSizeData.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 59, -1, 50));
 
-        TableSize.setBackground(new java.awt.Color(255, 255, 255));
         TableSize.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        TableSize.setForeground(new java.awt.Color(0, 0, 0));
         TableSize.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"XL"},
@@ -122,7 +120,7 @@ public class SizeDataView extends javax.swing.JPanel {
                 {"XXL"}
             },
             new String [] {
-                "Size Data"
+                "SIZE DATA"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -5,12 +5,14 @@
  */
 package bazff.controller;
 
+import bazff.config.Database;
 import bazff.dao.TransactionDAO;
 import bazff.view.MainWindow;
 import bazff.view.PaymentPopUp;
 import bazff.view.ReceiptPopUp;
 import java.awt.Point;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Locale;
 
 /**
@@ -43,5 +45,15 @@ public class TransactionController {
         ReceiptPopUp receiptPopUp = new ReceiptPopUp(mainWindow, true);
         receiptPopUp.setLocation(posisi);
         receiptPopUp.setVisible(true);
+    }
+    
+    public int ambilTotalBarangTerjual(){
+        try {
+            TransactionDAO transactionDAO = new TransactionDAO(Database.getKoneksi());
+            return transactionDAO.getTotalBarangTerjual();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return 0;
+        }
     }
 }

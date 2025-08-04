@@ -56,4 +56,31 @@ public class TransactionDAO {
         }
         return daftarTransaksi;
     }
+    
+    public int getTotalBarangTerjual() throws SQLException {
+        final String sql = "SELECT SUM(quantity) AS total_terjual FROM detail_transaction;";
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int total = 0;
+
+        try {
+            stmt = this.conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                total = rs.getInt("total_terjual");
+            }
+        } catch (SQLException e) {
+            System.out.println("Terjadi exception: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+                // Optional: log error closing resources
+            }
+        }
+        return total;
+    }
 }

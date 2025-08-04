@@ -177,7 +177,7 @@ public class ProductController {
     public int ambilTotalBarangMasuk() {
         try {
             ProductDAO productDAO = new ProductDAO(Database.getKoneksi());
-            return productDAO.getTotalBarangMasuk(); // method ini ada di ProductDAO
+            return productDAO.getTotalBarangMasuk();
         } catch (SQLException ex) {
             ex.printStackTrace();
             return 0;
