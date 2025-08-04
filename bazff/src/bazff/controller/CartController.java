@@ -5,10 +5,31 @@
  */
 package bazff.controller;
 
+import bazff.config.Database;
+import bazff.dao.ProductDAO;
+import bazff.model.ProductModel;
 import bazff.view.DetailProduct;
 import bazff.view.HomePage;
 import bazff.view.MainWindow;
 import bazff.view.ShoppingCartView;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.PopupMenu;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,6 +38,7 @@ import bazff.view.ShoppingCartView;
 public class CartController {
     private int tambahBarang;
     private int kurangBarang;
+    public static List<ProductModel> daftarProduct = new ArrayList<>();
     private HomePage homepage;
     private MainWindow mainWindow;
 
@@ -34,6 +56,21 @@ public class CartController {
     
     public void setTambahBarang(int tambahBarang) {
         this.tambahBarang = tambahBarang;
+        
+    }
+    
+   
+
+    public static List<ProductModel> getDaftarProduct() {
+        return daftarProduct;
+    }
+
+    public static void setDaftarProduct(List<ProductModel> daftarProduct) {
+        CartController.daftarProduct = daftarProduct;
+    }
+    
+    public static void addDaftarProduct(ProductModel produk){
+        CartController.daftarProduct.add(produk);
     }
 
     public int getTambahBarang() {
