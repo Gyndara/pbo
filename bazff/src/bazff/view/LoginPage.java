@@ -114,12 +114,17 @@ public class LoginPage extends javax.swing.JFrame {
         jBtnSign.setBackground(new java.awt.Color(236, 127, 169));
         jBtnSign.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jBtnSign.setForeground(new java.awt.Color(255, 237, 250));
-        jBtnSign.setText("Sign in");
+        jBtnSign.setText("Log in");
         jBtnSign.setBorder(null);
         jBtnSign.setPreferredSize(new java.awt.Dimension(200, 60));
         jBtnSign.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBtnSignMouseClicked(evt);
+            }
+        });
+        jBtnSign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSignActionPerformed(evt);
             }
         });
         jPanel1.add(jBtnSign, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 720, -1, -1));
@@ -153,6 +158,10 @@ public class LoginPage extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_jBtnSignMouseClicked
+
+    private void jBtnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSignActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnSignActionPerformed
 
     /**
      * @param args the command line arguments
