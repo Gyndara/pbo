@@ -156,36 +156,39 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jBtnSignMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSignMouseClicked
         String username = jTxtEmail.getText().trim();
-    String password = jTxtPass.getText().trim();
+        String password = jTxtPass.getText().trim();
 
-    if (username.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Username dan Password tidak boleh kosong!");
-        return;
-    }
-
-    try {
-        Connection conn = Database.getKoneksi();
-        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
-        PreparedStatement pst = conn.prepareStatement(sql);
-        pst.setString(1, username);
-        pst.setString(2, password);
-
-        ResultSet rs = pst.executeQuery();
-
-        if (rs.next()) {
-            String nama = rs.getString("nama_pegawai");
-            String role = rs.getString("role");
-
-            // Buka form berdasarkan role
-            if (role.equalsIgnoreCase("admin")) {
-                new MainWindow().setVisible(true); // Ganti sesuai form admin
-            } else {
-                new HomePage().setVisible(true); // Ganti sesuai form pegawai
-            }
-            this.dispose(); // Tutup form login
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Username dan Password tidak boleh kosong!");
+            return;
         }
-    } catch (HeadlessException | SQLException e) {
-    }
+
+        try {
+            Connection conn = Database.getKoneksi();
+            String sql = "SELECT * FROM user WHERE username = ? AND password = ? LIMIT 1";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                String nama = rs.getString("nama_pegawai");
+                String role = rs.getString("role");
+
+                // Buka form berdasarkan role
+                if (role.equalsIgnoreCase("admin")) {
+                    new MainWindow().setVisible(true); // Ganti sesuai form admin
+                } else {
+                    new HomePage().setVisible(true); // Ganti sesuai form pegawai
+                }
+                this.dispose(); // Tutup form login
+            }  else {
+                JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(this, "Login Gagal, Coba Sesaat Lagi", "Login Gagal", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jBtnSignMouseClicked
 
     private void jBtnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSignActionPerformed
