@@ -15,10 +15,12 @@ public class TransactionModel {
     private Date tanggal;
     private String cashierName;
     private int total;
+    private int quantity;
 
-    public TransactionModel(Date tanggal, String cashierName, int total) {
+    public TransactionModel(Date tanggal, String cashierName, int quantity,int total) {
         this.tanggal = tanggal;
         this.cashierName = cashierName;
+        this.quantity = quantity;
         this.total = total;
     }
 
@@ -30,6 +32,10 @@ public class TransactionModel {
         return cashierName;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+    
     public int getTotal() {
         return total;
     }

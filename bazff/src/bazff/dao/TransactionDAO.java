@@ -25,7 +25,7 @@ public class TransactionDAO {
     }
     
     public List<TransactionModel> getTransactionSummary() throws SQLException {
-        final String sql = "SELECT t.created_at, u.nama_pegawai AS cashier_name, t.total_harga FROM transaction t JOIN user u ON t.user_id = u.id ORDER BY t.created_at DESC";
+        final String sql = "SELECT t.id AS transaksi_id, t.created_at, u.nama_pegawai AS cashier_name, t.total_harga, SUM(dt.quantity) AS total_barang FROM transaction t JOIN user u ON t.user_id = u.id JOIN detail_transaction dt ON t.id = dt.transaksi_id GROUP BY t.id, t.created_at, u.nama_pegawai, t.total_harga ORDER BY t.created_at DESC";
 
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -39,9 +39,9 @@ public class TransactionDAO {
                 TransactionModel transaksi = new TransactionModel(
                     rs.getDate("created_at"),
                     rs.getString("cashier_name"),
-                    rs.getInt("total_harga")
+                    rs.getInt("total_harga"),
+                    rs.getInt("total_barang") 
                 );
-
                 daftarTransaksi.add(transaksi);
             }
         } catch (SQLException e) {
@@ -51,11 +51,12 @@ public class TransactionDAO {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
             } catch (SQLException e) {
-                
+                // Optional log
             }
         }
         return daftarTransaksi;
     }
+
     
     public int getTotalBarangTerjual() throws SQLException {
         final String sql = "SELECT SUM(quantity) AS total_terjual FROM detail_transaction;";
