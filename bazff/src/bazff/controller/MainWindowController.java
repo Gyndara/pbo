@@ -99,21 +99,21 @@ public class MainWindowController {
     }
     
     public void tampilHalamanSizeData(MainWindow window){
+        // Buat ulang panel baru setiap kali tombol diklik
+        SizeDataView panelBaru = new SizeDataView(window);
+        this.sizeDataView = panelBaru;
+
+        // Refresh panel header
         window.getPanelHeader().removeAll();
-        window.getPanelHeader().repaint();
+        window.getPanelHeader().add(panelBaru.getPanelHeaderSizeData());
         window.getPanelHeader().revalidate();
-        
+        window.getPanelHeader().repaint();
+
+        // Refresh panel isi
         window.getMainPanel().removeAll();
-        window.getMainPanel().repaint();
+        window.getMainPanel().add(panelBaru.getPanelSizeData());
         window.getMainPanel().revalidate();
-        
-        window.getPanelHeader().add(sizeDataView.getPanelHeaderSizeData());
-        window.getPanelHeader().repaint();
-        window.getPanelHeader().revalidate();
-        
-        window.getMainPanel().add(sizeDataView.getPanelSizeData());
         window.getMainPanel().repaint();
-        window.getMainPanel().revalidate();
     }
     
     public void tampilHalamanAddProduct(MainWindow window){
