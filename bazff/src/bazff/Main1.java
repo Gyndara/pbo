@@ -21,7 +21,7 @@ public class Main1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HomePage login = new HomePage();
+        LoginPage login = new LoginPage();
         login.setVisible(true);
     }
 }
