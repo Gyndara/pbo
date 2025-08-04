@@ -186,6 +186,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         String status = jCmbProductStatus.getSelectedItem().toString();
 
         productController.updateProduct(skuCode, quantity, price, status);
+        mainWindow.getProductController().refreshProductPanel();
         this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
