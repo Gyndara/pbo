@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -56,6 +58,75 @@ public class ProductDAO {
             }
         }
         return daftarProduk;
+    }
+    
+        public List<ProductModel> getProductHomepage() throws SQLException {
+        final String sql = "SELECT p.product_code, p.product_name, ps.sku_code, ps.size_id, ps.quantity, ps.product_price, ps.product_status FROM product p JOIN product_size ps ON p.id = ps.product_id where ps.quantity > 0 AND ps.product_status = 'ready'";
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<ProductModel> daftarProduk = new ArrayList<>();
+
+        try {
+            stmt = this.conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                ProductModel produk = new ProductModel();
+
+                produk.setProductCode(rs.getString("product_code"));
+                produk.setProductName(rs.getString("product_name"));
+                produk.setSkuCode(rs.getString("sku_code"));
+                produk.setQuantity(rs.getInt("quantity"));
+                produk.setProductStatus(rs.getString("product_status"));
+                produk.setProductPrice(rs.getInt("product_price"));
+                produk.setSizeId(rs.getInt("size_id"));
+
+                daftarProduk.add(produk);
+            }
+        } catch (SQLException e) {
+            System.out.println("Terjadi exception: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+            }
+        }
+        return daftarProduk;
+    }
+        
+    public List<ProductModel> getSizesByProductCode(String productCode) throws SQLException {
+        List<ProductModel> sizeList = new ArrayList<>();
+
+        String query = "SELECT p.product_code, p.product_name, " +
+                       "ps.sku_code, ps.size_id, ps.quantity, ps.product_price, ps.product_status " +
+                       "FROM product p " +
+                       "JOIN product_size ps ON p.id = ps.product_id " +
+                       "WHERE p.product_code = ?";
+
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, productCode);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    ProductModel product = new ProductModel();
+
+                    product.setProductCode(rs.getString("product_code"));
+                    product.setProductName(rs.getString("product_name"));
+                    product.setSkuCode(rs.getString("sku_code"));
+                    product.setSizeId(rs.getInt("size_id"));
+                    product.setQuantity(rs.getInt("quantity"));
+                    product.setProductPrice(rs.getInt("product_price"));
+                    product.setProductStatus(rs.getString("product_status"));
+
+                    sizeList.add(product);
+                }
+            }
+        }
+
+        return sizeList;
+
     }
     
     public void deleteBySku(String skuCode) throws SQLException{

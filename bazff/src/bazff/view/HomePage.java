@@ -61,7 +61,7 @@ public class HomePage extends javax.swing.JFrame {
         };
 
         // Ambil panel dari controller
-        produkPanels = HomePageController.generateProdukPanels(homePageController, namaProduk, hargaProduk, gambarProduk);
+        produkPanels = HomePageController.generateProdukPanels(homePageController);
 
         
 

@@ -5,9 +5,20 @@
  */
 package bazff.view;
 
+import bazff.config.Database;
 import bazff.controller.HomePageController;
+import bazff.dao.ProductDAO;
+import bazff.model.ProductModel;
 import java.awt.Color;
+import java.awt.Component;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
+import javax.swing.JList;
 
 /**
  *
@@ -22,6 +33,8 @@ public class DetailProduct extends javax.swing.JFrame {
     private HomePage homePage;
     public DetailProduct() {
         initComponents();
+        
+        
         ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
         jGambar.setIcon(LoginImage);
         jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
@@ -29,15 +42,54 @@ public class DetailProduct extends javax.swing.JFrame {
         this.homePage = homePage;
     }
     
-    public DetailProduct(HomePageController homePageController) {
+    public DetailProduct(HomePageController homePageController, String productCode) {
         initComponents();
+        customizeComboBoxRenderer();
         this.homePageController = homePageController;
         this.homePage = homePageController.getHomePage(); // ambil dari controller
+        
+        try {
+            Connection conn = Database.getKoneksi();
+            ProductDAO productDAO = new ProductDAO(conn);
+            List<ProductModel> sizeList = productDAO.getSizesByProductCode(productCode);
+            
+            for(ProductModel p : sizeList) {
+                jCmbSize.addItem(p);
+            }
+            
+            // Set initial price label (for first item)
+            if (!sizeList.isEmpty()) {
+                jLabelHarga.setText("Rp. " + sizeList.get(0).getProductPrice());
+            }
+            
+            jLabelNama.setText(sizeList.get(0).getProductName());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
         jGambar.setIcon(LoginImage);
         jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
     }
+    
+    private void customizeComboBoxRenderer() {
+    jCmbSize.setRenderer(new DefaultListCellRenderer() {
+        @Override
+        public Component getListCellRendererComponent(
+                JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+
+            super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+
+            if (value instanceof ProductModel) {
+                ProductModel model = (ProductModel) value;
+                setText("" + model.getSizeId()); // customize this as needed
+            }
+
+            return this;
+        }
+    });
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,11 +144,15 @@ public class DetailProduct extends javax.swing.JFrame {
 
         jCmbSize.setBackground(new java.awt.Color(236, 127, 169));
         jCmbSize.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jCmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XXL", "XL", "L", "M", "S", "XS" }));
         jCmbSize.setPreferredSize(new java.awt.Dimension(250, 60));
         jCmbSize.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jCmbSizeFocusGained(evt);
+            }
+        });
+        jCmbSize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCmbSizeActionPerformed(evt);
             }
         });
         jPanel2.add(jCmbSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, -1, -1));
@@ -164,6 +220,14 @@ public class DetailProduct extends javax.swing.JFrame {
     private void jBtnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCancelMouseClicked
         homePageController.keluarPageDetail(this);
     }//GEN-LAST:event_jBtnCancelMouseClicked
+
+    private void jCmbSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbSizeActionPerformed
+        ProductModel selectedSize = (ProductModel) jCmbSize.getSelectedItem();
+        if (selectedSize != null) {
+            jLabelHarga.setText("Rp. " + selectedSize.getProductPrice());
+        }
+
+    }//GEN-LAST:event_jCmbSizeActionPerformed
     
     /**
      * @param args the command line arguments
@@ -203,7 +267,7 @@ public class DetailProduct extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnCheckout;
-    private javax.swing.JComboBox<String> jCmbSize;
+    private javax.swing.JComboBox<ProductModel> jCmbSize;
     private javax.swing.JLabel jGambar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;

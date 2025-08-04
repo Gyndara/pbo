@@ -17,6 +17,8 @@ public class ProductModel {
     private String skuCode;
     private int quantity;
     private String productStatus;
+    private int sizeId;
+    private int productPrice;
     
     public ProductModel(){
         
@@ -68,6 +70,22 @@ public class ProductModel {
 
     public void setProductStatus(String productStatus) {
         this.productStatus = productStatus;
+    }
+
+    public int getSizeId() {
+        return sizeId;
+    }
+
+    public void setSizeId(int sizeId) {
+        this.sizeId = sizeId;
+    }
+
+    public int getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
     }
     
     
