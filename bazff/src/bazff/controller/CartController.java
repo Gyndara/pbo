@@ -79,12 +79,12 @@ public class CartController {
 
                 // ✅ Ukuran: ubah ID menjadi nama ukuran
                 String sizeName = sizeMap.getOrDefault(p.getSizeId(), "tidak diketahui");
-                JLabel labelSize = new JLabel("Ukuran: " + sizeName, JLabel.LEFT);
+                JLabel labelSize = new JLabel(" Ukuran: " + sizeName, JLabel.LEFT);
                 labelSize.setFont(new Font("Arial", Font.BOLD, 14));
 
                 // Harga
                 JLabel labelHarga = new JLabel("Rp. " + p.getProductPrice(), JLabel.LEFT);
-                labelHarga.setFont(new Font("Arial", Font.PLAIN, 13));
+                labelHarga.setFont(new Font("Arial", Font.PLAIN, 20));
 
                 // Panel bagian kiri
                 JPanel panelKiri = new JPanel(new GridBagLayout());
