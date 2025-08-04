@@ -7,6 +7,7 @@ package bazff.view;
 
 import bazff.controller.SizeController;
 import java.awt.Point;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -35,6 +36,20 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public JTextArea getjTextArea3() {
+        return jTextArea3;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +65,6 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButtonAdd = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -83,7 +97,9 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         jTextArea3.setEditable(false);
         jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea3.setColumns(20);
+        jTextArea3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextArea3.setRows(5);
+        jTextArea3.setBorder(null);
         jScrollPane3.setViewportView(jTextArea3);
 
         PanelPembayaran.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 7, 400, -1));
@@ -95,19 +111,12 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         jPanel2.setPreferredSize(new java.awt.Dimension(485, 43));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("19/01/2025");
-        jLabel2.setPreferredSize(new java.awt.Dimension(490, 25));
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 10, 180, -1));
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("B A Z F F");
         jLabel3.setPreferredSize(new java.awt.Dimension(490, 25));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
@@ -130,7 +139,9 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 120, -1, -1));
@@ -140,7 +151,9 @@ public class ReceiptPopUp extends javax.swing.JDialog {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 450, -1, -1));
@@ -200,7 +213,6 @@ public class ReceiptPopUp extends javax.swing.JDialog {
     private javax.swing.JPanel PanelPembayaran;
     private javax.swing.JButton jButtonAdd;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

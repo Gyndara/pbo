@@ -8,6 +8,8 @@ package bazff.view;
 import bazff.controller.SizeController;
 import bazff.controller.TransactionController;
 import java.awt.Point;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -39,6 +41,17 @@ public class PaymentPopUp extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JTextArea getjTextArea2() {
+        return jTextArea2;
+    }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,7 +101,9 @@ public class PaymentPopUp extends javax.swing.JDialog {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
         PanelPembayaran.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 7, 400, -1));
@@ -139,6 +154,7 @@ public class PaymentPopUp extends javax.swing.JDialog {
         jPanel3.setPreferredSize(new java.awt.Dimension(400, 100));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(255, 184, 224)));
         jTextField1.setPreferredSize(new java.awt.Dimension(350, 50));
         jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 40, -1, -1));
@@ -156,7 +172,9 @@ public class PaymentPopUp extends javax.swing.JDialog {
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
         jScrollPane2.setViewportView(jTextArea2);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 120, -1, -1));

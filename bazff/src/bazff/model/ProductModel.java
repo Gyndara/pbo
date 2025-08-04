@@ -88,5 +88,8 @@ public class ProductModel {
         this.productPrice = productPrice;
     }
     
-    
+    @Override
+    public String toString() {
+        return productName + " (Rp. " + productPrice + ")";
+    }
 }

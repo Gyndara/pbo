@@ -197,10 +197,6 @@ public class CartController {
                 panelKanan.add(Box.createVerticalStrut(10));
                 panelKanan.add(BtnKurang);
                 
-                //Hitung Jumlah
-                
-                
-                
                 // Gabung semua
                 panelProduk.add(panelKiri, BorderLayout.WEST);
                 panelProduk.add(panelKanan, BorderLayout.EAST);
