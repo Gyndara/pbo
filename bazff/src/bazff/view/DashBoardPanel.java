@@ -7,6 +7,7 @@ package bazff.view;
 
 
 
+import bazff.controller.ProductController;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +20,7 @@ public class DashBoardPanel extends javax.swing.JPanel {
      * Creates new form ProductDataPanel
      */
     private MainWindow mainWindow;
-    
+    private ProductController productController;
     
 
     
@@ -27,7 +28,12 @@ public class DashBoardPanel extends javax.swing.JPanel {
         this.mainWindow = window;
         initComponents();
         
-        
+         // Buat controller
+        productController = new ProductController(mainWindow);
+
+        // Ambil total barang masuk dan tampilkan di text field
+        int totalMasuk = productController.ambilTotalBarangMasuk();
+        jTxtBarangMasuk.setText(String.valueOf(totalMasuk));
     }
 
     DashBoardPanel() {
@@ -55,7 +61,7 @@ public class DashBoardPanel extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTxtBarangMasuk = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -117,24 +123,24 @@ public class DashBoardPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Barang Masuk");
+        jLabel1.setText("Barang Ready");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/kiriedit.png"))); // NOI18N
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(255, 184, 224));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("0");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTxtBarangMasuk.setEditable(false);
+        jTxtBarangMasuk.setBackground(new java.awt.Color(255, 184, 224));
+        jTxtBarangMasuk.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
+        jTxtBarangMasuk.setForeground(new java.awt.Color(255, 255, 255));
+        jTxtBarangMasuk.setText("0");
+        jTxtBarangMasuk.setBorder(null);
+        jTxtBarangMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTxtBarangMasukActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
+        jPanel6.add(jTxtBarangMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 270, 40));
 
         PanelHome.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 380, 280));
 
@@ -145,9 +151,9 @@ public class DashBoardPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTxtBarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtBarangMasukActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTxtBarangMasukActionPerformed
 
     public JPanel getHeaderHomePanel() {
         return HeaderHomePanel;
@@ -170,6 +176,6 @@ public class DashBoardPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTxtBarangMasuk;
     // End of variables declaration//GEN-END:variables
 }

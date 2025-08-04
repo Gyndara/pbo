@@ -106,7 +106,15 @@ public class ProductDataPanel extends javax.swing.JPanel {
             new String [] {
                 "PRODUCT CODE", "SKU CODE", "PRODUCT NAME", "PRODUCT QUANTITY", "PRODUCT STATUS"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TableProduct.setRowHeight(40);
         jScrollPane1.setViewportView(TableProduct);
 

@@ -65,4 +65,31 @@ public class ProductDAO {
             stmt.executeUpdate();
         }
     }
+    
+    public int getTotalBarangMasuk() throws SQLException {
+        final String sql = "SELECT SUM(ps.quantity) AS total_quantity FROM product_size ps JOIN product p ON ps.product_id = p.id WHERE ps.product_status = 'ready';";
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int total = 0;
+
+        try {
+            stmt = this.conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                total = rs.getInt("total_quantity");
+            }
+        } catch (SQLException e) {
+            System.out.println("Terjadi exception: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+            // Optional: log error closing resources
+            }
+        }
+        return total;
+    }
 }

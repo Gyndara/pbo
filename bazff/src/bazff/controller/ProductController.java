@@ -108,4 +108,14 @@ public class ProductController {
             ex.printStackTrace();
         }
     }
+    
+    public int ambilTotalBarangMasuk() {
+        try {
+            ProductDAO productDAO = new ProductDAO(Database.getKoneksi());
+            return productDAO.getTotalBarangMasuk(); // method ini ada di ProductDAO
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return 0;
+        }
+    }
 }
