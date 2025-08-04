@@ -16,6 +16,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.AbstractMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -143,7 +144,8 @@ public class DetailProduct extends javax.swing.JFrame {
         jLabelNama.setFont(new java.awt.Font("Arial", 0, 38)); // NOI18N
         jLabelNama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNama.setText("Jersey Short Jacket");
-        jPanel2.add(jLabelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 360, -1));
+        jLabelNama.setPreferredSize(new java.awt.Dimension(360, 44));
+        jPanel2.add(jLabelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 240, 470, -1));
 
         jLabelHarga.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
         jLabelHarga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -244,7 +246,7 @@ public class DetailProduct extends javax.swing.JFrame {
 
     private void jBtnCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCheckoutActionPerformed
         // TODO add your handling code here:
-        CartController.addDaftarProduct((ProductModel) jCmbSize.getSelectedItem());
+        CartController.addDaftarProduct(new AbstractMap.SimpleEntry<>((ProductModel) jCmbSize.getSelectedItem(), Integer.parseInt(jTxtJumlah.getText())));
         homePageController.keluarPageDetail(this);
         homePageController.tampilHalamanCart();
     }//GEN-LAST:event_jBtnCheckoutActionPerformed

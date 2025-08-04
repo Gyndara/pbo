@@ -34,7 +34,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
         initComponents();
         this.mainWindow = window;
         this.homePageController = homePageController;
-        this.cartController = new CartController();
+        this.cartController = new CartController(mainWindow);
         this.homePage = new HomePage();
         this.transactionController = new TransactionController(window);
         
@@ -44,7 +44,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
             Map<Integer, String> sizeMap = sizeDAO.getSizeMap();
 
             // Lalu panggil method generate dengan sizeMap
-            produkPanels = CartController.generateDaftarPanels(cartController, sizeMap);
+            produkPanels = CartController.generateDaftarPanels(cartController, sizeMap, jPanelListDaftar);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -55,8 +55,13 @@ public class ShoppingCartView extends javax.swing.JFrame {
         }
         jPanelListDaftar.revalidate();
         jPanelListDaftar.repaint();
+        
+        
     }
 
+    public JTextField getTotalField(){
+        return jTextFieldTotal;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
