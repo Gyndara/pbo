@@ -47,8 +47,12 @@ public class ProductController {
 
     public void updatePopUp2(UpdatePopUp1 dialog1) {
         Point posisi = dialog1.getLocation();
+        String skuCode = dialog1.getjTxtSkuUpdate().getText(); // ambil sku dari dialog1
+
         dialog1.setVisible(false);
-        UpdatePopUp2 dialog2 = new UpdatePopUp2(mainWindow, true);
+
+        
+        UpdatePopUp2 dialog2 = new UpdatePopUp2(mainWindow, skuCode, this);
         dialog2.setLocation(posisi);
         dialog2.setVisible(true);
     }
@@ -97,6 +101,20 @@ public class ProductController {
             return imagePath;
         }
         return null;
+    }
+    
+    public void updateProduct(String skuCode, String quantityText, String priceText, String status) {
+        try {
+            Integer quantity = quantityText.isEmpty() ? null : Integer.valueOf(quantityText);
+            Integer price = priceText.isEmpty() ? null : Integer.valueOf(priceText);
+            String productStatus = (status == null || status.isEmpty()) ? null : status;
+
+            ProductDAO dao = new ProductDAO(Database.getKoneksi());
+            dao.updateProductBySku(skuCode, quantity, price, productStatus);
+
+        } catch (SQLException | NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
     
     public void deleteProduct(String skuCode){

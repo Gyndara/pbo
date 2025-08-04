@@ -6,6 +6,7 @@
 package bazff.view;
 
 import bazff.controller.ProductController;
+import javax.swing.JTextField;
 
 /**
  *
@@ -31,6 +32,10 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JTextField getjTxtSkuUpdate() {
+        return jTxtSkuUpdate;
+    }
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,7 +50,7 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTxtSkuUpdate = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -80,10 +85,10 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
+        jTxtSkuUpdate.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtSkuUpdate.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTxtSkuUpdate.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTxtSkuUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 261, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
@@ -181,6 +186,6 @@ public class UpdatePopUp1 extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTxtSkuUpdate;
     // End of variables declaration//GEN-END:variables
 }

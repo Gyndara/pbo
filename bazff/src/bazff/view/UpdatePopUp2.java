@@ -5,6 +5,8 @@
  */
 package bazff.view;
 
+import bazff.controller.ProductController;
+
 /**
  *
  * @author bisma
@@ -31,6 +33,22 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         initComponents();
         mainWindow = window;
     }
+    
+    private String skuCode;
+    private ProductController productController;
+
+    public UpdatePopUp2(MainWindow window, String skuCode, ProductController productController) {
+        super(window, true);
+        this.mainWindow = window;
+        this.skuCode = skuCode;
+        this.productController = productController;
+
+        // Pindahkan ke sini jika belum visible
+        setUndecorated(true);
+
+        initComponents();
+        pack();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,14 +63,14 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTxtAddQuantity = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTxtNewPrice = new javax.swing.JTextField();
         jCmbProductStatus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -84,14 +102,14 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 60, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField1.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jTxtAddQuantity.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtAddQuantity.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTxtAddQuantity.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTxtAddQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(236, 127, 169));
-        jLabel3.setText("Add Product Quantity");
+        jLabel3.setText("Add Product Quantity (Opsional)");
         jLabel3.setPreferredSize(new java.awt.Dimension(435, 25));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
@@ -101,6 +119,11 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         jButton1.setText("Update");
         jButton1.setBorder(null);
         jButton1.setPreferredSize(new java.awt.Dimension(150, 55));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -136,15 +159,15 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
         jLabel5.setPreferredSize(new java.awt.Dimension(435, 25));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
-        jTextField2.setPreferredSize(new java.awt.Dimension(435, 64));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+        jTxtNewPrice.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtNewPrice.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 1, new java.awt.Color(236, 127, 169)));
+        jTxtNewPrice.setPreferredSize(new java.awt.Dimension(435, 64));
+        jPanel1.add(jTxtNewPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
         jCmbProductStatus.setBackground(new java.awt.Color(236, 127, 169));
         jCmbProductStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jCmbProductStatus.setForeground(new java.awt.Color(255, 237, 250));
-        jCmbProductStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ready", "not ready" }));
+        jCmbProductStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ready", "not_ready" }));
         jCmbProductStatus.setBorder(null);
         jPanel1.add(jCmbProductStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 130, 40));
 
@@ -156,6 +179,15 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String quantity = jTxtAddQuantity.getText();
+        String price = jTxtNewPrice.getText();
+        String status = jCmbProductStatus.getSelectedItem().toString();
+
+        productController.updateProduct(skuCode, quantity, price, status);
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -205,7 +237,7 @@ public class UpdatePopUp2 extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTxtAddQuantity;
+    private javax.swing.JTextField jTxtNewPrice;
     // End of variables declaration//GEN-END:variables
 }

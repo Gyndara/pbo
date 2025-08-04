@@ -92,4 +92,41 @@ public class ProductDAO {
         }
         return total;
     }
+    
+    public void updateProductBySku(String skuCode, Integer quantity, Integer price, String status) throws SQLException {
+        StringBuilder sql = new StringBuilder("UPDATE product_size SET ");
+        List<Object> params = new ArrayList<>();
+
+        // Bangun bagian SET berdasarkan parameter yang tidak null
+        if (quantity != null) {
+            sql.append("quantity = quantity + ?, ");
+            params.add(quantity);
+        }
+
+        if (price != null) {
+            sql.append("product_price = ?, ");
+            params.add(price);
+        }
+
+        if (status != null && !status.isEmpty()) {
+            sql.append("product_status = ?, ");
+            params.add(status);
+        }
+
+        // Hapus koma terakhir dan tambahkan WHERE
+        sql.setLength(sql.length() - 2);
+        sql.append(" WHERE sku_code = ?");
+        params.add(skuCode);
+
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement(sql.toString());
+            for (int i = 0; i < params.size(); i++) {
+                stmt.setObject(i + 1, params.get(i));
+            }
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+        }
+    }
 }
