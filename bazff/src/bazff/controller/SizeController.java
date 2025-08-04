@@ -62,9 +62,6 @@ public class SizeController {
     }
     
     public void refreshSizePanel(){                     
-        SizeDataView PanelSizeData = new SizeDataView(mainWindow); // buat ulang panel Size
-        mainWindow.getMainPanel().removeAll();                 // hapus semua panel sebelumnya
-        mainWindow.getMainPanel().add(PanelSizeData);              // tambahkan panel Size yang baru
         mainWindow.getMainPanel().revalidate();                // refresh layout
         mainWindow.getMainPanel().repaint();                   // repaint tampilan
     }
