@@ -6,8 +6,12 @@
 package bazff.view;
 
 
+import bazff.config.Database;
 import bazff.controller.ProductController;
-import javax.swing.JLabel;
+import bazff.dao.SizeDAO;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JPanel;
 
 /**
@@ -24,6 +28,18 @@ public class AddProduct extends javax.swing.JPanel {
     public AddProduct(MainWindow window) {
         this.mainWindow = window;
         initComponents();
+
+        try {
+            Connection conn = Database.getKoneksi();
+            SizeDAO sizeDAO = new SizeDAO(conn);
+            List<String> sizes = sizeDAO.getAllSizeNames();
+            jComboBox1.removeAllItems();
+            for (String size : sizes) {
+                jComboBox1.addItem(size);
+            }
+        } catch (SQLException e) {
+            System.out.println("Gagal memuat data ukuran: " + e.getMessage());
+        }
         productController = new ProductController(window);
     }
 
@@ -50,12 +66,12 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jTextFieldPrice = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBoxSize = new javax.swing.JComboBox<>();
         jButtonAdd = new javax.swing.JButton();
         jButtonAddProductSize = new javax.swing.JButton();
         jButtonCencel = new javax.swing.JButton();
         LabelImage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(1440, 858));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,13 +126,6 @@ public class AddProduct extends javax.swing.JPanel {
         jLabel5.setText("Size");
         PanelAddProduct.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 393, -1, -1));
 
-        jComboBoxSize.setBackground(new java.awt.Color(236, 127, 169));
-        jComboBoxSize.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        jComboBoxSize.setForeground(new java.awt.Color(255, 230, 248));
-        jComboBoxSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "XS", "M", "L", "XL", "XXL" }));
-        jComboBoxSize.setBorder(null);
-        PanelAddProduct.add(jComboBoxSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 430, 180, 62));
-
         jButtonAdd.setBackground(new java.awt.Color(236, 127, 169));
         jButtonAdd.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
         jButtonAdd.setForeground(new java.awt.Color(255, 237, 250));
@@ -160,6 +169,13 @@ public class AddProduct extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         PanelAddProduct.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(236, 127, 169));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S" }));
+        jComboBox1.setBorder(null);
+        PanelAddProduct.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, 170, 50));
+
         add(PanelAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -187,7 +203,7 @@ public class AddProduct extends javax.swing.JPanel {
     private javax.swing.JButton jButtonAdd;
     private javax.swing.JButton jButtonAddProductSize;
     private javax.swing.JButton jButtonCencel;
-    private javax.swing.JComboBox<String> jComboBoxSize;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
