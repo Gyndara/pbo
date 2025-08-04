@@ -136,4 +136,9 @@ public class ProductController {
             return 0;
         }
     }
+    
+    public void refreshProductPanel(){
+        mainWindow.getMainPanel().revalidate();
+        mainWindow.getMainPanel().repaint();
+    }
 }

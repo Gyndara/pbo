@@ -156,6 +156,7 @@ public class DeleteProductPopUp extends javax.swing.JDialog {
     
         if (!skuCode.equals("") && mainWindow != null) {
             mainWindow.getProductController().deleteProduct(skuCode);
+            mainWindow.getProductController().refreshProductPanel();
             this.dispose();
             
         } else {

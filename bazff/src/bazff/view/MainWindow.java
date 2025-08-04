@@ -36,6 +36,16 @@ public class MainWindow extends javax.swing.JFrame {
     public ProductController getProductController() {
         return productController;
     }
+
+    public MainWindowController getWindowController() {
+        return windowController;
+    }
+
+    public HomePageController getHomePageController() {
+        return homePageController;
+    }
+    
+    
     
 
     /**

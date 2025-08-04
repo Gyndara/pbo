@@ -52,20 +52,18 @@ public class MainWindowController {
     }
     
     public void tampilHalamanProduct(MainWindow window){
-        //mengubah panel header
+        ProductDataPanel panelBaru = new ProductDataPanel(window);
+        this.ProductDataPanel = panelBaru;
+
+        // Bersihkan dan tampilkan header
         window.getPanelHeader().removeAll();
-        window.getPanelHeader().repaint();;
-        window.getPanelHeader().revalidate();
-        //mengubah panel main
-        window.getMainPanel().removeAll();
-        window.getMainPanel().repaint();
-        window.getMainPanel().revalidate();
-        
-        window.getPanelHeader().add(ProductDataPanel.getPanelHeaderProduct());
+        window.getPanelHeader().add(panelBaru.getPanelHeaderProduct());
         window.getPanelHeader().repaint();
         window.getPanelHeader().revalidate();
-        
-        window.getMainPanel().add(ProductDataPanel.getPanelProductData());
+
+        // Bersihkan dan tampilkan isi
+        window.getMainPanel().removeAll();
+        window.getMainPanel().add(panelBaru.getPanelProductData());
         window.getMainPanel().repaint();
         window.getMainPanel().revalidate();
     }
