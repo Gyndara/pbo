@@ -35,20 +35,10 @@ public class DetailProduct extends javax.swing.JFrame {
      */
     private HomePageController homePageController;
     private HomePage homePage;
-    public DetailProduct() {
-        initComponents();
-        
-        
-        
-        ImageIcon LoginImage = new ImageIcon(getClass().getClassLoader().getResource("resources/jersey.png"));
-        jGambar.setIcon(LoginImage);
-        jCmbSize.getEditor().getEditorComponent().setBackground(Color.decode("#EC7FA9"));
-        this.homePageController = homePageController;
-        this.homePage = homePage;
-    }
-    
+
     public DetailProduct(HomePageController homePageController, String productCode) {
         initComponents();
+        jTxtJumlah.setText("1");
         this.homePageController = homePageController;
         this.homePage = homePageController.getHomePage(); // ambil dari controller
         
@@ -250,41 +240,7 @@ public class DetailProduct extends javax.swing.JFrame {
         homePageController.keluarPageDetail(this);
         homePageController.tampilHalamanCart();
     }//GEN-LAST:event_jBtnCheckoutActionPerformed
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DetailProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DetailProduct().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancel;
