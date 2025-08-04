@@ -23,6 +23,7 @@ import java.util.Map;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -236,6 +237,11 @@ public class DetailProduct extends javax.swing.JFrame {
 
     private void jBtnCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCheckoutActionPerformed
         // TODO add your handling code here:
+        String jumlah = jTxtJumlah.getText();
+        if (jumlah.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ukuran tidak boleh kosong!");
+            return;
+        }
         CartController.addDaftarProduct(new AbstractMap.SimpleEntry<>((ProductModel) jCmbSize.getSelectedItem(), Integer.parseInt(jTxtJumlah.getText())));
         homePageController.keluarPageDetail(this);
         homePageController.tampilHalamanCart();
