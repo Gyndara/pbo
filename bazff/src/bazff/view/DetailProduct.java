@@ -239,8 +239,15 @@ public class DetailProduct extends javax.swing.JFrame {
         // TODO add your handling code here:
         String jumlah = jTxtJumlah.getText();
         if (jumlah.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ukuran tidak boleh kosong!");
+            JOptionPane.showMessageDialog(this, "Ukuran tidak boleh kosong!", "Input Salah", JOptionPane.ERROR_MESSAGE);
+            jTxtJumlah.requestFocus();
             return;
+        }
+        
+        if (!jumlah.matches("\\d+")) { // \d+ means one or more digits
+            JOptionPane.showMessageDialog(this, "Ukuran harus berupa angka saja!", "Input Salah", JOptionPane.ERROR_MESSAGE);
+            jTxtJumlah.requestFocus();
+            return; // stop further processing
         }
         CartController.addDaftarProduct(new AbstractMap.SimpleEntry<>((ProductModel) jCmbSize.getSelectedItem(), Integer.parseInt(jTxtJumlah.getText())));
         homePageController.keluarPageDetail(this);
