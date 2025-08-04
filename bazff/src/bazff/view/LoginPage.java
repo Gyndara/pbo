@@ -5,6 +5,13 @@
  */
 package bazff.view;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import bazff.config.Database;
+import java.awt.HeadlessException;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
@@ -148,15 +155,43 @@ public class LoginPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnSignMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSignMouseClicked
-        String validate = jTxtEmail.getText();
-        
-        if (validate.equals("admin")) {
-            new MainWindow().setVisible(true);
-        } else {
-            new HomePage().setVisible(true);
+        String username = jTxtEmail.getText().trim();
+    String password = jTxtPass.getText().trim();
+
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Username dan Password tidak boleh kosong!");
+        return;
+    }
+
+    try {
+        Connection conn = Database.getKoneksi();
+        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, username);
+        pst.setString(2, password);
+
+        ResultSet rs = pst.executeQuery();
+
+        if (rs.next()) {
+            String nama = rs.getString("nama_pegawai");
+            String role = rs.getString("role");
+
+            // Buka form berdasarkan role
+            if (role.equalsIgnoreCase("admin")) {
+                new MainWindow().setVisible(true); // Ganti sesuai form admin
+            } else {
+                new HomePage().setVisible(true); // Ganti sesuai form pegawai
+            }
+            this.dispose(); // Tutup form login
         }
-        
-        dispose();
+
+        rs.close();
+        pst.close();
+        conn.close();
+
+    } catch (HeadlessException | SQLException e) {
+        JOptionPane.showMessageDialog(this, "Pasword atau Username salah" );
+    }
     }//GEN-LAST:event_jBtnSignMouseClicked
 
     private void jBtnSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSignActionPerformed
