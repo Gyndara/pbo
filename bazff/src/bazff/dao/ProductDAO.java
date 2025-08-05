@@ -62,7 +62,7 @@ public class ProductDAO {
         return daftarProduk;
     }
     
-        public List<ProductModel> getProductHomepage() throws SQLException {
+    public List<ProductModel> getProductHomepage() throws SQLException {
         final String sql = "SELECT p.product_code, p.product_name, ps.sku_code, ps.size_id, ps.quantity, ps.product_price, ps.product_status FROM product p JOIN product_size ps ON p.id = ps.product_id where ps.quantity > 0 AND ps.product_status = 'ready'";
 
         PreparedStatement stmt = null;
