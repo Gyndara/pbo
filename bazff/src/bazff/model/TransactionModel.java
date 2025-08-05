@@ -5,7 +5,9 @@
  */
 package bazff.model;
 
+import bazff.config.Session;
 import java.sql.Date;
+import java.util.List;
 
 /**
  *
@@ -13,30 +15,84 @@ import java.sql.Date;
  */
 public class TransactionModel {
     private Date tanggal;
-    private String cashierName;
+    private int userId;
     private int total;
+    private int bayar;
     private int quantity;
+    private String cashierName;
+    private List<DetailTransModel> details;
 
-    public TransactionModel(Date tanggal, String cashierName, int quantity,int total) {
+    public TransactionModel(Date tanggal, int userId ,int total, int bayar) {
         this.tanggal = tanggal;
-        this.cashierName = cashierName;
-        this.quantity = quantity;
+        this.userId = userId;
         this.total = total;
+        this.bayar = bayar;
     }
-
-    public Date getTanggal() {
-        return tanggal;
+    
+    public TransactionModel(Date tanggal, int userId, String cashierName, int total, int quantity) {
+        this.tanggal = tanggal;
+        this.userId = userId;
+        this.cashierName = cashierName;
+        this.total = total;
+        this.quantity = quantity;
     }
 
     public String getCashierName() {
         return cashierName;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public void setCashierName(String cashierName) {
+        this.cashierName = cashierName;
+}
+
+
+    public List<DetailTransModel> getDetails() {
+        return details;
     }
-    
+
+    public void setDetails(List<DetailTransModel> details) {
+        this.details = details;
+    }
+
+    public Date getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     public int getTotal() {
         return total;
     }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getBayar() {
+        return bayar;
+    }
+
+    public void setBayar(int bayar) {
+        this.bayar = bayar;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    
 }

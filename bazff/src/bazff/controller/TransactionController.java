@@ -6,17 +6,23 @@
 package bazff.controller;
 
 import bazff.config.Database;
+import bazff.config.Session;
 import static bazff.controller.CartController.daftarProduct;
 import bazff.dao.TransactionDAO;
+import bazff.model.DetailTransModel;
 import bazff.model.ProductModel;
+import bazff.model.TransactionModel;
 import bazff.view.MainWindow;
 import bazff.view.PaymentPopUp;
 import bazff.view.ReceiptPopUp;
 import bazff.view.ShoppingCartView;
 import java.awt.Point;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -119,6 +125,51 @@ public class TransactionController {
         }
         
         double kembalian = bayar - total2;
+        
+        try {
+            Connection conn = Database.getKoneksi();
+            TransactionDAO dao = new TransactionDAO(conn);
+
+            // Calculate totals
+            int subtotal = (int) total;
+            int totalWithPPN = (int) total2;
+
+            // Prepare TransactionModel
+            TransactionModel transaksi = new TransactionModel(
+                Date.valueOf(LocalDate.now()),
+                Session.getUserId(),
+                totalWithPPN,
+                (int) bayar
+            );
+
+            // Create list of details
+            List<DetailTransModel> detailList = new ArrayList<>();
+            for (Map.Entry<ProductModel, Integer> entry : daftarProduct) {
+                ProductModel produk = entry.getKey();
+                int jumlah = entry.getValue();
+
+                DetailTransModel detail = new DetailTransModel(
+                    produk.getSizeId(),  // ← Ensure this method exists
+                    jumlah,
+                    produk.getProductPrice()
+                );
+                detailList.add(detail);
+            }
+
+            transaksi.setDetails(detailList);
+
+            // Insert to database
+            boolean inserted = dao.insertTransactionWithDetails(transaksi);
+            if (!inserted) {
+                JOptionPane.showMessageDialog(paymentPopUp, "Gagal menyimpan transaksi ke database.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(paymentPopUp, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+            return;
+        }
         
         CartController.setDaftarProduct(new ArrayList<>());
         

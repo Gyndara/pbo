@@ -125,8 +125,8 @@ public class TableController {
                 model.addRow(new Object[]{
                     t.getTanggal(),
                     t.getCashierName(),
+                    t.getQuantity(),
                     t.getTotal(),
-                    t.getQuantity()
                 });
             }
 

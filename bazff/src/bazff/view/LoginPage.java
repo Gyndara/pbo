@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import bazff.config.Database;
+import bazff.config.Session;
 import java.awt.HeadlessException;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
@@ -173,8 +174,11 @@ public class LoginPage extends javax.swing.JFrame {
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
+                int userId = rs.getInt("id");
                 String nama = rs.getString("nama_pegawai");
                 String role = rs.getString("role");
+                
+                Session.setUser(userId, nama);
 
                 // Buka form berdasarkan role
                 if (role.equalsIgnoreCase("admin")) {
