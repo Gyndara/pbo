@@ -195,7 +195,7 @@ public class ProductController {
         try {
             conn = Database.getKoneksi();
             
-            conn.setAutoCommit(false); // 🔥 Autocommit dimatikan
+            conn.setAutoCommit(false);
 
             String code = txtCode.getText().trim();
             String name = txtName.getText().trim();
@@ -203,7 +203,7 @@ public class ProductController {
             String size = comboSize.getSelectedItem().toString();
             String imagePath = saveImageToDisk(imageFile);
 
-            // Siapkan model dan DAO untuk product
+            
             MainProductModel product = new MainProductModel();
             product.setProductCode(code);
             product.setProductName(name);
@@ -213,7 +213,7 @@ public class ProductController {
             productDAO.insertProduct(product);
             int productId = productDAO.getProductIdByCode(code);
 
-            // Ambil ID size
+            
             SizeDAO sizeDAO = new SizeDAO(conn);
             int sizeId = sizeDAO.getSizeIdByName(size);
             if (sizeId == -1) throw new SQLException("Size tidak ditemukan: " + size);
@@ -260,7 +260,7 @@ public class ProductController {
         } finally {
             if (conn != null) {
                 try {
-                    conn.setAutoCommit(true); // 🔁 Kembalikan ke autocommit true
+                    conn.setAutoCommit(true); 
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
