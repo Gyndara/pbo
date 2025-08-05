@@ -62,7 +62,8 @@ public class CartController {
         try {
             for (Map.Entry<ProductModel, Integer> p : daftarProduct) {
                 JPanel panelProduk = new JPanel();
-                panelProduk.setMaximumSize(new Dimension(1920, 220));
+                panelProduk.setAlignmentX(Component.LEFT_ALIGNMENT);
+                panelProduk.setMaximumSize(new Dimension(Integer.MAX_VALUE, 220));
                 panelProduk.setLayout(new BorderLayout());
                 panelProduk.setBackground(new Color(255, 230, 248));
 

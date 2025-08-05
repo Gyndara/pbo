@@ -10,6 +10,9 @@ import bazff.controller.CartController;
 import bazff.controller.HomePageController;
 import bazff.controller.TransactionController;
 import bazff.dao.SizeDAO;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Map;
@@ -36,6 +39,9 @@ public class ShoppingCartView extends javax.swing.JFrame {
         this.cartController = new CartController(mainWindow);
         this.homePage = new HomePage();
         this.transactionController = new TransactionController(window, this);
+        jPanelListDaftar.setPreferredSize(null);
+        jPanelListDaftar.setMaximumSize(null);
+        jPanelListDaftar.setMinimumSize(null);
         
         try {
             Connection conn = Database.getKoneksi();
@@ -48,10 +54,14 @@ public class ShoppingCartView extends javax.swing.JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        for (JPanel p : produkPanels) {
-            jPanelListDaftar.add(p);
-            jPanelListDaftar.add(Box.createVerticalStrut(10));
+        
+        for (int i = 0; i < produkPanels.length; i++) {
+            jPanelListDaftar.add(produkPanels[i]);
+            if (i < produkPanels.length - 1) {
+                jPanelListDaftar.add(Box.createVerticalStrut(10));
+            }
         }
+        
         jPanelListDaftar.revalidate();
         jPanelListDaftar.repaint();
         
@@ -73,6 +83,7 @@ public class ShoppingCartView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanelListDaftar = new javax.swing.JPanel();
         jBtnProceed = new javax.swing.JButton();
 
@@ -115,10 +126,14 @@ public class ShoppingCartView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setOpaque(false);
+
         jPanelListDaftar.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelListDaftar.setPreferredSize(new java.awt.Dimension(1920, 220));
         jPanelListDaftar.setLayout(new javax.swing.BoxLayout(jPanelListDaftar, javax.swing.BoxLayout.Y_AXIS));
-        jPanel1.add(jPanelListDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, 740));
+        jScrollPane2.setViewportView(jPanelListDaftar);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1920, 750));
 
         jBtnProceed.setBackground(new java.awt.Color(236, 127, 169));
         jBtnProceed.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -174,5 +189,6 @@ public class ShoppingCartView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelListDaftar;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

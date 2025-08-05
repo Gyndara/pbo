@@ -46,6 +46,11 @@ public class TransactionController {
     }
     
     public void paymentPopUp() {
+        if (daftarProduct.isEmpty()) {
+            JOptionPane.showMessageDialog(mainWindow, "Shopping Cart kosong!", "Cart Kosong", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         paymentPopUp = new PaymentPopUp(mainWindow, this);
 
         // Mulai isi data struk di jTextArea2
